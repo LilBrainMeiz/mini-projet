@@ -4,15 +4,21 @@ public class Ouvrage
     private static int isNombreOuvrage;
     private int        iNumeroOuvrage;
 
-    private String sTitre;
-    private String sEditeur;
-    private String sSerie;
-    private String sScenariste;
-    private String sDessinateur;
-    private int    iTome;
+    private String  sTitre;
+    private String  sEditeur;
+    private String  sSerie;
+    private String  sScenariste;
+    private String  sDessinateur;
+    private Integer iTome; // Ici le tome est en Integer car il est facultatif
+
+    public Ouvrage(String titre, String editeur, String scenariste,
+                   String dessinateur)
+    {
+        this(titre, editeur, null, scenariste, dessinateur, null);
+    }
 
     public Ouvrage(String titre, String editeur, String serie,
-                   String scenariste, String dessinateur, int tome)
+                   String scenariste, String dessinateur, Integer tome)
     {
         this.iNumeroOuvrage = ++Ouvrage.isNombreOuvrage;
 
@@ -24,10 +30,10 @@ public class Ouvrage
         this.iTome          = tome;
     }
 
-    public String getEditeur()    { return this.sEditeur; }
-    public String getDessinateur(){ return this.sDessinateur; }
-    public String getSerie()      { return this.sSerie; }
-    public String getScenariste() { return this.sScenariste; }
-    public String getTitre()      { return this.sTitre; }
-    public int    getTome()       { return this.iTome; }
+    public String  getEditeur()    { return this.sEditeur; }
+    public String  getDessinateur(){ return this.sDessinateur; }
+    public String  getSerie()      { return this.sSerie; }
+    public String  getScenariste() { return this.sScenariste; }
+    public String  getTitre()      { return this.sTitre; }
+    public Integer getTome()       { return this.iTome; }
 }
