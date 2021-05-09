@@ -42,10 +42,10 @@ public class Ouvrage
         this.iTome          = tome;
     }
 
-    public String  getEditeur()    { return this.sEditeur; }
+    public String  getEditeur()    { return this.sEditeur;     }
     public String  getDessinateur(){ return this.sDessinateur; }
-    public String  getSerie()      { return this.sSerie; }
-    public String  getScenariste() { return this.sScenariste; }
-    public String  getTitre()      { return this.sTitre; }
-    public Integer getTome()       { return this.iTome; }
+    public String  getSerie()      { return this.sSerie;       }
+    public String  getScenariste() { return this.sScenariste;  }
+    public String  getTitre()      { return this.sTitre;       }
+    public Integer getTome()       { return this.iTome;        }
 }
