@@ -1,25 +1,16 @@
-import javax.swing.*;
-
-
-public class MetierEtat extends JFrame
+public class ControleurEtat
 {
-	private ControleurEtat  ctrl;
+    private FrameEtat  ihm;
+    private MetierEtat metier;
 
-	private PanelEtat  panelEtat;
+    public ControleurEtat()
+    {
+        this.ihm    = new FrameEtat(this);
+        this.metier = new MetierEtat();
+    }
 
-	public MetierEtat()
-	{
-		this.setTitle( "Etats" );
-		this.setLocation( 30, 30 );
-		this.setSize( 400, 200 );
-
-		this.panelEtat  = new PanelEtat( this.ctrl );
-
-        this.add( this.panelEtat );
-
-
-		this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        this.setVisible( true );
-
-	}
+    public static void main(String[] args)
+    {
+        new ControleurEtat();
+    }
 }
