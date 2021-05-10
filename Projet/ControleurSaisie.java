@@ -1,6 +1,6 @@
 public class ControleurSaisie
 {
-    private MainFrame    ihm;
+    private FrameSaisie  ihm;
     private MetierSaisie metier;
     
     public ControleurSaisie()

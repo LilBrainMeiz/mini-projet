@@ -1,10 +1,10 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.FileInputStream;
-import java.util.FileOutputStream;
 
 import java.io.PrintWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 public class MetierBase
 {

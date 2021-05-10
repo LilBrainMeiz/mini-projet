@@ -5,7 +5,7 @@ public class FrameSaisie extends JFrame
     private ControleurSaisie oCtrl;
     private PanelSaisie oPanelSaisie;
 
-    public MainFrame(ControleurSaisie ctrl)
+    public FrameSaisie(ControleurSaisie ctrl)
     {
         // Modèle MVC
         this.oCtrl = ctrl;
