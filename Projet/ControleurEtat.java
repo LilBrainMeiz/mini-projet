@@ -6,7 +6,7 @@ public class ControleurEtat
     public ControleurEtat()
     {
         this.ihm    = new FrameEtat(this);
-        this.metier = new metierEtat();
+        this.metier = new MetierEtat();
     }
 
     public static void main(String[] args)
