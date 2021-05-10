@@ -11,11 +11,11 @@ public class FrameEtat extends JFrame
 
 		this.panelEtat  = new PanelEtat( ctrl );
 
-        this.add( this.panelEtat );
+        	this.add( this.panelEtat );
 
 		this.pack();
 		this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        this.setVisible( true );
+       	 	this.setVisible( true );
 	}
 
 	public void maj()
