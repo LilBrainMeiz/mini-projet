@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 public class FrameSaisie extends JFrame
 {
     private ControleurSaisie oCtrl;
-    PanelSaisie oPanelSaisie;
+    private PanelSaisie oPanelSaisie;
 
     public MainFrame(ControleurSaisie ctrl)
     {
