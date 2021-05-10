@@ -3,7 +3,9 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout  ;
 
-public class PanelSaisie extends JPanel
+import java.awt.event.ActionListener;
+
+public class PanelSaisie extends JPanel implements ActionListener
 {
     private ControleurSaisie ctrl;
     
@@ -51,8 +53,7 @@ public class PanelSaisie extends JPanel
         txtSerie      .setHorizontalAlignment(JTextField.RIGHT);
 
         panelNord = new JPanel( new BorderLayout() );
-        lblTemp   = new JLabel("* Champs obligatoires"); // lblTemp à revoir pour la taille
-        lblTemp.setHorizontalTextPosition(JLabel.LEFT);
+        lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT); // lblTemp à revoir pour la taille
         
         panelCentre = new JPanel( new GridLayout( 6, 1 ));
         panelTmp    = new JPanel();
@@ -61,7 +62,7 @@ public class PanelSaisie extends JPanel
         /*     Ajout des composants    */
         /*-----------------------------*/
         
-        panelNord.add( new JLabel ( new ImageIcon ( "bedetheque.png" )), BorderLayout.CENTER);
+        panelNord.add( new JLabel ( new ImageIcon ( "./bedetheque.png" )), BorderLayout.CENTER);
         panelNord.add( lblTemp                                         , BorderLayout.SOUTH );
         
         panelTmp.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
@@ -98,5 +99,24 @@ public class PanelSaisie extends JPanel
         this.add( panelNord      , BorderLayout.NORTH  );
         this.add( panelCentre    , BorderLayout.CENTER );
         this.add( this.btnAjouter, BorderLayout.SOUTH  );
+        
+        /*-----------------------------*/
+        /*  Activation des composants  */
+        /*-----------------------------*/
+        txtTitre      .addActionLister(this);
+        txtEditeur    .addActionLister(this);
+        txtDessinateur.addActionLister(this);
+        txtScenariste .addActionLister(this);
+        txtTome       .addActionLister(this);
+        txtSerie      .addActionLister(this);
+        
+        
     }
+    
+    public void maj()
+    {
+    
+    }
+    
+    public void actionPerformed(ActionEvent e){}
 }
