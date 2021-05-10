@@ -42,17 +42,14 @@ public class MetierBase
         return oFichier;
     }
 
-    public void ecrireFichier(String chemin, List<String> oFichier)
+    public void ecrireFichier(String chemin, String toPrint)
     {
         try
         {
             PrintWriter oOutput = new PrintWriter( new FileOutputStream(
                                                        chemin));
 
-            for(String sToPrint : oFichier)
-            {
-                oOutput.println(sToPrint);
-            }
+            oOutput.println(toPrint);
 
             oOutput.close();
         }catch(Exception e){ e.printStackTrace(); }
