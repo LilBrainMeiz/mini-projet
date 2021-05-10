@@ -21,7 +21,8 @@ public class MetierBase
 
         try
         {
-            Scanner oInput = new Scanner( new FileInputStream(chemin));
+            Scanner oInput = new Scanner( new FileInputStream(chemin),
+                                          "UTF8" );
 
             while(oInput.hasNextLine())
             {
