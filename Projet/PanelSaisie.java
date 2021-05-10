@@ -64,32 +64,32 @@ public class PanelSaisie extends JPanel
         panelNord.add( new JLabel ( new ImageIcon ( "bedetheque.png" )), BorderLayout.CENTER);
         panelNord.add( lblTemp                                         , BorderLayout.SOUTH );
         
-        panelTmp.add( new JLabel( "Titre* : "      , JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
         panelTmp.add( this.txtTitre );
         panelCentre.add( panelTmp );
         
         panelTmp = new JPanel();
-        panelTmp.add( new JLabel( "Editeur* : "    , JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Editeur* : "    , JLabel.RIGHT ));
         panelTmp.add( this.txtEditeur );
         panelCentre.add( panelTmp );
         
         panelTmp = new JPanel();
-        panelTmp.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT ));
         panelTmp.add( this.txtDessinateur );
         panelCentre.add( panelTmp );
         
         panelTmp = new JPanel();
-        panelTmp.add( new JLabel( "Scénariste* : " , JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Scénariste* : " , JLabel.RIGHT ));
         panelTmp.add( this.txtScenariste );
         panelCentre.add( panelTmp );
         
         panelTmp = new JPanel();
-        panelTmp.add( new JLabel( "Tome : "        , JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
         panelTmp.add( this.txtTome );
         panelCentre.add( panelTmp );
         
         panelTmp = new JPanel();
-        panelTmp.add( new JLabel( "Série : "       , JLabel.RIGHT );
+        panelTmp.add( new JLabel( "Série : "       , JLabel.RIGHT ));
         panelTmp.add( this.txtSerie );
         panelCentre.add( panelTmp );
         
