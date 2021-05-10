@@ -11,13 +11,13 @@ public class FrameSaisie extends JFrame
         this.oCtrl = ctrl;
 
         this.setTitle("Mini-projet");
-        this.setSize(600, 600);
         this.setLocation(20, 20);
         
         this.oPanelSaisie = new PanelSaisie(oCtrl);
         
         this.add(this.oPanelSaisie);
         
+        this.pack();
         this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         this.setVisible(true);
     }
