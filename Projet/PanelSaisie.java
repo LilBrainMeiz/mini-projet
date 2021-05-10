@@ -121,24 +121,24 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void maj()
     {
-        txtTitre      .setText("");
-        txtEditeur    .setText("");
-        txtDessinateur.setText("");
-        txtScenariste .setText("");
-        txtTome       .setText("");
-        txtSerie      .setText("");
+        this.txtTitre      .setText("");
+        this.txtEditeur    .setText("");
+        this.txtDessinateur.setText("");
+        this.txtScenariste .setText("");
+        this.txtTome       .setText("");
+        this.txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e)
     {
-        String titre       = this.txtTitre      .getText();
-        String editeur     = this.txtEditeur    .getText();
-        String serie       = this.txtSerie      .getText();
-        String scenariste  = this.txtScenariste .getText();
-        String dessinateur = this.txtDessinateur.getText();
+        String sTitre       = this.txtTitre      .getText();
+        String sEditeur     = this.txtEditeur    .getText();
+        String sSerie       = this.txtSerie      .getText();
+        String sScenariste  = this.txtScenariste .getText();
+        String sDessinateur = this.txtDessinateur.getText();
         
-        Integer tome = Integer.parseInt(this.txtTome.getText());
+        Integer iTome = Integer.parseInt(this.txtTome.getText());
         
-        this.ctrl.ajouterOuvrage( titre, editeur, serie, scenariste, dessinateur, tome );
+        this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
     }
 }
