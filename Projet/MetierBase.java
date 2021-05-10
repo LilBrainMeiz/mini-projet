@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import java.io.PrintWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
@@ -26,37 +27,55 @@ public class MetierBase
 
     public String toString()
     {
-        String sEntete = "+";
-        String suite = "------------------------------+";
+        File f = new File("sortie.txt");
+        boolean bIsExisting = f.exists();
 
-        for(int i = 0; i < 5; i++)
+        if(!bIsExisting)
         {
-            sEntete += suite;
+            String sEntete = "+";
+            String suite = "------------------------------+";
+    
+            for(int i = 0; i < 5; i++)
+            {
+                sEntete += suite;
+            }
+    
+            sEntete += "\n";
+
+            String encadre = "|" + String.format("%-30s", "Titre") + "|" +
+            String.format("%-30s", "Scenariste")  + "|" +
+            String.format("%-30s", "Dessinateur") + "|" + 
+            String.format("%-30s", "Editeur")     + "|" +
+            String.format("%-30s", "Serie")       + "|" + "\n";
+
+            sEntete += encadre + "+";
+
+            for(int i = 0; i < 5; i++)
+            {
+                sEntete += suite;
+            }
+
+            sEntete += "\n";
+
+            for(Ouvrage o : this.ensOuvrages)
+            {
+                sEntete += o.toString();
+            }
+
+            return sEntete;
+        }
+        else
+        {
+            String sRet = "";
+
+            for(Ouvrage o : this.ensOuvrages)
+            {
+                sRet += o.toString();
+            }
+
+            return sRet;
         }
 
-        sEntete += "\n";
-
-        String encadre = "|" + String.format("%-30s", "Titre") + "|" +
-        String.format("%-30s", "Scenariste")  + "|" +
-        String.format("%-30s", "Dessinateur") + "|" + 
-        String.format("%-30s", "Editeur")     + "|" +
-        String.format("%-30s", "Serie")       + "|" + "\n";
-
-        sEntete += encadre + "+";
-
-        for(int i = 0; i < 5; i++)
-        {
-            sEntete += suite;
-        }
-
-        sEntete += "\n";
-
-
-        for(Ouvrage o : this.ensOuvrages)
-        {
-            sEntete += o.toString();
-        }
-
-        return sEntete;
+        return null;
     }
 }
