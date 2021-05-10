@@ -17,8 +17,11 @@ public class Ouvrage
     {
         // Permet de ne pas tolérer un autre argument que serie ou tome
         // en null;
-        if(titre == null || editeur == null || scenariste == null ||
-           dessinateur == null)return null;
+        if(titre       == null || titre      .equals("") ||
+           editeur     == null || editeur    .equals("") ||
+           scenariste  == null || scenariste .equals("") ||
+           dessinateur == null || dessinateur.equals("")  )
+            return null;
 
         // Permet de ne pas ajouter d'ouvrage si il y en a déjà 10000
         if(Ouvrage.isNombreOuvrage == 10000)return null;
