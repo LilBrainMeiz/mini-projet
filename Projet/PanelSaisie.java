@@ -95,8 +95,8 @@ public class PanelSaisie extends JPanel
         
         panelTmp = new JPanel();
         
-        this.add( panelNord  , BorderLayout.NORTH  );
-        this.add( panelCentre, BorderLayout.CENTER );
-        this.add( this.btnAjouter );
+        this.add( panelNord      , BorderLayout.NORTH  );
+        this.add( panelCentre    , BorderLayout.CENTER );
+        this.add( this.btnAjouter, BorderLayout.SOUTH  );
     }
 }
