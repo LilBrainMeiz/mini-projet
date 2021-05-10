@@ -5,7 +5,7 @@ public class ControleurSaisie
     
     public ControleurSaisie()
     {
-        this.ihm    = new MainFrame(this);
+        this.ihm    = new FrameSaisie(this);
         this.metier = new MetierSaisie();
     }
 
