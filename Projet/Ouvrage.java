@@ -11,9 +11,9 @@ public class Ouvrage
     private String  sDessinateur;
     private Integer iTome; // Ici le tome est en Integer car il est facultatif
 
-    public static creerOuvrage(String titre, String editeur, String serie,
-                               String scenariste, String dessinateur,
-                               Integer tome)
+    public static Ouvrage creerOuvrage(String titre, String editeur,
+                                       String serie, String scenariste,
+                                       String dessinateur, Integer tome)
     {
         // Permet de ne pas tolérer un autre argument que serie ou tome
         // en null;
