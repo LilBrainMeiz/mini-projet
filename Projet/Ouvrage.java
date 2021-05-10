@@ -15,6 +15,12 @@ public class Ouvrage
                                String scenariste, String dessinateur,
                                Integer tome)
     {
+        // Permet de ne pas tolérer un autre argument que serie ou tome
+        // en null;
+        if(titre == null || editeur == null || scenariste == null ||
+           dessinateur == null)return null;
+
+        // Permet de ne pas ajouter d'ouvrage si il y en a déjà 10000
         if(Ouvrage.isNombreOuvrage == 10000)return null;
 
         return new Ouvrage(titre, editeur, serie, scenariste, dessinateur,
@@ -43,7 +49,8 @@ public class Ouvrage
 
     public String toString()
     {
-        return getTitre() + "|" + getScenariste() + "|" + getDessinateur() +
-               "|" + getEditeur() + "|" + getSerie() + "\n";
+        return this.getTitre() + "|" + this.getScenariste() + "|" +
+               this.getDessinateur() + "|" + this.getEditeur() + "|" +
+               this.getSerie() + "\n";
     }
 }
