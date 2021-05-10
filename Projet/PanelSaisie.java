@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout  ;
 
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelSaisie extends JPanel implements ActionListener
 {
@@ -103,7 +104,7 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*-----------------------------*/
         /*  Activation des composants  */
         /*-----------------------------*/
-        this.btnAjouter.addActionLister(this);
+        this.btnAjouter.addActionListener(this);
     }
     
     public void maj()
