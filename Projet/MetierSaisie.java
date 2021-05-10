@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 import java.io.FileWriter;
 
@@ -8,14 +9,14 @@ public class MetierSaisie extends MetierBase
 
     public String[] getAuteur()
     {
-        List<String> tab = super.lireFichier("auteur.txt");
+        ArrayList<String> tab = super.lireFichier("auteur.txt");
 
         return tab.toArray(new String[tab.size()]);
     }
 
     public String[] getEditeur()
     {
-        List<String> tab = super.lireFichier("editeur.txt");
+        ArrayList<String> tab = super.lireFichier("editeur.txt");
 
         return tab.toArray(new String[tab.size()]);
     }

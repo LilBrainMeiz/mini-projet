@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,6 +24,36 @@ public class MetierBase
         this.ensOuvrages.add(Ouvrage.creerOuvrage(titre, editeur, serie,
                                                   scenariste, dessinateur,
                                                   tome));
+    }
+
+    public ArrayList<String> lireFichier(String chemin)
+    {
+        ArrayList<String> oFichier = new ArrayList<String>();
+
+        try
+        {
+            Scanner oInput = new Scanner( new FileInputStream(chemin),
+                                          "UTF8" );
+
+            while(oInput.hasNextLine())
+            {
+                oFichier.add(oInput.nextLine());
+            }
+        }catch(Exception e){ e.printStackTrace(); }
+
+        return oFichier;
+    }
+
+    public void ecrireFichier(String chemin, String toPrint)
+    {
+        try
+        {
+            PrintWriter oOutput = new PrintWriter( new FileWriter(chemin, true));
+        
+            oOutput.println(toPrint);
+            oOutput.close();
+        }
+        catch(Exception e){ e.printStackTrace(); }
     }
 
     public String toString()

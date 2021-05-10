@@ -44,12 +44,14 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*   Création des composants   */
         /*-----------------------------*/
 
-        String[] arString = { "oui", "non" };
+        String[] arAuteurs  = this.ctrl.getAuteur();
+        String[] arEditeurs = this.ctrl.getEditeur();
+        String[] arSeries   = this.ctrl.getSerie();
 
-        this.cbDessinateur  = new JComboBox(arString);
-        this.cbScenariste   = new JComboBox(arString);
-        this.cbSerie        = new JComboBox(arString);
-        this.cbEditeur      = new JComboBox(arString);
+        this.cbDessinateur  = new JComboBox(arAuteurs);
+        this.cbScenariste   = new JComboBox(arAuteurs);
+        this.cbSerie        = new JComboBox(arSeries);
+        this.cbEditeur      = new JComboBox(arEditeurs);
 
         this.txtTitre       = new JTextField(20);
         this.txtEditeur     = new JTextField(20);
