@@ -1,3 +1,6 @@
+import java.io.PrintWriter;
+import java.io.FileOutputStream;
+
 public class MetierSaisie extends MetierBase
 {
     public void ecrireFichier(String chemin, String toPrint)
