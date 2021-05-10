@@ -25,7 +25,7 @@ public class PanelSaisie extends JPanel implements ActionListener
         // Variables locales
         JPanel panelNord  ;
         JPanel panelCentre;
-        JPanel panelTemp  ;
+        JPanel panelTmp  ;
         
         JLabel lblTemp     ;
         
