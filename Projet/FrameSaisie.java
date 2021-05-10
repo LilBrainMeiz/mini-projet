@@ -1,10 +1,10 @@
 import javax.swing.JFrame;
 
-public class MainFrame extends JFrame
+public class FrameSaisie extends JFrame
 {
-    private Controleur oCtrl;
+    private ControleurSaisie oCtrl;
 
-    public MainFrame(Controleur ctrl)
+    public MainFrame(ControleurSaisie ctrl)
     {
         // Modèle MVC
         this.oCtrl = ctrl;

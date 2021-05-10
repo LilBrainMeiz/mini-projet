@@ -1,14 +1,14 @@
-public class Controleur
+public class ControleurSaisie
 {
     private MainFrame oIHM;
 
-    public Controleur()
+    public ControleurSaisie()
     {
         this.oIHM = new MainFrame(this);
     }
 
     public static void main(String[] args)
     {
-        new Controleur();
+        new ControleurSaisie();
     }
 }
