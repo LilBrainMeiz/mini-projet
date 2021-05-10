@@ -49,8 +49,11 @@ public class Ouvrage
 
     public String toString()
     {
-        return this.getTitre() + "|" + this.getScenariste() + "|" +
-               this.getDessinateur() + "|" + this.getEditeur() + "|" +
-               this.getSerie() + "|" + this.getTome() + "\n";
+        return "|" + String.format("%-30s",this.getTitre()) + "|" +
+               String.format("%-30s", this.getScenariste())  + "|" +
+               String.format("%-30s", this.getDessinateur()) + "|" + 
+               String.format("%-30s", this.getEditeur())     + "|" +
+               String.format("%-30s", this.getSerie())       + "|" + 
+               String.format("%-30s", this.getTome())        + "|" + "\n";
     }
 }

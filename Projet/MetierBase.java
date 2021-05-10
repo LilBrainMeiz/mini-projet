@@ -26,13 +26,37 @@ public class MetierBase
 
     public String toString()
     {
-        String sRet = "";
+        String sEntete = "+";
+        String suite = "------------------------------+";
+
+        for(int i = 0; i < 5; i++)
+        {
+            sEntete += suite;
+        }
+
+        sEntete += "\n";
+
+        String encadre = "|" + String.format("%-30s", "Titre") + "|" +
+        String.format("%-30s", "Scenariste")  + "|" +
+        String.format("%-30s", "Dessinateur") + "|" + 
+        String.format("%-30s", "Editeur")     + "|" +
+        String.format("%-30s", "Serie")       + "|" + "\n";
+
+        sEntete += encadre + "+";
+
+        for(int i = 0; i < 5; i++)
+        {
+            sEntete += suite;
+        }
+
+        sEntete += "\n";
+
 
         for(Ouvrage o : this.ensOuvrages)
         {
-            sRet += o.toString();
+            sEntete += o.toString();
         }
 
-        return sRet;
+        return sEntete;
     }
 }
