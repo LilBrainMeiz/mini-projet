@@ -9,7 +9,8 @@ public class ControleurEtat
         this.metier = new metierEtat();
     }
 
-    public static public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         new ControleurEtat();
     }
 }
