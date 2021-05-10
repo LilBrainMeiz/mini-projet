@@ -13,12 +13,15 @@ public class PanelSaisie extends JPanel implements ActionListener
 {
     private ControleurSaisie ctrl;
     
+
+    private JComboBox  cbDessinateur;
+    private JComboBox  cbScenariste;
+    private JComboBox  cbSerie;
+    private JComboBox  cbEditeur;
+
     private JTextField txtTitre;
     private JTextField txtEditeur;
-    private JTextField txtDessinateur;
-    private JTextField txtScenariste;
     private JTextField txtTome;
-    private JTextField txtSerie;
     
     private JButton btnAjouter;
     
@@ -40,22 +43,23 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*-----------------------------*/
         /*   Création des composants   */
         /*-----------------------------*/
-        
+
+        String[] arString = { "oui", "non" };
+
+        this.cbDessinateur  = new JComboBox(arString);
+        this.cbScenariste   = new JComboBox(arString);
+        this.cbSerie        = new JComboBox(arString);
+        this.cbEditeur      = new JComboBox(arString);
+
         this.txtTitre       = new JTextField(20);
         this.txtEditeur     = new JTextField(20);
-        this.txtDessinateur = new JTextField(20);
-        this.txtScenariste  = new JTextField(20);
         this.txtTome        = new JTextField(20);
-        this.txtSerie       = new JTextField(20);
 
         this.btnAjouter     = new JButton("Ajouter la BD");
 
         this.txtTitre      .setHorizontalAlignment(JTextField.RIGHT);
         this.txtEditeur    .setHorizontalAlignment(JTextField.RIGHT);
-        this.txtDessinateur.setHorizontalAlignment(JTextField.RIGHT);
-        this.txtScenariste .setHorizontalAlignment(JTextField.RIGHT);
         this.txtTome       .setHorizontalAlignment(JTextField.RIGHT);
-        this.txtSerie      .setHorizontalAlignment(JTextField.RIGHT);
 
         panelNord = new JPanel( new BorderLayout() );
         lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
@@ -84,19 +88,19 @@ public class PanelSaisie extends JPanel implements ActionListener
         panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelTmp2.add( this.txtTitre       );
+        panelTmp2.add( this.txtTitre      );
         panelTmp.add ( panelTmp2 );
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelTmp2.add( this.txtEditeur     );
+        panelTmp2.add( this.cbEditeur     );
         panelTmp.add ( panelTmp2 );
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelTmp2.add( this.txtDessinateur );
+        panelTmp2.add( this.cbDessinateur );
         panelTmp.add ( panelTmp2 );
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelTmp2.add( this.txtScenariste  );
+        panelTmp2.add( this.cbScenariste );
         panelTmp.add ( panelTmp2 );
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -104,7 +108,7 @@ public class PanelSaisie extends JPanel implements ActionListener
         panelTmp.add ( panelTmp2 );
 
         panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        panelTmp2.add( this.txtSerie       );
+        panelTmp2.add( this.cbSerie       );
         panelTmp.add ( panelTmp2 );
         
         panelCentre.add ( panelTmp, BorderLayout.CENTER );
@@ -122,20 +126,16 @@ public class PanelSaisie extends JPanel implements ActionListener
     public void maj()
     {
         this.txtTitre      .setText("");
-        this.txtEditeur    .setText("");
-        this.txtDessinateur.setText("");
-        this.txtScenariste .setText("");
         this.txtTome       .setText("");
-        this.txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e)
     {
-        String sTitre       = this.txtTitre      .getText();
-        String sEditeur     = this.txtEditeur    .getText();
-        String sSerie       = this.txtSerie      .getText();
-        String sScenariste  = this.txtScenariste .getText();
-        String sDessinateur = this.txtDessinateur.getText();
+        String sTitre       = this.txtTitre     .getText();
+        String sEditeur     = (String)this.cbEditeur    .getSelectedItem();
+        String sSerie       = (String)this.cbSerie      .getSelectedItem();
+        String sScenariste  = (String)this.cbScenariste .getSelectedItem();
+        String sDessinateur = (String)this.cbDessinateur.getSelectedItem();
         
         Integer iTome = Integer.parseInt(this.txtTome.getText());
         
