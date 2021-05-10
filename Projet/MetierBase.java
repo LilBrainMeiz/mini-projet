@@ -15,6 +15,15 @@ public class MetierBase
         this.ensOuvrages = new ArrayList<Ouvrage>();
     }
 
+    public void ajouterOuvrage(String titre, String editeur, String serie,
+                               String scenariste, String dessinateur,
+                               Integer tome)
+    {
+        this.ensOuvrages.add(Ouvrage.creerOuvrage(titre, editeur, serie,
+                                                  scenariste, dessinateur,
+                                                  tome));
+    }
+
     public List<String> lireFichier(String chemin)
     {
         List<String> oFichier = new ArrayList<String>();
@@ -47,5 +56,17 @@ public class MetierBase
 
             oOutput.close();
         }catch(Exception e){ e.printStackTrace(); }
+    }
+
+    public String toString()
+    {
+        String sRet = "";
+
+        for(Ouvrage o : this.ensOuvrages)
+        {
+            sRet += o.toString();
+        }
+
+        return sRet;
     }
 }

@@ -51,6 +51,6 @@ public class Ouvrage
     {
         return this.getTitre() + "|" + this.getScenariste() + "|" +
                this.getDessinateur() + "|" + this.getEditeur() + "|" +
-               this.getSerie() + "\n";
+               this.getSerie() + "|" + this.getTome() + "\n";
     }
 }
