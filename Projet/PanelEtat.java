@@ -5,7 +5,7 @@ import java.awt.GridLayout;
 
 public class PanelEtat extends JPanel
 {
-	private Controleur ctrl;
+	private ControleurEtat ctrl;
 
 	private JButton btnTous;
 	private JButton btnList;
