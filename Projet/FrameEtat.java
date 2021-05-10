@@ -17,4 +17,9 @@ public class FrameEtat extends JFrame
 		this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         this.setVisible( true );
 	}
+
+	public void maj()
+    	{
+        	this.panelEtat.maj();
+    	}
 }
