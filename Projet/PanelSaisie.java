@@ -103,19 +103,17 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*-----------------------------*/
         /*  Activation des composants  */
         /*-----------------------------*/
-        txtTitre      .addActionLister(this);
-        txtEditeur    .addActionLister(this);
-        txtDessinateur.addActionLister(this);
-        txtScenariste .addActionLister(this);
-        txtTome       .addActionLister(this);
-        txtSerie      .addActionLister(this);
-        
-        
+        this.btnAjouter.addActionLister(this);
     }
     
     public void maj()
     {
-    
+        txtTitre      .setText("");
+        txtEditeur    .setText("");
+        txtDessinateur.setText("");
+        txtScenariste .setText("");
+        txtTome       .setText("");
+        txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e){}
