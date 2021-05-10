@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.BorderLayout;
 
-
 public class FrameEtat extends JFrame
 {
 	private Controleur  ctrl;
