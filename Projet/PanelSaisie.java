@@ -27,7 +27,7 @@ public class PanelSaisie extends JPanel implements ActionListener
         JPanel panelCentre;
         JPanel panelTemp  ;
         
-        JLabel lblTmp     ;
+        JLabel lblTemp     ;
         
         // Réglage du layoutManager
         this.setLayout( new BorderLayout() );
