@@ -131,11 +131,14 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        this.ctrl.ajouterOuvrage(this.txtTitre.getText(),
-                                 this.txtEditeur.getText(),
-                                 this.txtSerie.getText(),
-                                 this.txtScenariste.getText(),
-                                 this.txtDessinateur.getText(),
-                                 Integer.parseInt(this.txtTome.getText()));
+        String titre       = this.txtTitre      .getText();
+        String editeur     = this.txtEditeur    .getText();
+        String serie       = this.txtSerie      .getText();
+        String scenariste  = this.txtScenariste .getText();
+        String dessinateur = this.txtDessinateur.getText();
+        
+        Integer tome = Integer.parseInt(this.txtTome.getText());
+        
+        this.ctrl.ajouterOuvrage( titre, editeur, serie, scenariste, dessinateur, tome );
     }
 }
