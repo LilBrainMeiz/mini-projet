@@ -4,7 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout  ;
 import java.awt.Dimension   ;
 
-public class PanelEtat extends JPanel
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class PanelEtat extends JPanel implements ActionListener
 {
 	private ControleurEtat ctrl;
 
@@ -25,10 +29,9 @@ public class PanelEtat extends JPanel
 		// gestion du layoutManager
 		this.setLayout( new BorderLayout() );
 
-		/*-------------------------*/
-		/* Création des composants */
-		/*-------------------------*/
-
+		/*------------------------------*/
+		/*   Création des composants    */
+		/*------------------------------*/
 		this.btnTous = new JButton( "Afficher tous les ouvrages"  );
 		this.btnList = new JButton( "Lister par Editeur et Série" );
 
@@ -40,10 +43,11 @@ public class PanelEtat extends JPanel
 		panelTmp    = new JPanel();
 		panelNord   = new JPanel();
 		panelCentre = new JPanel( new GridLayout( 4, 1 )  );
-		/*-------------------------*/
-		/*   Ajout des composants  */
-		/*-------------------------*/
 
+
+		/*------------------------------*/
+		/*     Ajout des composants     */
+		/*------------------------------*/
 		panelNord.add( new JLabel(new ImageIcon("./bedetheque.png")));
 
 		panelCentre.add( new JLabel( "  Que souhaitez vous faire ?" ) );
@@ -63,5 +67,26 @@ public class PanelEtat extends JPanel
 		
 		this.add ( panelNord  , BorderLayout.NORTH  );
 		this.add ( panelCentre, BorderLayout.CENTER );
+
+
+		/*------------------------------*/
+		/*   Activation des composants  */
+		/*------------------------------*/
+		this.btnTous.addActionListener(this);
+		this.btnList.addActionListener(this);
+
+		this.txtAuteur.addActionListener(this);
+	}
+
+	public void maj()
+	{
+		txtAuteur.setText("");
+	}
+
+	public void actionPerformed( ActionEvent e )
+	{
+		if ( e.getSource() == this.btnTous   ) System.out.println( "Tous"   );
+		if ( e.getSource() == this.btnList   ) System.out.println( "List"   );
+		if ( e.getSource() == this.txtAuteur ) System.out.println( "Auteur" );
 	}
 }
