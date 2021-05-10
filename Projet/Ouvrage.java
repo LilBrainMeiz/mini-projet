@@ -4,12 +4,12 @@ public class Ouvrage
     private static int isNombreOuvrage;
     private int        iNumeroOuvrage;
 
-    private String  sTitre;
-    private String  sEditeur;
-    private String  sSerie;
-    private String  sScenariste;
-    private String  sDessinateur;
-    private Integer iTome; // Ici le tome est en Integer car il est facultatif
+    private String     sTitre;
+    private String     sEditeur;
+    private String     sSerie;
+    private String     sScenariste;
+    private String     sDessinateur;
+    private Integer    iTome; // Ici le tome est en Integer car il est facultatif
 
     public static Ouvrage creerOuvrage(String titre, String editeur,
                                        String serie, String scenariste,
@@ -52,11 +52,11 @@ public class Ouvrage
 
     public String toString()
     {
-        return "|" + String.format("%-30s",this.getTitre()) + "|" +
-               String.format("%-30s", this.getScenariste())  + "|" +
-               String.format("%-30s", this.getDessinateur()) + "|" + 
-               String.format("%-30s", this.getEditeur())     + "|" +
-               String.format("%-30s", this.getSerie())       + "|" + 
-               String.format("%-30s", this.getTome())        + "|" + "\n";
+        return "|" + String.format("%-30s", this.getTitre())       + "|" +
+                     String.format("%-30s", this.getScenariste())  + "|" +
+                     String.format("%-30s", this.getDessinateur()) + "|" + 
+                     String.format("%-30s", this.getEditeur())     + "|" +
+                     String.format("%-30s", this.getSerie())       + "|" + 
+                     String.format("%-30s", this.getTome())        + "|" + "\n";
     }
 }
