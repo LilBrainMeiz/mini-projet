@@ -129,5 +129,8 @@ public class PanelSaisie extends JPanel implements ActionListener
         txtSerie      .setText("");
     }
     
-    public void actionPerformed(ActionEvent e){}
+    public void actionPerformed(ActionEvent e)
+    {
+        this.ctrl.ajouterOuvrage()
+    }
 }
