@@ -19,6 +19,10 @@ public class ControleurSaisie
         metier.ecrireFichier("sortie.txt", metier.toString());
     }
 
+    public String[] getAuteur (){ return this.metier.getAuteur (); }
+    public String[] getEditeur(){ return this.metier.getEditeur(); }
+    public String[] getSerie  (){ return this.metier.getSerie  (); }
+    
     public static void main(String[] args)
     {
         new ControleurSaisie();

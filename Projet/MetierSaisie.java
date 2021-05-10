@@ -1,19 +1,29 @@
-import java.io.PrintWriter;
-import java.io.FileOutputStream;
+import java.util.List;
 
 import java.io.FileWriter;
 
 public class MetierSaisie extends MetierBase
 {
-    public void ecrireFichier(String chemin, String toPrint)
+    public MetierSaisie(){}
+
+    public String[] getAuteur()
     {
-        try
-        {
-            PrintWriter oOutput = new PrintWriter( new FileWriter(chemin, true));
+        List<String> tab = super.lireFichier("auteur.txt");
 
-            oOutput.println(toPrint);
+        return tab.toArray(new String[tab.size()]);
+    }
 
-            oOutput.close();
-        }catch(Exception e){ e.printStackTrace(); }
+    public String[] getEditeur()
+    {
+        List<String> tab = super.lireFichier("editeur.txt");
+
+        return tab.toArray(new String[tab.size()]);
+    }
+
+    public String[] getSerie()
+    {
+        List<String> tab = super.lireFichier("serie.txt");
+
+        return tab.toArray(new String[tab.size()]);
     }
 }
