@@ -10,7 +10,7 @@ public class FrameSaisie extends JFrame
         // Modèle MVC
         this.oCtrl = ctrl;
 
-        this.setTitle("Mini-projet");
+        this.setTitle("Saisie des ouvrages");
         this.setLocation(20, 20);
         
         this.oPanelSaisie = new PanelSaisie(oCtrl);

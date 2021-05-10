@@ -2,6 +2,7 @@ import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout  ;
+import java.awt.FlowLayout;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent   ;
@@ -27,22 +28,23 @@ public class PanelSaisie extends JPanel implements ActionListener
         JPanel panelNord  ;
         JPanel panelCentre;
         JPanel panelTmp  ;
+        JPanel panelTmp2 ;
         
         JLabel lblTemp     ;
         
         // Réglage du layoutManager
-        this.setLayout( new BorderLayout() );
+        this.setLayout( new BorderLayout(1, 4) );
         
         /*-----------------------------*/
         /*   Création des composants   */
         /*-----------------------------*/
         
-        txtTitre       = new JTextField(14);
-        txtEditeur     = new JTextField(14);
-        txtDessinateur = new JTextField(14);
-        txtScenariste  = new JTextField(14);
-        txtTome        = new JTextField(14);
-        txtSerie       = new JTextField(14);
+        txtTitre       = new JTextField(20);
+        txtEditeur     = new JTextField(20);
+        txtDessinateur = new JTextField(20);
+        txtScenariste  = new JTextField(20);
+        txtTome        = new JTextField(20);
+        txtSerie       = new JTextField(20);
         
         btnAjouter     = new JButton("Ajouter la BD");
         
@@ -56,8 +58,8 @@ public class PanelSaisie extends JPanel implements ActionListener
         panelNord = new JPanel( new BorderLayout() );
         lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT); // lblTemp à revoir pour la taille
         
-        panelCentre = new JPanel( new GridLayout( 6, 1 ));
-        panelTmp    = new JPanel();
+        panelCentre = new JPanel( new BorderLayout() );
+        panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
         
         /*-----------------------------*/
         /*     Ajout des composants    */
@@ -67,35 +69,41 @@ public class PanelSaisie extends JPanel implements ActionListener
         panelNord.add( lblTemp                                         , BorderLayout.SOUTH );
         
         panelTmp.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
-        panelTmp.add( this.txtTitre );
-        panelCentre.add( panelTmp );
-        
-        panelTmp = new JPanel();
         panelTmp.add( new JLabel( "Editeur* : "    , JLabel.RIGHT ));
-        panelTmp.add( this.txtEditeur );
-        panelCentre.add( panelTmp );
-        
-        panelTmp = new JPanel();
         panelTmp.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT ));
-        panelTmp.add( this.txtDessinateur );
-        panelCentre.add( panelTmp );
-        
-        panelTmp = new JPanel();
         panelTmp.add( new JLabel( "Scénariste* : " , JLabel.RIGHT ));
-        panelTmp.add( this.txtScenariste );
-        panelCentre.add( panelTmp );
-        
-        panelTmp = new JPanel();
         panelTmp.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
-        panelTmp.add( this.txtTome );
-        panelCentre.add( panelTmp );
-        
-        panelTmp = new JPanel();
         panelTmp.add( new JLabel( "Série : "       , JLabel.RIGHT ));
-        panelTmp.add( this.txtSerie );
-        panelCentre.add( panelTmp );
+    
+        panelCentre.add( panelTmp, BorderLayout.WEST );
+
+        panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtTitre       );
+        panelTmp.add ( panelTmp2 );
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtEditeur     );
+        panelTmp.add ( panelTmp2 );
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtDessinateur );
+        panelTmp.add ( panelTmp2 );
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtScenariste  );
+        panelTmp.add ( panelTmp2 );
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtTome        );
+        panelTmp.add ( panelTmp2 );
+
+        panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        panelTmp2.add( this.txtSerie       );
+        panelTmp.add ( panelTmp2 );
         
-        panelTmp = new JPanel();
+        panelCentre.add ( panelTmp, BorderLayout.CENTER );
         
         this.add( panelNord      , BorderLayout.NORTH  );
         this.add( panelCentre    , BorderLayout.CENTER );
@@ -109,12 +117,12 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void maj()
     {
-        txtTitre      .setText("");
-        txtEditeur    .setText("");
-        txtDessinateur.setText("");
-        txtScenariste .setText("");
-        txtTome       .setText("");
-        txtSerie      .setText("");
+        this.txtTitre      .setText("");
+        this.txtEditeur    .setText("");
+        this.txtDessinateur.setText("");
+        this.txtScenariste .setText("");
+        this.txtTome       .setText("");
+        this.txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e){}
