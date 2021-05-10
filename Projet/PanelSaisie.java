@@ -2,7 +2,9 @@ import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout  ;
-import java.awt.FlowLayout;
+import java.awt.FlowLayout  ;
+import java.awt.Font        ;
+import java.awt.Color       ;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent   ;
@@ -39,24 +41,26 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*   Création des composants   */
         /*-----------------------------*/
         
-        txtTitre       = new JTextField(20);
-        txtEditeur     = new JTextField(20);
-        txtDessinateur = new JTextField(20);
-        txtScenariste  = new JTextField(20);
-        txtTome        = new JTextField(20);
-        txtSerie       = new JTextField(20);
-        
-        btnAjouter     = new JButton("Ajouter la BD");
-        
-        txtTitre      .setHorizontalAlignment(JTextField.RIGHT);
-        txtEditeur    .setHorizontalAlignment(JTextField.RIGHT);
-        txtDessinateur.setHorizontalAlignment(JTextField.RIGHT);
-        txtScenariste .setHorizontalAlignment(JTextField.RIGHT);
-        txtTome       .setHorizontalAlignment(JTextField.RIGHT);
-        txtSerie      .setHorizontalAlignment(JTextField.RIGHT);
+        this.txtTitre       = new JTextField(20);
+        this.txtEditeur     = new JTextField(20);
+        this.txtDessinateur = new JTextField(20);
+        this.txtScenariste  = new JTextField(20);
+        this.txtTome        = new JTextField(20);
+        this.txtSerie       = new JTextField(20);
+
+        this.btnAjouter     = new JButton("Ajouter la BD");
+
+        this.txtTitre      .setHorizontalAlignment(JTextField.RIGHT);
+        this.txtEditeur    .setHorizontalAlignment(JTextField.RIGHT);
+        this.txtDessinateur.setHorizontalAlignment(JTextField.RIGHT);
+        this.txtScenariste .setHorizontalAlignment(JTextField.RIGHT);
+        this.txtTome       .setHorizontalAlignment(JTextField.RIGHT);
+        this.txtSerie      .setHorizontalAlignment(JTextField.RIGHT);
 
         panelNord = new JPanel( new BorderLayout() );
-        lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT); // lblTemp à revoir pour la taille
+        lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
+        lblTemp.setFont(new Font ("Serif", Font.BOLD, 10));
+        lblTemp.setForeground(Color.RED);
         
         panelCentre = new JPanel( new BorderLayout() );
         panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
@@ -117,12 +121,12 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void maj()
     {
-        this.txtTitre      .setText("");
-        this.txtEditeur    .setText("");
-        this.txtDessinateur.setText("");
-        this.txtScenariste .setText("");
-        this.txtTome       .setText("");
-        this.txtSerie      .setText("");
+        txtTitre      .setText("");
+        txtEditeur    .setText("");
+        txtDessinateur.setText("");
+        txtScenariste .setText("");
+        txtTome       .setText("");
+        txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e){}
