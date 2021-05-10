@@ -139,7 +139,11 @@ public class PanelSaisie extends JPanel implements ActionListener
         String sScenariste  = (String)this.cbScenariste .getSelectedItem();
         String sDessinateur = (String)this.cbDessinateur.getSelectedItem();
         
-        Integer iTome = Integer.parseInt(this.txtTome.getText());
+        Integer iTome;
+        if ( this.txtTome.getText().matches("^[0-9]*$") )
+            iTome = Integer.parseInt(this.txtTome.getText());
+        else
+            iTome = null;
         this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
     }
 }
