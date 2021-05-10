@@ -1,8 +1,9 @@
 public class FrameEtat
 {
-    PanelEtat panelEtat;
-    public FrameEtat(Controleur)
+    private PanelEtat panelEtat;
+
+    public FrameEtat(ControleurEtat ctrl)
     {
-        
+        this.panelEtat = new PanelEtat(ctrl);
     }
 }

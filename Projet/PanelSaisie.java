@@ -11,7 +11,6 @@ public class PanelSaisie
     private JTextField txtDessinateur;
     private JTextField txtScenariste;
     private JTextField txtTome;
-    private JTextField txtTome;
     private JTextField txtSerie;
     
     private JButton btnAjouter;
