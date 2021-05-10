@@ -14,10 +14,10 @@ public class PanelSaisie extends JPanel implements ActionListener
     private ControleurSaisie ctrl;
     
 
-    private JComboBox  cbDessinateur;
-    private JComboBox  cbScenariste;
-    private JComboBox  cbSerie;
-    private JComboBox  cbEditeur;
+    private JComboBox<String>  cbDessinateur;
+    private JComboBox<String>  cbScenariste;
+    private JComboBox<String>  cbSerie;
+    private JComboBox<String>  cbEditeur;
 
     private JTextField txtTitre;
     private JTextField txtEditeur;
@@ -48,10 +48,10 @@ public class PanelSaisie extends JPanel implements ActionListener
         String[] arEditeurs = this.ctrl.getEditeur();
         String[] arSeries   = this.ctrl.getSerie();
 
-        this.cbDessinateur  = new JComboBox(arAuteurs);
-        this.cbScenariste   = new JComboBox(arAuteurs);
-        this.cbSerie        = new JComboBox(arSeries);
-        this.cbEditeur      = new JComboBox(arEditeurs);
+        this.cbDessinateur  = new JComboBox<String>(arAuteurs);
+        this.cbScenariste   = new JComboBox<String>(arAuteurs);
+        this.cbSerie        = new JComboBox<String>(arSeries );
+        this.cbEditeur      = new JComboBox<String>(arEditeurs);
 
         this.txtTitre       = new JTextField(20);
         this.txtEditeur     = new JTextField(20);
@@ -140,7 +140,6 @@ public class PanelSaisie extends JPanel implements ActionListener
         String sDessinateur = (String)this.cbDessinateur.getSelectedItem();
         
         Integer iTome = Integer.parseInt(this.txtTome.getText());
-        
         this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
     }
 }
