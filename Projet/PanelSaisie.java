@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+import java.awt.BorderLayout;
+
 public class PanelSaisie
 {
     private ControleurSaisie ctrl;
@@ -18,6 +20,9 @@ public class PanelSaisie
     {
         this.ctrl = ctrl;
         
+        // Variables locales
+        JPanel    panelTemp;
+        
         /*-----------------------------*/
         /*   Création des composants   */
         /*-----------------------------*/
@@ -31,6 +36,12 @@ public class PanelSaisie
         txtSerie       = new JTextField(14);
         
         btnAjouter     = new JButton("Ajouter la BD");
+
+        panelTemp = new JPanel( new BorderLayout() );
+        
+        /*-----------------------------*/
+        /*     Ajout des composants    */
+        /*-----------------------------*/
         
         
     }
