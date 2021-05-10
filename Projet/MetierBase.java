@@ -75,7 +75,5 @@ public class MetierBase
 
             return sRet;
         }
-
-        return null;
     }
 }
