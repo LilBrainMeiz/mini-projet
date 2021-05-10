@@ -1,20 +1,19 @@
 import javax.swing.*;
-import java.awt.event.*;
 
 import java.awt.GridLayout;
 
 public class PanelEtat extends JPanel
 {
-	private Controleur ctrl;
+	private ControleurEtat ctrl;
 
 	private JButton btnTous;
 	private JButton btnList;
 
 	private JTextField txtAuteur;
 
-	public PanelEtat( Controleur ctrl )
+	public PanelEtat( ControleurEtat ctrl )
 	{
-this.setLayout( new GridLayout( 4, 1 ) );
+		this.setLayout( new GridLayout( 4, 1 ) );
 
 		this.btnTous = new JButton( "Afficher tous les ouvrages"  );
 		this.btnList = new JButton( "Lister par Editeur et Série" );
