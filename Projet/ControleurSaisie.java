@@ -5,8 +5,8 @@ public class ControleurSaisie
 
     public ControleurSaisie()
     {
-        this.ihm = new FrameSaisie(this);
         this.metier = new MetierSaisie();
+        this.ihm    = new FrameSaisie(this);
     }
 
     public void ajouterOuvrage(String titre, String editeur, String serie,
@@ -19,9 +19,9 @@ public class ControleurSaisie
         metier.ecrireFichier("sortie.txt", metier.toString());
     }
 
+    public String[] getSerie  (){ return this.metier.getSerie  (); }
     public String[] getAuteur (){ return this.metier.getAuteur (); }
     public String[] getEditeur(){ return this.metier.getEditeur(); }
-    public String[] getSerie  (){ return this.metier.getSerie  (); }
     
     public static void main(String[] args)
     {
