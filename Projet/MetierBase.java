@@ -15,14 +15,19 @@ public class MetierBase
     {
         List<String> oFichier = new ArrayList<String>();
 
-        Scanner oInput = new Scanner(new File(path));
-
-        // Bug ici si le fichier est vide;
-        do
+        try
         {
-            oFichier.add(oInput.nextLine());
-        }while(oInput.hasNextLine());
+            Scanner oInput = new Scanner( new FileInputStream(chemin));
 
-        return oFichier;
+            while(oInput.hasNextLine())
+            {
+                
+            }
+        }catch(Exception e){ e.printStackTrace(); }
+    }
+
+    public void ecrireFichier(List<String> oFichier)
+    {
+
     }
 }
