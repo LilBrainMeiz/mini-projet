@@ -117,12 +117,12 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void maj()
     {
-        txtTitre      .setText("");
-        txtEditeur    .setText("");
-        txtDessinateur.setText("");
-        txtScenariste .setText("");
-        txtTome       .setText("");
-        txtSerie      .setText("");
+        this.txtTitre      .setText("");
+        this.txtEditeur    .setText("");
+        this.txtDessinateur.setText("");
+        this.txtScenariste .setText("");
+        this.txtTome       .setText("");
+        this.txtSerie      .setText("");
     }
     
     public void actionPerformed(ActionEvent e){}
