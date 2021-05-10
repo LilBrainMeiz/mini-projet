@@ -1,6 +1,7 @@
 public class FrameEtat
 {
-    public FrameEtat()
+    PanelEtat panelEtat;
+    public FrameEtat(Controleur)
     {
         
     }

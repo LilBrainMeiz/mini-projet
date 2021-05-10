@@ -1,10 +1,12 @@
 public class ControleurSaisie
 {
-    private MainFrame oIHM;
-
+    private MainFrame    ihm;
+    private MetierSaisie metier;
+    
     public ControleurSaisie()
     {
-        this.oIHM = new MainFrame(this);
+        this.ihm    = new MainFrame(this);
+        this.metier = new MetierSaisie();
     }
 
     public static void main(String[] args)

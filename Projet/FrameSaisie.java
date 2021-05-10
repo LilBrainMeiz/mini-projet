@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 public class FrameSaisie extends JFrame
 {
     private ControleurSaisie oCtrl;
+    PanelSaisie oPanelSaisie;
 
     public MainFrame(ControleurSaisie ctrl)
     {
@@ -12,6 +13,8 @@ public class FrameSaisie extends JFrame
         this.setTitle("Mini-projet");
         this.setSize(600, 600);
         this.setLocation(20, 20);
+        
+        this.PanelSaisie = new PanelSaisie(oCtrl);
 
         this.setVisible(true);
     }
