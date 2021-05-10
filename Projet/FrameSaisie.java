@@ -14,8 +14,16 @@ public class FrameSaisie extends JFrame
         this.setSize(600, 600);
         this.setLocation(20, 20);
         
-        this.PanelSaisie = new PanelSaisie(oCtrl);
-
+        this.oPanelSaisie = new PanelSaisie(oCtrl);
+        
+        this.add(this.oPanelSaisie);
+        
+        this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         this.setVisible(true);
+    }
+    
+    public void maj()
+    {
+        this.oPanelSaisie.maj();
     }
 }
