@@ -21,9 +21,11 @@ public class MetierBase
 
             while(oInput.hasNextLine())
             {
-                
+                oFichier.add(oInput.nextLine());
             }
         }catch(Exception e){ e.printStackTrace(); }
+
+        return oFichier;
     }
 
     public void ecrireFichier(List<String> oFichier)
