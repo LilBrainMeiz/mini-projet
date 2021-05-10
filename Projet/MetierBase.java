@@ -24,37 +24,6 @@ public class MetierBase
                                                   tome));
     }
 
-    public List<String> lireFichier(String chemin)
-    {
-        List<String> oFichier = new ArrayList<String>();
-
-        try
-        {
-            Scanner oInput = new Scanner( new FileInputStream(chemin),
-                                          "UTF8" );
-
-            while(oInput.hasNextLine())
-            {
-                oFichier.add(oInput.nextLine());
-            }
-        }catch(Exception e){ e.printStackTrace(); }
-
-        return oFichier;
-    }
-
-    public void ecrireFichier(String chemin, String toPrint)
-    {
-        try
-        {
-            PrintWriter oOutput = new PrintWriter( new FileOutputStream(
-                                                       chemin));
-
-            oOutput.println(toPrint);
-
-            oOutput.close();
-        }catch(Exception e){ e.printStackTrace(); }
-    }
-
     public String toString()
     {
         String sRet = "";
