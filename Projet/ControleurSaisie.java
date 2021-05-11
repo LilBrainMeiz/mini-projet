@@ -10,16 +10,16 @@
 
 public class ControleurSaisie
 {
-    //Attributs de ControleurSaisie
-    private FrameSaisie  ihm;    /* @see FrameSaisie */
-    private MetierSaisie metier; /* @see MetierSaisie */
+	//Attributs de ControleurSaisie
+	private FrameSaisie  ihm;    /* @see FrameSaisie */
+	private MetierSaisie metier; /* @see MetierSaisie */
 
-    //Constructeur de la classe ControleurSaisie
-    public ControleurSaisie()
-    {
-        this.metier = new MetierSaisie();
-        this.ihm    = new FrameSaisie(this);
-    }
+	//Constructeur de la classe ControleurSaisie
+	public ControleurSaisie()
+	{
+		this.metier = new MetierSaisie();
+		this.ihm    = new FrameSaisie(this);
+	}
     
     //Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
     /*
@@ -32,25 +32,25 @@ public class ControleurSaisie
                                String scenariste, String dessinateur,
                                Integer tome)
     {
-        if ( this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
+		if ( this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
                                         dessinateur, tome) )
-                this.metier.ecrireFichier("sortie.txt", metier.toString());
-        else
-            this.ihm.champObligatoire();
+			this.metier.ecrireFichier("sortie.txt", metier.toString());
+		else
+			this.ihm.champObligatoire();
     }
     
-    /*-----Accesseur aux attributs de la classe métier-----*/
-    /* @return L'attribut Serie de la classe metier */
-    public String[] getSerie  (){ return this.metier.getSerie  (); }
+	/*-----Accesseur aux attributs de la classe métier-----*/
+	/* @return L'attribut Serie de la classe metier */
+	public String[] getSerie  (){ return this.metier.getSerie  (); }
     
-    /* @return L'attribut Auteur de la classe metier */
-    public String[] getAuteur (){ return this.metier.getAuteur (); }
+	/* @return L'attribut Auteur de la classe metier */
+	public String[] getAuteur (){ return this.metier.getAuteur (); }
     
-    /* @return L'attribut Editeur de la classe metier */
-    public String[] getEditeur(){ return this.metier.getEditeur(); }
+	/* @return L'attribut Editeur de la classe metier */
+	public String[] getEditeur(){ return this.metier.getEditeur(); }
      
-    public static void main(String[] args)
-    {
-        new ControleurSaisie();
-    }
+	public static void main(String[] args)
+	{
+		new ControleurSaisie();
+	}
 }
