@@ -151,7 +151,7 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-        String sTitre       = this.txtTitre     .getText();
+        String sTitre       = this.txtTitre             .getText();
         String sEditeur     = (String)this.cbEditeur    .getSelectedItem();
         String sSerie       = (String)this.cbSerie      .getSelectedItem();
         String sScenariste  = (String)this.cbScenariste .getSelectedItem();
@@ -163,7 +163,7 @@ public class PanelSaisie extends JPanel implements ActionListener
             iTome = Integer.parseInt(this.txtTome.getText());
         else
             iTome = null;
-            
+
         this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
                                   sDessinateur, iTome );
     }
