@@ -7,7 +7,7 @@
  * @author Pesquerel Mathis
  * @author Vatres    Manon
  */
-public class Ouvrage 
+public class Ouvrage implements Comparable<Ouvrage>
 {
     // Attributs
     // ici, le préfixe is correspond à "int" "static" selon la notation hongroise.
