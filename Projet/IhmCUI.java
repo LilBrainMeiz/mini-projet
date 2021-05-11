@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.Collections;
 
 
@@ -38,5 +39,20 @@ public class IhmCUI
 
 		for ( Ouvrage o : tmp )
 			System.out.println(o);
+	}
+
+	public void afficherListeGroupee()
+	{
+		List<Ouvrage> list = this.ctrl.getOuvrages();
+
+		Map<String, List<Ouvrage>> listGrouped = list.stream().collect(Collectors.groupingBy(l -> l.getEditeur()));
+		System.out.println(listGrouped);
+
+		ArrayList<Ouvrage> alTest = new ArrayList(listGrouped.values());
+
+		for(Ouvrage o : alTest)
+		{
+			System.out.println(o.toString());
+		}
 	}
 }

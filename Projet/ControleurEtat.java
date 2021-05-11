@@ -27,6 +27,7 @@ public class ControleurEtat
 		do
 		{
 			this.ihm.afficherMenu();
+            this.ihm.afficherListeGroupee();
 			action = scInput.nextInt();
 
 			switch( action )
