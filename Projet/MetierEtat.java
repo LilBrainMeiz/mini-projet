@@ -32,21 +32,4 @@ public class MetierEtat extends MetierBase
 		}
 		catch (Exception e){ e.printStackTrace(); }
 	}
-
-	public void afficheTous()  // a completer
-	{
-		try
-		{
-			Scanner sc = new Scanner( new FileInputStream( "./sortie.txt" ) );
-
-			while ( sc.hasNextLine() )
-			{
-				String tmp = sc.nextLine();
-				System.out.println( tmp );
-
-			}
-			sc.close();
-		}
-		catch (Exception e){ e.printStackTrace(); }
-	}
 }

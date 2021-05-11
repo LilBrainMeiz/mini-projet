@@ -63,11 +63,11 @@ public class MetierSaisie extends MetierBase
         	if(!bIsExisting)
         	{            
         	    for(Ouvrage o : super.getOuvrages() )
-         	       sRet += "\n" + o.toString2();
+         	       sRet += o.toString2() + "\n";
         	}
         	else
         	{
-       			sRet = super.getLastOuvrage().toString2();
+       			sRet = super.getLastOuvrage().toString2() + "\n";
         	}
         	return sRet;
 	}
