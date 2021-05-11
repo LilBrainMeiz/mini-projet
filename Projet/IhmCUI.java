@@ -46,11 +46,8 @@ public class IhmCUI
 	{
 		List<Ouvrage> list = this.ctrl.getOuvrages();
 
-		List<Ouvrage> sort = list.stream().sorted(Comparator.comparing(Ouvrage::getEditeur)).
-							collect(Collectors.toList());
-
-		sort = sort.stream().sorted(Comparator.comparing(Ouvrage::getSerie)).
-			   collect(Collectors.toList());
+		List<Ouvrage> sort = list.stream().sorted(Comparator.comparing(Ouvrage::getEditeur).
+							 thenComparing(Ouvrage::getSerie)).collect(Collectors.toList());
 
 		sort.forEach(System.out::println);
 	}
