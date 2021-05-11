@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 public class IhmCUI
@@ -45,14 +46,12 @@ public class IhmCUI
 	{
 		List<Ouvrage> list = this.ctrl.getOuvrages();
 
-		Map<String, List<Ouvrage>> listGrouped = list.stream().collect(Collectors.groupingBy(l -> l.getEditeur()));
-		System.out.println(listGrouped);
+		List<Ouvrage> sort = list.stream().sorted(Comparator.comparing(Ouvrage::getEditeur)).
+							collect(Collectors.toList());
 
-		ArrayList<Ouvrage> alTest = new ArrayList(listGrouped.values());
+		sort = sort.stream().sorted(Comparator.comparing(Ouvrage::getSerie)).
+			   collect(Collectors.toList());
 
-		for(Ouvrage o : alTest)
-		{
-			System.out.println(o.toString());
-		}
+		sort.forEach(System.out::println);
 	}
 }

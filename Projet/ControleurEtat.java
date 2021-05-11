@@ -34,7 +34,7 @@ public class ControleurEtat
 			switch( action )
 			{
 				case 1  -> this.ihm.afficherTriNaturel();
-				case 2  -> this.ihm.afficherTriNaturel();
+				case 2  -> this.ihm.afficherListeGroupee();
 				case 3  -> this.ihm.afficherTriNaturel();
 			}			
 		}while ( action != 4 );
