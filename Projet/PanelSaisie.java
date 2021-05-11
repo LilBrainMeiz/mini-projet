@@ -13,7 +13,6 @@ public class PanelSaisie extends JPanel implements ActionListener
 {
     private ControleurSaisie ctrl;
     
-
     private JComboBox<String>  cbDessinateur;
     private JComboBox<String>  cbScenariste;
     private JComboBox<String>  cbSerie;
@@ -25,6 +24,39 @@ public class PanelSaisie extends JPanel implements ActionListener
     
     private JButton btnAjouter;
     
+    public void initComposantComboBox(String[] auteurs, String[] editeurs,  
+                                      String[] series)
+    {
+        this.cbDessinateur  = new JComboBox<String>(auteurs);
+        this.cbScenariste   = new JComboBox<String>(auteurs);
+        this.cbSerie        = new JComboBox<String>(series );
+        this.cbEditeur      = new JComboBox<String>(editeurs);
+    }
+
+    public void initComposantTextField(int column)
+    {
+        this.txtTitre       = new JTextField(column);
+        this.txtEditeur     = new JTextField(column);
+        this.txtTome        = new JTextField(column);
+    }
+
+    public void setComposantTextFieldAlignement(int alignement)
+    {
+        this.txtTitre      .setHorizontalAlignment(alignement);
+        this.txtEditeur    .setHorizontalAlignment(alignement);
+        this.txtTome       .setHorizontalAlignment(alignement);
+    }
+
+    public void addFormulaireComposantLabel(JPanel toAdd)
+    {
+        toAdd.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
+        toAdd.add( new JLabel( "Editeur* : "    , JLabel.RIGHT ));
+        toAdd.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT ));
+        toAdd.add( new JLabel( "Scénariste* : " , JLabel.RIGHT ));
+        toAdd.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
+        toAdd.add( new JLabel( "Série : "       , JLabel.RIGHT ));
+    }
+
     public PanelSaisie(ControleurSaisie ctrl)
     {
         this.ctrl = ctrl;
@@ -44,46 +76,32 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*   Création des composants   */
         /*-----------------------------*/
 
-        String[] arAuteurs  = this.ctrl.getAuteur();
-        String[] arEditeurs = this.ctrl.getEditeur();
-        String[] arSeries   = this.ctrl.getSerie();
+        initComposantComboBox (this.ctrl.getAuteur(), this.ctrl.getEditeur(),
+                               this.ctrl.getSerie());
 
-        this.cbDessinateur  = new JComboBox<String>(arAuteurs);
-        this.cbScenariste   = new JComboBox<String>(arAuteurs);
-        this.cbSerie        = new JComboBox<String>(arSeries );
-        this.cbEditeur      = new JComboBox<String>(arEditeurs);
-
-        this.txtTitre       = new JTextField(20);
-        this.txtEditeur     = new JTextField(20);
-        this.txtTome        = new JTextField(20);
+        initComposantTextField(20);
 
         this.btnAjouter     = new JButton("Ajouter la BD");
 
-        this.txtTitre      .setHorizontalAlignment(JTextField.RIGHT);
-        this.txtEditeur    .setHorizontalAlignment(JTextField.RIGHT);
-        this.txtTome       .setHorizontalAlignment(JTextField.RIGHT);
+        setComposantTextFieldAlignement(JTextField.RIGHT);
 
         panelNord = new JPanel( new BorderLayout() );
         lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
         lblTemp.setFont(new Font ("Serif", Font.BOLD, 10));
         lblTemp.setForeground(Color.RED);
         
-        panelCentre = new JPanel( new BorderLayout() );
+        panelCentre = new JPanel( new BorderLayout()        );
         panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
         
         /*-----------------------------*/
         /*     Ajout des composants    */
         /*-----------------------------*/
         
-        panelNord.add( new JLabel ( new ImageIcon ( "./bedetheque.png" )), BorderLayout.CENTER);
-        panelNord.add( lblTemp                                         , BorderLayout.SOUTH );
+        panelNord.add( new JLabel ( new ImageIcon ( "./bedetheque.png" ))
+                                  , BorderLayout.CENTER);
+        panelNord.add( lblTemp    , BorderLayout.SOUTH );
         
-        panelTmp.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
-        panelTmp.add( new JLabel( "Editeur* : "    , JLabel.RIGHT ));
-        panelTmp.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT ));
-        panelTmp.add( new JLabel( "Scénariste* : " , JLabel.RIGHT ));
-        panelTmp.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
-        panelTmp.add( new JLabel( "Série : "       , JLabel.RIGHT ));
+        addFormulaireComposantLabel(panelTmp);
     
         panelCentre.add( panelTmp, BorderLayout.WEST );
 
@@ -140,10 +158,13 @@ public class PanelSaisie extends JPanel implements ActionListener
         String sDessinateur = (String)this.cbDessinateur.getSelectedItem();
         
         Integer iTome;
+
         if ( this.txtTome.getText().matches("^[0-9]*$") )
             iTome = Integer.parseInt(this.txtTome.getText());
         else
             iTome = null;
-        this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
+            
+        this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
+                                  sDessinateur, iTome );
     }
 }

@@ -14,7 +14,6 @@ public class FrameSaisie extends JFrame
         this.setLocation(20, 20);
         
         this.oPanelSaisie = new PanelSaisie(oCtrl);
-        
         this.add(this.oPanelSaisie);
         
         this.pack();
