@@ -1,3 +1,8 @@
+/*
+ * FrameSaisie.java
+ * Frame
+ * @author */
+
 import javax.swing.JFrame;
 
 public class FrameSaisie extends JFrame
