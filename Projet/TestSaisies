@@ -52,19 +52,19 @@ Scénariste   : Dumesnil
 Tome         : 
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 07 : <<Possible>> // Mettre un nombre dans titre
+Saisie 07 : <<Possible>> //Mettre deux auteurs différents
 
-Titre        : 1234
-Editeur      : Edition parla
+Titre        : Titre3
+Editeur      : Edition garlangue
 Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 08 : <<Possible>> //Mettre deux auteurs différent
+Saisie 08 : <<Possible>> //Mettre un nombre dans Titre
 
-Titre        : Titre3
-Editeur      : Edition garlangue
+Titre        : 1234
+Editeur      : Edition parla
 Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : 1
@@ -79,10 +79,10 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Création d'une oeuvre déja existente ( ici Titre1, tome 1)
+Création d'une oeuvre déjà existante ( ici Titre1, tome 1)
 en changeant les informations :
 ---------------------------------------------
-Saisie 10 : <<Impossible>>  // Pour l'édition
+Saisie 10 : <<Impossible>>  //Pour l'édition
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -91,7 +91,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 11 : <<Impossible>> // Pour l'auteur
+Saisie 11 : <<Impossible>> //Pour l'auteur
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -100,7 +100,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 12 : <<Impossible>> // Pour la série
+Saisie 12 : <<Impossible>> //Pour la série
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -109,7 +109,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : le zodiaque
 ---------------------------------------------
-Saisie 13 : <<Impossible>> // Mettre série à vide
+Saisie 13 : <<Impossible>> //Mettre série à vide
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -118,10 +118,10 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        :
 ---------------------------------------------
-Fin oeuvre déja existente
+Fin oeuvre déjà existante
 ---------------------------------------------
 ---------------------------------------------
-Pour les saisies de tomes non-valide :
+Pour les saisies de tomes non-valides :
 ---------------------------------------------
 Saisie 14 : <<Impossible>> //Nombre à virgule
 
