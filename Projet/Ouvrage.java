@@ -121,10 +121,9 @@ public class Ouvrage implements Comparable<Ouvrage>
 	/* retourne les informations de l'ouvrage séparé par ":"*/
 	public String toString2()
 	{
-        	return this.sTitre       + ":" + this.sScenariste + ":" +
-		       this.sDessinateur + ":" + this.sEditeur    + ":" +
-		       this.sSerie       + ":" + this.iTome;
-        
+        	return this.sTitre       + ":" + this.sEditeur      + ":" +
+		       this.sSerie       + ":" +  this.sScenariste  + ":" +
+		       this.sDessinateur + ":" + this.iTome;
 	}
     
 	/*
