@@ -1,3 +1,12 @@
+/*
+ * PanelSaisie.java
+ * panneau
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
 import javax.swing.*;
 
 import java.awt.BorderLayout;
