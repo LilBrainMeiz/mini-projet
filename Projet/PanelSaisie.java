@@ -22,6 +22,8 @@ import java.awt.event.FocusEvent    ;
 
 public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 {
+	
+	// Attributs
 	private ControleurSaisie ctrl;
 
 	private JComboBox<String>  cbDessinateur;
@@ -34,7 +36,8 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	private JTextField txtTome;
 
 	private JButton btnAjouter;
-
+	
+	
 	public void initComposantComboBox(String[] auteurs, String[] editeurs,  
 									  String[] series)
 	{
