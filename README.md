@@ -8,7 +8,7 @@ acquis depuis le début de l'année.
 
 Cette application a pour but d'enregistrer un certain nombre de livre dans une base de donnée pour ensuite les utiliser et les trier dans une seconde application.
 
-## Quels sont les contraintes auxquels vous avez du faire face ?
+## Quelles sont les contraintes auxquelles vous avez dû faire face ?
 
 Nous ne pouvions dépasser les 10000 livres dans la base de donnée. Aussi, il a fallu analyser notre propre application et faire un processus de rétro-ingénierie afin de pouvoir
 retrouver des erreurs dans notre code. Ceci nous a permis de débusquer plusieurs erreurs dans notre code et ainsi, le rendre plus stable.
