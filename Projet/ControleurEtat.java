@@ -1,26 +1,41 @@
+import iut.algo.Clavier;
+import java.util.List;
+
 public class ControleurEtat
 {
-	private EtatCUI  ihm;
+	private IhmCUI     ihm;
 	private MetierEtat metier;
 
 	public ControleurEtat()
 	{
-		this.ihm    = new EtatCUI();
+		this.ihm    = new IhmCUI(this);
 		this.metier = new MetierEtat();
 
-		switch( ihm.getMethodeAppeler().charAt(0) + "" )
-		{
-			case "1" -> this.metier.afficheTous();
-			case "2" -> System.out.println("truc dur");
-			case "3" -> {
-							String[] coupe;
-							coupe = new String[2];
-							coupe = ihm.getMethodeAppeler().split( " " );
-
-							this.metier.rechercheDansFichier( "\\|.*\\|.*"+coupe[1]+".*", "./sortie.txt" );
-						}
-		}
+		this.lancerEtat();
 	}
+
+	public String        getEnTete  (){ return this.metier.enTete     (); }
+	public List<Ouvrage> getOuvrages(){ return this.metier.getOuvrages(); }
+
+	private void lancerEtat()
+	{
+		int action;
+
+		do
+		{
+			this.ihm.afficherMenu();
+			action = Clavier.lire_int();
+
+			switch( action )
+			{
+				case 1  -> this.ihm.afficherTriNaturel();
+				case 2  -> this.ihm.afficherTriNaturel();
+				case 3  -> this.ihm.afficherTriNaturel();
+			}
+			
+		}while ( action != 4 );
+	}
+
 
 	public static void main(String[] args)
 	{
