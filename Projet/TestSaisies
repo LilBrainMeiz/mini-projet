@@ -123,7 +123,7 @@ Fin oeuvre déja existente
 ---------------------------------------------
 Pour les saisies de tomes non-valide :
 ---------------------------------------------
-Saisie 15 : <<Impossible>>
+Saisie 15 : <<Impossible>> //Nombre à virgule
 
 Titre        : 1234
 Editeur      : Edition parla
@@ -132,7 +132,7 @@ Scénariste   : Dumesnil
 Tome         : 1,5
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 16 : <<Impossible>>
+Saisie 16 : <<Impossible>> //Nombre négatif
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -141,7 +141,7 @@ Scénariste   : Dumesnil
 Tome         : -1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 17 : <<Impossible>>
+Saisie 17 : <<Impossible>> //Lettre
 
 Titre        : Titre1
 Editeur      : Edition parla
