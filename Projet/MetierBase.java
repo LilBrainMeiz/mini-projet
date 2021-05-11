@@ -6,78 +6,78 @@ import java.io.FileInputStream;
 
 public class MetierBase
 {
-    private List<Ouvrage> ensOuvrages;
+	private List<Ouvrage> ensOuvrages;
 
-    public MetierBase()
-    {
-        this.ensOuvrages = new ArrayList<Ouvrage>();
-    }
+	public MetierBase()
+	{
+		this.ensOuvrages = new ArrayList<Ouvrage>();
+	}
 
-    public boolean ajouterOuvrage(String titre, String editeur, String serie,
-                               String scenariste, String dessinateur,
-                               Integer tome)
-    {
-        Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
-                                           scenariste, dessinateur, tome);
+	public boolean ajouterOuvrage(String titre, String editeur, String serie,
+							   String scenariste, String dessinateur,
+							   Integer tome)
+	{
+		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
+										   scenariste, dessinateur, tome);
 
-        if ( tmp == null )return false;
-        
-        this.ensOuvrages.add(tmp);
-        return true;
-    }
+		if ( tmp == null )return false;
 
-    public ArrayList<String> lireFichier(String chemin)
-    {
-        ArrayList<String> oFichier = new ArrayList<String>();
+		this.ensOuvrages.add(tmp);
+		return true;
+	}
 
-        try
+	public ArrayList<String> lireFichier(String chemin)
+	{
+		ArrayList<String> oFichier = new ArrayList<String>();
+
+		try
         {
             Scanner oInput = new Scanner( new FileInputStream(chemin),
-                                          "UTF8" );
+			                          "UTF8" );
 
-            while(oInput.hasNextLine())
-            {
-                oFichier.add(oInput.nextLine());
-            }
-        }catch(Exception e){ e.printStackTrace(); }
+			while(oInput.hasNextLine())
+			{
+				oFichier.add(oInput.nextLine());
+			}
+		}catch(Exception e){ e.printStackTrace(); }
 
-        return oFichier;
-    }
+		return oFichier;
+	}
 
-    public String enTete()
-    {
-        String sRet = "+";
+	public String enTete()
+	{
+		String sRet = "+";
 
-        sRet += "------------------------------+";
-        sRet += "-------------------------+";
-        sRet += "-------------------------+";
-        sRet += "---------------+";
-        sRet += "-----------------------------------+";
-        sRet += "------+";
+		sRet += "------------------------------+";
+		sRet += "-------------------------+";
+		sRet += "-------------------------+";
+		sRet += "---------------+";
+		sRet += "-----------------------------------+";
+		sRet += "------+";
 
-        sRet += "\n";
+		sRet += "\n";
 
-        String encadre = "|" +
-                            "             Titre            "      + "|" +
-                            "        Scenariste       "           + "|" +
-                            "        Dessinateur      "           + "|" +
-                            "    Editeur    "                     + "|" +
-                            "               Serie               " + "|" +
-                            " Tome "                              + "|" +"\n";
+		String encadre = "|" +
+							"             Titre            "      + "|" +
+							"        Scenariste       "           + "|" +
+							"        Dessinateur      "           + "|" +
+							"    Editeur    "                     + "|" +
+							"               Serie               " + "|" +
+							" Tome "                              + "|" +"\n";
 
-        sRet += encadre + "+";
+		sRet += encadre + "+";
 
-        sRet += "------------------------------+";
-        sRet += "-------------------------+";
-        sRet += "-------------------------+";
-        sRet += "---------------+";
-        sRet += "-----------------------------------+";
-        sRet += "------+";
+		sRet += "------------------------------+";
+		sRet += "-------------------------+";
+		sRet += "-------------------------+";
+		sRet += "---------------+";
+		sRet += "-----------------------------------+";
+		sRet += "------+";
 
-        return sRet;
-    }
+		return sRet;
+	}
 
-    public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
+	public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
 
-    public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
+	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
 }
