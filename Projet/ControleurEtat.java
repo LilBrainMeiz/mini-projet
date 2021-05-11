@@ -17,9 +17,6 @@ public class ControleurEtat
 			case "3"  -> {
 							String[] coupe;
 							coupe = new String[2];
-
-							String tmp = ihm.getMethodeAppeler();
-
 							coupe = ihm.getMethodeAppeler().split( " " );
 
 			            	this.metier.rechercheDansFichier( "\\|.*\\|.*"+coupe[1]+".*", "./sortie.txt" );
