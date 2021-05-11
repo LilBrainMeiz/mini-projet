@@ -32,7 +32,6 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	private JComboBox<String>  cbEditeur;
 
 	private JTextField txtTitre;
-	private JTextField txtEditeur;
 	private JTextField txtTome;
 
 	private JButton btnAjouter;
@@ -59,7 +58,6 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	public void initComposantTextField(int column)
 	{
 		this.txtTitre       = new JTextField(column);
-		this.txtEditeur     = new JTextField(column);
 		this.txtTome        = new JTextField(column);
 	}
 	
@@ -166,6 +164,7 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		/*-----------------------------*/
 		this.btnAjouter.addActionListener(this);
 		this.txtTitre  .addFocusListener (this);
+		this.txtTome   .addFocusListener (this);
 	}
     
 	/*
@@ -207,7 +206,11 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		if ( !this.txtTome.getText().equals("") && this.txtTome.getText().matches("^[0-9]*$") )
 			iTome = Integer.parseInt(this.txtTome.getText());
 		else
+		{
+			this.txtTome.setForeground(Color.RED);
+			this.txtTome.setText("Valeur impossible");
 			iTome = null;
+		}
 
 		this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
 								  sDessinateur, iTome );
@@ -219,11 +222,8 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	 */
 	public void focusGained(FocusEvent e)
 	{
-		if (this.txtTitre.getForeground() == Color.RED)
-		{
-			this.txtTitre.setForeground(Color.BLACK);
-			this.txtTitre.setText("");
-		}
+		((JTextField)e.getSource()).setForeground(Color.BLACK);
+		((JTextField)e.getSource()).setText("");
 	}
 	
 	/*

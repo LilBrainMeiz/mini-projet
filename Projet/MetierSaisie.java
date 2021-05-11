@@ -44,7 +44,7 @@ public class MetierSaisie extends MetierBase
 		{
 			PrintWriter oOutput = new PrintWriter( new FileWriter(chemin, true));
 		
-			oOutput.println(toPrint);
+			oOutput.print(toPrint);
 			oOutput.close();
 		}
 		catch(Exception e){ e.printStackTrace(); }

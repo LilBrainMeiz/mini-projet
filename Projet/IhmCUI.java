@@ -1,11 +1,9 @@
 import java.util.Scanner;
-import java.util.stream.Collectors;
 import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import java.util.stream.Collectors;
 
 public class IhmCUI
 {
@@ -42,13 +40,32 @@ public class IhmCUI
 			System.out.println(o);
 	}
 
+	public void afficherOuvrageDe()
+    {
+        List<Ouvrage> tmp = this.ctrl.getOuvrages();
+
+        System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
+
+        String nom = this.ctrl.getNomAuteur();
+
+        System.out.println( this.ctrl.getEnTete() );
+
+        for (Ouvrage o : tmp)
+        {
+            if( o.getDessinateur().equals( nom ) || o.getScenariste().equals( nom ) )
+                System.out.println( o );
+        }
+    }
+
 	public void afficherListeGroupee()
 	{
 		List<Ouvrage> list = this.ctrl.getOuvrages();
 
 		List<Ouvrage> sort = list.stream().sorted(Comparator.comparing(Ouvrage::getEditeur).
-							 thenComparing(Ouvrage::getSerie)).collect(Collectors.toList());
+						     thenComparing(Ouvrage::getSerie)).collect(Collectors.toList());
 
-		sort.forEach(System.out::println);
+		System.out.println( this.ctrl.getEnTete() );
+		
+		sort.forEach(tP -> System.out.println(tP));
 	}
 }
