@@ -1,20 +1,38 @@
 import iut.algo.Clavier;
 
-public class EtatCUI
+import java.util.List;
+import java.util.Collections;
+
+
+public class IhmCUI
 {
-	private String methodeAppeler;
+	private ControleurEtat ctrl;
 
-	public EtatCUI()
+	public IhmCUI(ControleurEtat ctrl)
 	{
-		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
-		                    "   1.Afficher tous les ouvrages"                               + "\n" +
-		                    "   2.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
-		                    "   3.Afficher tous les ouvrages de [nom]"                      + "\n"
-		                  );
-
-		System.out.print( "Saisissez le numero puis son eventuel parametre : " );
-		this.methodeAppeler = Clavier.lireString();
+		this.ctrl = ctrl;
 	}
 
-	public String getMethodeAppeler(){ return this.methodeAppeler; }
+	public void afficherMenu()
+	{
+		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
+							"   1.Afficher tous les ouvrages"                               + "\n" +
+							"   2.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
+							"   3.Afficher tous les ouvrages de [nom]"                      + "\n" +
+							"   4.Quitter"                                                  + "\n"
+						  );
+
+		System.out.print( "Saisissez le numero puis son eventuel parametre : " );
+	}
+
+	public void afficherTriNaturel()
+	{
+		System.out.println(this.ctrl.getEnTete());
+
+		List<Ouvrage> tmp = this.ctrl.getOuvrages();
+		Collections.sort(tmp);
+
+		for ( Ouvrage o : tmp )
+			System.out.println(o);
+	}
 }
