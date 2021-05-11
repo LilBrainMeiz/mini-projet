@@ -22,7 +22,7 @@ public class ControleurSaisie
     public String[] getSerie  (){ return this.metier.getSerie  (); }
     public String[] getAuteur (){ return this.metier.getAuteur (); }
     public String[] getEditeur(){ return this.metier.getEditeur(); }
-    
+     
     public static void main(String[] args)
     {
         new ControleurSaisie();
