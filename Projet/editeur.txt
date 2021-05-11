@@ -1,3 +1,3 @@
-Edition garlangue
-Edition parla
-Edition moulinni
+garlangue
+parla
+moulinni
