@@ -1,5 +1,15 @@
+/*
+ * Ouvrage.java
+ * ouvrage
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
 public class Ouvrage 
 {
+    // Attributs
     // ici, le préfixe is correspond à "int" "static" selon la notation hongroise.
     private static int isNombreOuvrage;
     private int        iNumeroOuvrage;
@@ -11,6 +21,7 @@ public class Ouvrage
     private String     sDessinateur;
     private Integer    iTome; // Ici le tome est en Integer car il est facultatif
 
+    // Méthode usine
     public static Ouvrage creerOuvrage(String titre, String editeur,
                                        String serie, String scenariste,
                                        String dessinateur, Integer tome)
@@ -29,7 +40,8 @@ public class Ouvrage
         return new Ouvrage(titre, editeur, serie, scenariste, dessinateur,
                            tome);
     }
-
+    
+    // Constructeur
     private Ouvrage(String titre, String editeur, String serie,
                    String scenariste, String dessinateur, Integer tome)
     {
@@ -42,9 +54,16 @@ public class Ouvrage
         this.sDessinateur   = dessinateur;
         this.iTome          = tome;
     }
-
+    
+    /*-----Accesseurs-----*/
+    
+    /* @return l'attribut sEditeur */
     public String  getEditeur    (){ return this.sEditeur;     }
+    
+    /* @return l'attribut sEditeur */
     public String  getDessinateur(){ return this.sDessinateur; }
+    
+    /* @return l'attribut sEditeur */
     public String  getSerie      (){ return this.sSerie;       }
     public String  getScenariste (){ return this.sScenariste;  }
     public String  getTitre      (){ return this.sTitre;       }
