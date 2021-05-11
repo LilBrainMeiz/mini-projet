@@ -1,5 +1,6 @@
 public class ControleurSaisie
 {
+    //Attributs de ControleurSaisie
     private FrameSaisie  ihm;
     private MetierSaisie metier;
 
