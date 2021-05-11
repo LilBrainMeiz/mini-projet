@@ -44,6 +44,32 @@ public class MetierBase
         return oFichier;
     }
 
+    public String enTete()
+    {
+        String sRet = "";
+
+        sRet = "+";
+        String suite = "-------------------------------+";
+
+        for(int i = 0; i < 6; i++)sRet += suite;
+
+        sRet += "\n";
+
+        String encadre = "|" +
+                            "              Titre            " + "|" +
+                            "            Scenariste         " + "|" +
+                            "            Dessinateur        " + "|" +
+                            "             Editeur           " + "|" +
+                            "              Serie            " + "|" +
+                            "               Tome            " + "|" +"\n";
+
+        sRet += encadre + "+";
+
+        for(int i = 0; i < 6; i++)sRet += suite;
+
+        return sRet;
+    }
+    
     public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
 
     public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
