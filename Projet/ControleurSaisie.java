@@ -11,7 +11,7 @@ public class ControleurSaisie
         this.ihm    = new FrameSaisie(this);
     }
     
-    //Méthode pour ajouter un ouvrage dans la bedetheque
+    //Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
     public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
                                Integer tome)
