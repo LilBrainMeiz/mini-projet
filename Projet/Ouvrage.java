@@ -119,10 +119,11 @@ public class Ouvrage
     }
     
     /*
-     * compare l'ouvrage actuel avec l'ouvrage mis en paramètre
+     * compare le titre de l'ouvrage actuel avec le titre de l'ouvrage mis en paramètre
      * @param autre
      *           ouvrage comparé
-     * @return */
+     * @return 0 si les titres des 2 ouvrages sont identiques
+     */
     public int compareTo(Ouvrage autre)
     {
         int iSize = autre.sTitre.length();
@@ -138,7 +139,13 @@ public class Ouvrage
 
         return 0;
     }
-
+    
+    /*
+     * compare l'ouvrage actuel avec l'ouvrage mis en paramètre
+     * @param autre
+     *           ouvrage comparé
+     * @return true si les attributs des 2 ouvrages sont identiques
+     */
     public boolean equals(Ouvrage autre)
     {
         return this.sTitre      .equals(autre.sTitre      ) && 
