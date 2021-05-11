@@ -1,3 +1,16 @@
+/*
+ * ControleurSaisie.java
+ * controleur
+ * Chaque controleur comprend :
+ *    -Une FrameSaisie (ihm)
+ *    -Un MetierSaisie (metier)
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
+
 public class ControleurSaisie
 {
     //Attributs de ControleurSaisie
@@ -12,6 +25,12 @@ public class ControleurSaisie
     }
     
     //Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
+    /*
+     * Ajoute un ouvrage dans la base metier
+     *
+     * @param titre, editeur, serie, scenariste, dessinateur, tome
+     *             Attributs du nouvel ouvrage
+     */
     public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
                                Integer tome)
@@ -22,9 +41,14 @@ public class ControleurSaisie
         metier.ecrireFichier("sortie.txt", metier.toString());
     }
     
-    //Accesseur aux attributs de la classe métier
+    /*-----Accesseur aux attributs de la classe métier-----*/
+    /* @return L'attribut Serie de la classe metier */
     public String[] getSerie  (){ return this.metier.getSerie  (); }
+    
+    /* @return L'attribut Auteur de la classe metier */
     public String[] getAuteur (){ return this.metier.getAuteur (); }
+    
+    /* @return L'attribut Editeur de la classe metier */
     public String[] getEditeur(){ return this.metier.getEditeur(); }
      
     public static void main(String[] args)
