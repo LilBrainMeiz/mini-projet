@@ -32,10 +32,11 @@ public class ControleurSaisie
                                String scenariste, String dessinateur,
                                Integer tome)
     {
-        this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
-                                   dessinateur, tome);
-
-        metier.ecrireFichier("sortie.txt", metier.toString());
+        if ( this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
+                                        dessinateur, tome) )
+                this.metier.ecrireFichier("sortie.txt", metier.toString());
+        else
+            this.ihm.champObligatoire();
     }
     
     /*-----Accesseur aux attributs de la classe métier-----*/
