@@ -14,8 +14,8 @@ public class MetierBase
 	}
 
 	public boolean ajouterOuvrage(String titre, String editeur, String serie,
-							   String scenariste, String dessinateur,
-							   Integer tome)
+				      String scenariste, String dessinateur,
+				      Integer tome)
 	{
 		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
 						   scenariste, dessinateur, tome);
@@ -31,14 +31,15 @@ public class MetierBase
 		ArrayList<String> oFichier = new ArrayList<String>();
 
 		try
-        {
-            Scanner oInput = new Scanner( new FileInputStream(chemin),
-			                          "UTF8" );
+        	{
+            		Scanner oInput = new Scanner( new FileInputStream(chemin),
+			                              "UTF8" );
 
 			while(oInput.hasNextLine())
 			{
 				oFichier.add(oInput.nextLine());
 			}
+			
 		}catch(Exception e){ e.printStackTrace(); }
 
 		return oFichier;
