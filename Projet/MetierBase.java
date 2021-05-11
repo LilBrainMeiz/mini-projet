@@ -91,12 +91,11 @@ public class MetierBase
 				tabLigActuelle = s.split(":");
 				
 				tome =  tabLigActuelle[5].equals("null")?null: Integer.parseInt(tabLigActuelle[5]);
-				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0], tabLigActuelle[3],
-														  tabLigActuelle[4], tabLigActuelle[1],
-														  tabLigActuelle[2], tome));
+				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0], tabLigActuelle[1],
+				                                          tabLigActuelle[2], tabLigActuelle[3],
+				                                          tabLigActuelle[4], tome));
 			}
 		}
-	}
 	
 	/*
 	 * retourne l'en-tete d'un tableau
