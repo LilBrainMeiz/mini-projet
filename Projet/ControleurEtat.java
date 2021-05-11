@@ -58,13 +58,19 @@ public class ControleurEtat
 
 			switch( action )
 			{
-				case 1  -> this.ihm.afficherTriNaturel();
-				case 2  -> this.ihm.afficherTriNaturel();
-				case 3  -> this.ihm.afficherTriNaturel();
+				case 1  -> this.ihm.afficherTriNaturel  ();
+				case 2  -> this.ihm.afficherListeGroupee();
+				case 3  -> this.ihm.afficherOuvrageDe   ();
 			}			
 		}while ( action != 4 );
 	}
 
+	public String getNomAuteur()
+	{
+		String sRet = this.scInput.next();
+
+		return sRet;
+	}
 
 	public static void main(String[] args)
 	{
