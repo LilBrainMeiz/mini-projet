@@ -1,30 +1,50 @@
 import java.util.List;
-import java.util.ArrayList;
 
-import java.io.FileWriter;
+import java.io.File       ;
+import java.io.FileWriter ;
+import java.io.PrintWriter;
 
 public class MetierSaisie extends MetierBase
 {
     public MetierSaisie(){}
 
-    public String[] getAuteur()
+    public String[] getEnsemble( String chemin )
     {
-        ArrayList<String> tab = super.lireFichier("auteur.txt");
+        List<String> tab = super.lireFichier(chemin);
 
         return tab.toArray(new String[tab.size()]);
     }
 
-    public String[] getEditeur()
+    public void ecrireFichier(String chemin, String toPrint)
     {
-        ArrayList<String> tab = super.lireFichier("editeur.txt");
-
-        return tab.toArray(new String[tab.size()]);
+        try
+        {
+            PrintWriter oOutput = new PrintWriter( new FileWriter(chemin, true));
+        
+            oOutput.println(toPrint);
+            oOutput.close();
+        }
+        catch(Exception e){ e.printStackTrace(); }
     }
 
-    public String[] getSerie()
+    public String toString()
     {
-        List<String> tab = super.lireFichier("serie.txt");
+        File      f = new File("sortie.txt");
+        String sRet = "";
 
-        return tab.toArray(new String[tab.size()]);
+        boolean bIsExisting = f.exists();
+
+        if(!bIsExisting)
+        {
+            sRet = super.enTete();
+            
+            for(Ouvrage o : super.getOuvrages() )sRet += "\n" + o.toString();
+        }
+        else
+        {
+            sRet = super.getLastOuvrage().toString();
+        }
+
+        return sRet;
     }
 }
