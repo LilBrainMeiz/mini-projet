@@ -1,3 +1,13 @@
+/*
+ * MetierBase.java
+ * classe mère de MetierSaisie et MetierEtat
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
+
 import java.util.Scanner;
 import java.io.FileInputStream;
 
