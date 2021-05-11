@@ -25,7 +25,7 @@ Scénariste   : Dumesnil
 Tome         : 2
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 11 : <<Possible>> // Changement du titre
+Saisie 04 : <<Possible>> // Changement du titre
 
 Titre        : Titre2
 Editeur      : Edition garlangue
@@ -52,7 +52,7 @@ Scénariste   : Dumesnil
 Tome         : 
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 14 : <<Possible>> // Mettre un nombre dans titre
+Saisie 07 : <<Possible>> // Mettre un nombre dans titre
 
 Titre        : 1234
 Editeur      : Edition parla
@@ -61,7 +61,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 12 : <<Possible>> //Mettre deux auteurs différent
+Saisie 08 : <<Possible>> //Mettre deux auteurs différent
 
 Titre        : Titre3
 Editeur      : Edition garlangue
@@ -70,7 +70,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 13 : <<Impossible>> //Mettre titre à vide
+Saisie 09 : <<Impossible>> //Mettre titre à vide
 
 Titre        :
 Editeur      : Edition parla
@@ -82,7 +82,7 @@ Série        : les chevaliers
 Création d'une oeuvre déja existente ( ici Titre1, tome 1)
 en changeant les informations :
 ---------------------------------------------
-Saisie 07 : <<Impossible>>  // Pour l'édition
+Saisie 10 : <<Impossible>>  // Pour l'édition
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -91,7 +91,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 07 : <<Impossible>> // Pour l'auteur
+Saisie 11 : <<Impossible>> // Pour l'auteur
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -100,7 +100,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 08 : <<Impossible>> // Pour la série
+Saisie 12 : <<Impossible>> // Pour la série
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -109,7 +109,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : le zodiaque
 ---------------------------------------------
-Saisie 09 : <<Impossible>> // Mettre série à vide
+Saisie 13 : <<Impossible>> // Mettre série à vide
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -123,7 +123,7 @@ Fin oeuvre déja existente
 ---------------------------------------------
 Pour les saisies de tomes non-valide :
 ---------------------------------------------
-Saisie 15 : <<Impossible>> //Nombre à virgule
+Saisie 14 : <<Impossible>> //Nombre à virgule
 
 Titre        : 1234
 Editeur      : Edition parla
@@ -132,7 +132,7 @@ Scénariste   : Dumesnil
 Tome         : 1,5
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 16 : <<Impossible>> //Nombre négatif
+Saisie 15 : <<Impossible>> //Nombre négatif
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -141,7 +141,7 @@ Scénariste   : Dumesnil
 Tome         : -1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 17 : <<Impossible>> //Lettre
+Saisie 16 : <<Impossible>> //Lettre
 
 Titre        : Titre1
 Editeur      : Edition parla
