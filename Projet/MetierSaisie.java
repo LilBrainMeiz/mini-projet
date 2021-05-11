@@ -1,3 +1,13 @@
+/*
+ * MetierSaisie.java
+ * Metier qui hérite de MetierBase
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
+
 import java.util.List;
 
 import java.io.File       ;
@@ -6,8 +16,13 @@ import java.io.PrintWriter;
 
 public class MetierSaisie extends MetierBase
 {
+    // Constructeur
     public MetierSaisie(){}
-
+    
+    // Accesseur
+    /* @param chemin
+     *          
+     * @return ArrayList*/
     public String[] getEnsemble( String chemin )
     {
         List<String> tab = super.lireFichier(chemin);
