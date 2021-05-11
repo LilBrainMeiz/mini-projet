@@ -53,11 +53,11 @@ public class Ouvrage
     public String toString()
     {
         return "| " + String.format("%-30s", this.getTitre      ()) + "| " +
-                      String.format("%-30s", this.getScenariste ()) + "| " +
-                      String.format("%-30s", this.getDessinateur()) + "| " + 
-                      String.format("%-30s", this.getEditeur    ()) + "| " +
-                      String.format("%-30s", this.getSerie      ()) + "| " + 
-                      String.format("%-30s", this.getTome       ()) + "|";
+                      String.format("%-25s", this.getScenariste ()) + "| " +
+                      String.format("%-25s", this.getDessinateur()) + "| " + 
+                      String.format("%-15s", this.getEditeur    ()) + "| " +
+                      String.format("%-35s", this.getSerie      ()) + "| " + 
+                      String.format("%-6s" , this.getTome       ()) + "|";
     }
 
     public int compareTo(Ouvrage autre)
