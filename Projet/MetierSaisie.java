@@ -54,23 +54,21 @@ public class MetierSaisie extends MetierBase
  	 * retourne ?
  	 */
 	public String toString()
-	{
-		File      f = new File("sortie.txt");
-		String sRet = "";
+    	{
+        	File      f = new File("sortie.txt");
+        	String sRet = "";
 
-		boolean bIsExisting = f.exists();
+        	boolean bIsExisting = f.exists();
 
-		if(!bIsExisting)
-		{
-			sRet = super.enTete();
-			
-			for(Ouvrage o : super.getOuvrages() )sRet += "\n" + o.toString();
-		}
-		else
-		{
-			sRet = super.getLastOuvrage().toString();
-		}
-
-		return sRet;
+        	if(!bIsExisting)
+        	{            
+        	    for(Ouvrage o : super.getOuvrages() )
+         	       sRet += "\n" + o.toString2();
+        	}
+        	else
+        	{
+       			sRet = super.getLastOuvrage().toString2();
+        	}
+        	return sRet;
 	}
 }
