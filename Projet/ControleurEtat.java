@@ -1,15 +1,18 @@
-import iut.algo.Clavier;
+import java.util.Scanner;
 import java.util.List;
 
 public class ControleurEtat
 {
 	private IhmCUI     ihm;
 	private MetierEtat metier;
+    private Scanner    scInput;
 
 	public ControleurEtat()
 	{
 		this.ihm    = new IhmCUI(this);
 		this.metier = new MetierEtat();
+
+        scInput = new Scanner(System.in);
 
 		this.lancerEtat();
 	}
@@ -24,7 +27,7 @@ public class ControleurEtat
 		do
 		{
 			this.ihm.afficherMenu();
-			action = Clavier.lire_int();
+			action = scInput.nextInt();
 
 			switch( action )
 			{

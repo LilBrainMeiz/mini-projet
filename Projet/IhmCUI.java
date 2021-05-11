@@ -1,4 +1,4 @@
-import iut.algo.Clavier;
+import java.util.Scanner;
 
 import java.util.List;
 import java.util.Collections;
@@ -8,9 +8,12 @@ public class IhmCUI
 {
 	private ControleurEtat ctrl;
 
+	private Scanner        scInput;
+
 	public IhmCUI(ControleurEtat ctrl)
 	{
 		this.ctrl = ctrl;
+		this.scInput = new Scanner(System.in);
 	}
 
 	public void afficherMenu()
