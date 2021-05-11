@@ -25,8 +25,8 @@ Il y a 3 mode de tri de la base de donnée.
 
 ## Notre groupe
 
-**Mathis Pesquerel - **
-**Manon Vatre - **
-**Maxence Bosquain - **
-**Benjamin Cleon - **
+**Mathis Pesquerel**. 
+**Manon Vatre**.
+**Maxence Bosquain**.
+**Benjamin Cleon**.
 **Enzo Loubeau**
