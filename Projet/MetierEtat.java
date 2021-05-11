@@ -26,7 +26,7 @@ public class MetierEtat extends MetierBase
 				{
 					System.out.println( tmp );
 				}
-            }
+			}
 
 			sc.close();
 		}
@@ -41,10 +41,10 @@ public class MetierEtat extends MetierBase
 
 			while ( sc.hasNextLine() )
 			{
-				tmp = sc.nextLine();
+				String tmp = sc.nextLine();
 				System.out.println( tmp );
 
-			}	
+			}
 			sc.close();
 		}
 		catch (Exception e){ e.printStackTrace(); }
