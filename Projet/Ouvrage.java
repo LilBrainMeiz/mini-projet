@@ -120,11 +120,10 @@ public class Ouvrage implements Comparable<Ouvrage>
 	
 	public String toString2()
 	{
-        	String sRet = this.sTitre       + ":" + this.sScenariste + ":" +
-		              this.sDessinateur + ":" + this.sEditeur    + ":" +
-		              this.sSerie       + ":" + this.iTome;
+        	return this.sTitre       + ":" + this.sScenariste + ":" +
+		       this.sDessinateur + ":" + this.sEditeur    + ":" +
+		       this.sSerie       + ":" + this.iTome;
         
-		return sRet;
     }
     
 	/*
