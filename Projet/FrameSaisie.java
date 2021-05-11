@@ -1,15 +1,27 @@
 /*
  * FrameSaisie.java
  * Frame
- * @author */
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
 
 import javax.swing.JFrame;
 
 public class FrameSaisie extends JFrame
 {
+    // Attributs
     private ControleurSaisie oCtrl;
     private PanelSaisie oPanelSaisie;
-
+    
+    // Constructeur
+    /*
+     * Ceci est le constructeur de la classe FrameSaisie
+     *
+     * @param ctrl
+     *           Initialise oCtrl de FrameSaisie à ctrl*/
     public FrameSaisie(ControleurSaisie ctrl)
     {
         // Modèle MVC
@@ -26,6 +38,7 @@ public class FrameSaisie extends JFrame
         this.setVisible(true);
     }
     
+    // Mise à jour du PanelSaisie
     public void maj()
     {
         this.oPanelSaisie.maj();
