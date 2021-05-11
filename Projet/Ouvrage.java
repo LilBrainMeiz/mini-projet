@@ -117,6 +117,15 @@ public class Ouvrage implements Comparable<Ouvrage>
 
 		return sRet;
 	}
+	
+	public String toString2()
+	{
+        	String sRet = this.sTitre       + ":" + this.sScenariste + ":" +
+		              this.sDessinateur + ":" + this.sEditeur    + ":" +
+		              this.sSerie       + ":" + this.iTome;
+        
+		return sRet;
+    }
     
 	/*
 	 * compare le titre de l'ouvrage actuel avec le titre de l'ouvrage mis en paramètre
