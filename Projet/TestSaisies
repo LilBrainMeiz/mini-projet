@@ -7,7 +7,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 02 : <<Impossible>>
+Saisie 02 : <<Impossible>> // Création en double de saisie 01
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -16,7 +16,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 03 : <<Possible>>
+Saisie 03 : <<Possible>> // Ajout d'un nouveau Tome
 
 Titre        : Titre1
 Editeur      : Edition garlangue
@@ -25,61 +25,7 @@ Scénariste   : Dumesnil
 Tome         : 2
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 04 : <<Impossible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : Dumesnil
-Scénariste   : Dumesnil
-Tome         : 1
-Série        : les chevaliers
----------------------------------------------
-Saisie 05 : <<Possible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : Dumesnil
-Scénariste   : Dumesnil
-Tome         : 3
-Série        : les chevaliers
----------------------------------------------
-Saisie 06 : <<Possible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : Dumesnil
-Scénariste   : Dumesnil
-Tome         : 
-Série        : les chevaliers
----------------------------------------------
-Saisie 07 : <<Impossible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : lebourge
-Scénariste   : Dumesnil
-Tome         :
-Série        : les chevaliers
----------------------------------------------
-Saisie 08 : <<Impossible>>
-
-Titre        : Titre1
-Editeur      : Edition garlangue
-Desssinateur : lebourge
-Scénariste   : Dumesnil
-Tome         : 1
-Série        : le zodiaque
----------------------------------------------
-Saisie 09 : <<Possible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : lebourge
-Scénariste   : Dumesnil
-Tome         : 1
-Série        :
----------------------------------------------
-Saisie 10 : <<Possible>>
+Saisie 11 : <<Possible>> // Changement du titre
 
 Titre        : Titre2
 Editeur      : Edition garlangue
@@ -88,7 +34,34 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 11 : <<Possible>>
+Saisie 05 : <<Possible>> // Ajout d'un nouveau Tome en changeant d'éditeur
+
+Titre        : Titre1
+Editeur      : Edition parla
+Desssinateur : Dumesnil
+Scénariste   : Dumesnil
+Tome         : 3
+Série        : les chevaliers
+---------------------------------------------
+Saisie 06 : <<Possible>> // Mettre Tome à vide
+
+Titre        : Titre1
+Editeur      : Edition parla
+Desssinateur : Dumesnil
+Scénariste   : Dumesnil
+Tome         : 
+Série        : les chevaliers
+---------------------------------------------
+Saisie 14 : <<Possible>> // Mettre un nombre dans titre
+
+Titre        : 1234
+Editeur      : Edition parla
+Desssinateur : lebourge
+Scénariste   : Dumesnil
+Tome         : 1
+Série        : les chevaliers
+---------------------------------------------
+Saisie 12 : <<Possible>> //Mettre deux auteurs différent
 
 Titre        : Titre3
 Editeur      : Edition garlangue
@@ -97,7 +70,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 12 : <<Impossible>>
+Saisie 13 : <<Impossible>> //Mettre titre à vide
 
 Titre        :
 Editeur      : Edition parla
@@ -106,18 +79,51 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 13 : <<Possible>>
+Création d'une oeuvre déja existente ( ici Titre1, tome 1)
+en changeant les informations :
+---------------------------------------------
+Saisie 07 : <<Impossible>>  // Pour l'édition
 
-Titre        : 1234
+Titre        : Titre1
 Editeur      : Edition parla
+Desssinateur : Dumesnil
+Scénariste   : Dumesnil
+Tome         : 1
+Série        : les chevaliers
+---------------------------------------------
+Saisie 07 : <<Impossible>> // Pour l'auteur
+
+Titre        : Titre1
+Editeur      : Edition garlangue
 Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
+Saisie 08 : <<Impossible>> // Pour la série
+
+Titre        : Titre1
+Editeur      : Edition garlangue
+Desssinateur : lebourge
+Scénariste   : Dumesnil
+Tome         : 1
+Série        : le zodiaque
+---------------------------------------------
+Saisie 09 : <<Impossible>> // Mettre série à vide
+
+Titre        : Titre1
+Editeur      : Edition garlangue
+Desssinateur : lebourge
+Scénariste   : Dumesnil
+Tome         : 1
+Série        :
+---------------------------------------------
+Fin oeuvre déja existente
+---------------------------------------------
+---------------------------------------------
 Pour les saisies de tomes non-valide :
 ---------------------------------------------
-Saisie 14 : <<Impossible>>
+Saisie 15 : <<Impossible>>
 
 Titre        : 1234
 Editeur      : Edition parla
@@ -126,7 +132,7 @@ Scénariste   : Dumesnil
 Tome         : 1,5
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 15 : <<Impossible>>
+Saisie 16 : <<Impossible>>
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -135,7 +141,7 @@ Scénariste   : Dumesnil
 Tome         : -1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 16 : <<Impossible>>
+Saisie 17 : <<Impossible>>
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -143,4 +149,6 @@ Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : a
 Série        : les chevaliers
+---------------------------------------------
+Fin tomes non-valide
 ---------------------------------------------
