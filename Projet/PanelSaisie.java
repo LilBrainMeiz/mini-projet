@@ -83,7 +83,7 @@ public class PanelSaisie extends JPanel implements ActionListener
 
         this.btnAjouter     = new JButton("Ajouter la BD");
 
-        setComposantTextFieldAlignement(JTextField.RIGHT);
+        setComposantTextFieldAlignement(JTextField.LEFT);
 
         panelNord = new JPanel( new BorderLayout() );
         lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
