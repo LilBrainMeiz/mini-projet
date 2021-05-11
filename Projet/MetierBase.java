@@ -47,6 +47,31 @@ public class MetierBase
 
 		return oFichier;
 	}
+	
+	public void synchroniserOuvrages()
+	{
+		File      f = new File("sortie.txt");
+		String[] tabLigActuelle;
+
+		Integer tome;
+
+		this.ensOuvrages.clear();
+
+		if ( f.exists() )
+		{
+			List<String> tmp = this.lireFichier("sortie.txt");
+
+			for ( String s : tmp )
+			{
+				tabLigActuelle = s.split(":");
+				
+				tome =  tabLigActuelle[5].equals("null")?null: Integer.parseInt(tabLigActuelle[5]);
+				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0], tabLigActuelle[1],
+														  tabLigActuelle[2], tabLigActuelle[3],
+														  tabLigActuelle[4], tome));
+			}
+		}
+	}
 
 	public String enTete()
 	{
