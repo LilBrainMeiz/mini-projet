@@ -18,7 +18,7 @@ public class MetierBase
 							   Integer tome)
 	{
 		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
-										   scenariste, dessinateur, tome);
+						   scenariste, dessinateur, tome);
 
 		if ( tmp == null )return false;
 
