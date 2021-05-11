@@ -27,16 +27,16 @@ public class ControleurEtat
 		do
 		{
 			this.ihm.afficherMenu();
-            this.ihm.afficherListeGroupee();
 			action = scInput.nextInt();
+
+			this.metier.synchroniserOuvrages();
 
 			switch( action )
 			{
 				case 1  -> this.ihm.afficherTriNaturel();
 				case 2  -> this.ihm.afficherTriNaturel();
 				case 3  -> this.ihm.afficherTriNaturel();
-			}
-			
+			}			
 		}while ( action != 4 );
 	}
 
