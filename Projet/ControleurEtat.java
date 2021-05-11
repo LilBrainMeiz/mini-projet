@@ -8,8 +8,6 @@ public class ControleurEtat
 		this.ihm    = new EtatCUI();
 		this.metier = new MetierEtat();
 
-		System.out.println( ihm.getMethodeAppeler() );
-		System.out.println( ihm.getMethodeAppeler().charAt(0) );
 		switch( ihm.getMethodeAppeler().charAt(0) + "" )
 		{
 			case "1" -> this.metier.afficheTous();
