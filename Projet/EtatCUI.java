@@ -17,4 +17,4 @@ public class EtatCUI
 	}
 
 	public String getMethodeAppeler(){ return this.methodeAppeler; }
-	}
+}
