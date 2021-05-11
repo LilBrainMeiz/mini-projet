@@ -37,7 +37,11 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 
 	private JButton btnAjouter;
 	
-	
+	/*
+	 * Initialise les composant ComboBox
+	 * @param auteurs, editeurs, series
+	 *          listes d'auteurs, d'editeurs et de series
+	 */
 	public void initComposantComboBox(String[] auteurs, String[] editeurs,  
 									  String[] series)
 	{
@@ -46,14 +50,24 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		this.cbSerie        = new JComboBox<String>(series );
 		this.cbEditeur      = new JComboBox<String>(editeurs);
 	}
-
+	
+	/*
+	 * Initialise les composant TextField
+	 * @param column
+	 *          Correspond à la taille en largeur des textField
+	 */
 	public void initComposantTextField(int column)
 	{
 		this.txtTitre       = new JTextField(column);
 		this.txtEditeur     = new JTextField(column);
 		this.txtTome        = new JTextField(column);
 	}
-
+	
+	/*
+	 * Ajoute les labels à un panel
+	 * @param toAdd
+	 *          JPanel qui recevra les JLabel
+	 */
 	public void addFormulaireComposantLabel(JPanel toAdd)
 	{
 		toAdd.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
@@ -63,7 +77,12 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		toAdd.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
 		toAdd.add( new JLabel( "Série : "       , JLabel.RIGHT ));
 	}
-
+	
+	// Constructeur
+	/*
+	 * @param ctrl
+	 *          ControleurSaisie
+	 */
 	public PanelSaisie(ControleurSaisie ctrl)
 	{
 		this.ctrl = ctrl;
@@ -149,12 +168,19 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		this.txtTitre  .addFocusListener (this);
 	}
     
+	/*
+	 * Mise à jour du Panel
+	 * Met à jour l'affichage du panel
+	 */
 	public void maj()
 	{
 		this.txtTitre.setText("");
 		this.txtTome .setText("");
 	}
-
+	
+	/*
+	 * Affiche "Champs obligatoire" en rouge dans le TextField txtTitre
+	 */
 	public void champObligatoire()
 	{
 		this.txtTitre.setForeground(Color.RED);
