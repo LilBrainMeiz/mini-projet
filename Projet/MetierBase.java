@@ -1,7 +1,8 @@
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.stream.Collectors;
 import java.io.FileInputStream;
 
 public class MetierBase
@@ -19,6 +20,8 @@ public class MetierBase
 	{
 		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
 						   scenariste, dessinateur, tome);
+
+        this.afficherListeGroupee();
 
 		if ( tmp == null )return false;
 
@@ -81,4 +84,12 @@ public class MetierBase
 	public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
 
 	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
+
+    public void afficherListeGroupee()
+	{
+		List<Ouvrage> list = this.getOuvrages();
+
+		Map<String, List<Ouvrage>> listGrouped = list.stream().collect(Collectors.groupingBy(l -> l.getEditeur()));
+		System.out.println(listGrouped);
+	}
 }
