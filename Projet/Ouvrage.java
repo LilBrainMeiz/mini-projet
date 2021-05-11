@@ -148,19 +148,4 @@ public class Ouvrage implements Comparable<Ouvrage>
 
 		return 0;
 	}
-
-	/*
-	 * compare l'ouvrage actuel avec l'ouvrage mis en paramètre
-	 * @param autre
-	 *           ouvrage comparé
-	 * @return true si les attributs des 2 ouvrages sont identiques
-	 */
-	public boolean equals(Ouvrage autre)
-	{
-		return this.sTitre      .equals(autre.sTitre      ) && 
-			   this.sScenariste .equals(autre.sScenariste ) &&
-			   this.sDessinateur.equals(autre.sDessinateur) &&
-			   this.sEditeur    .equals(autre.sDessinateur) &&
-			   this.sSerie      .equals(autre.sSerie      );
-	}
 }
