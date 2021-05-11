@@ -186,7 +186,12 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		this.txtTitre.setForeground(Color.RED);
 		this.txtTitre.setText("Champs obligatoire");
 	}
-
+	
+	/*
+	 * définition d'actionPerformed
+	 * @param e
+	 *          action effectué
+	 */
 	public void actionPerformed(ActionEvent e)
 	{
 		if ( this.txtTitre.getForeground() == Color.RED )return;
@@ -208,6 +213,10 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 								  sDessinateur, iTome );
 	}
 
+	/*
+	 * si la couleur de police de txtTitre est rouge et que l'on clique sur txtTitre,
+	 * la couleur de police devient noir et txtTitre contient ""
+	 */
 	public void focusGained(FocusEvent e)
 	{
 		if (this.txtTitre.getForeground() == Color.RED)
@@ -216,6 +225,9 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 			this.txtTitre.setText("");
 		}
 	}
-
+	
+	/*
+	 * on défini cette car on implémente focusListener mais elle est inutile
+	 */
 	public void focusLost(FocusEvent e){}
 }
