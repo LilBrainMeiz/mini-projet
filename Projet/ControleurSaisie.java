@@ -28,16 +28,16 @@ public class ControleurSaisie
      * @param titre, editeur, serie, scenariste, dessinateur, tome
      *             Attributs du nouvel ouvrage
      */
-    public void ajouterOuvrage(String titre, String editeur, String serie,
+	public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
                                Integer tome)
-    {
+	{
 		if ( this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
                                         dessinateur, tome) )
 			this.metier.ecrireFichier("sortie.txt", metier.toString());
 		else
 			this.ihm.champObligatoire();
-    }
+	}
     
 	/*-----Accesseur aux attributs de la classe métier-----*/
 	/* @return L'attribut Serie de la classe metier */
