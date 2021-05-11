@@ -103,7 +103,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	public Integer getTome       (){ return this.iTome;        }
 
-	/* retourne les informations de l'ouvrage */
+	/* retourne les informations de l'ouvrage sous forme de ligne d'un tableau */
 	public String toString()
 	{
 		String sRet = "| " +
@@ -118,6 +118,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 		return sRet;
 	}
 	
+	/* retourne les informations de l'ouvrage séparé par ":"*/
 	public String toString2()
 	{
         	return this.sTitre       + ":" + this.sScenariste + ":" +
