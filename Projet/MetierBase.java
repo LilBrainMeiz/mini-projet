@@ -1,8 +1,7 @@
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+import java.io.File;
 import java.io.FileInputStream;
 
 public class MetierBase
@@ -12,6 +11,7 @@ public class MetierBase
 	public MetierBase()
 	{
 		this.ensOuvrages = new ArrayList<Ouvrage>();
+		this.synchroniserOuvrages();
 	}
 
 	public boolean ajouterOuvrage(String titre, String editeur, String serie,
@@ -21,17 +21,15 @@ public class MetierBase
 		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
 						   scenariste, dessinateur, tome);
 
-        this.afficherListeGroupee();
-
 		if ( tmp == null )return false;
 
 		this.ensOuvrages.add(tmp);
 		return true;
 	}
 
-	public ArrayList<String> lireFichier(String chemin)
+	public List<String> lireFichier(String chemin)
 	{
-		ArrayList<String> oFichier = new ArrayList<String>();
+		List<String> oFichier = new ArrayList<String>();
 
 		try
         	{
@@ -47,7 +45,7 @@ public class MetierBase
 
 		return oFichier;
 	}
-	
+
 	public void synchroniserOuvrages()
 	{
 		File      f = new File("sortie.txt");
@@ -109,12 +107,4 @@ public class MetierBase
 	public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
 
 	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
-
-    public void afficherListeGroupee()
-	{
-		List<Ouvrage> list = this.getOuvrages();
-
-		Map<String, List<Ouvrage>> listGrouped = list.stream().collect(Collectors.groupingBy(l -> l.getEditeur()));
-		System.out.println(listGrouped);
-	}
 }
