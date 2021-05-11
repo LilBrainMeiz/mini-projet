@@ -1,9 +1,6 @@
 /*
  * ControleurSaisie.java
  * controleur
- * Chaque controleur comprend :
- *    -Une FrameSaisie (ihm)
- *    -Un MetierSaisie (metier)
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
