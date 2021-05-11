@@ -43,7 +43,7 @@ public class Ouvrage
         this.iTome          = tome;
     }
 
-        public String  getEditeur    (){ return this.sEditeur;     }
+    public String  getEditeur    (){ return this.sEditeur;     }
     public String  getDessinateur(){ return this.sDessinateur; }
     public String  getSerie      (){ return this.sSerie;       }
     public String  getScenariste (){ return this.sScenariste;  }
@@ -52,12 +52,16 @@ public class Ouvrage
 
     public String toString()
     {
-        return "| " + String.format("%-30s", this.getTitre      ()) + "| " +
-                      String.format("%-25s", this.getScenariste ()) + "| " +
-                      String.format("%-25s", this.getDessinateur()) + "| " + 
-                      String.format("%-15s", this.getEditeur    ()) + "| " +
-                      String.format("%-35s", this.getSerie      ()) + "| " + 
-                      String.format("%-6s" , this.getTome       ()) + "|";
+        String sRet = "| " +
+                      String.format("%-29s", this.getTitre      ()) + "| " +
+                      String.format("%-24s", this.getScenariste ()) + "| " +
+                      String.format("%-24s", this.getDessinateur()) + "| " + 
+                      String.format("%-14s", this.getEditeur    ()) + "| " +
+                      String.format("%-34s", this.getSerie      ()) + "| ";
+        
+        sRet += this.iTome == null ? "Aucun"+ "|": String.format("%-5s" , this.getTome()) + "|";
+        
+        return sRet;
     }
 
     public int compareTo(Ouvrage autre)
