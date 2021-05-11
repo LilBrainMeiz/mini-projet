@@ -32,7 +32,6 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	private JComboBox<String>  cbEditeur;
 
 	private JTextField txtTitre;
-	private JTextField txtEditeur;
 	private JTextField txtTome;
 
 	private JButton btnAjouter;
@@ -59,7 +58,6 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	public void initComposantTextField(int column)
 	{
 		this.txtTitre       = new JTextField(column);
-		this.txtEditeur     = new JTextField(column);
 		this.txtTome        = new JTextField(column);
 	}
 	
