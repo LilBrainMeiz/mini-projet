@@ -124,7 +124,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 		       this.sDessinateur + ":" + this.sEditeur    + ":" +
 		       this.sSerie       + ":" + this.iTome;
         
-    }
+	}
     
 	/*
 	 * compare le titre de l'ouvrage actuel avec le titre de l'ouvrage mis en paramètre
