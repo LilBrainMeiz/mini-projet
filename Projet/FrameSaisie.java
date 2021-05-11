@@ -38,6 +38,8 @@ public class FrameSaisie extends JFrame
         this.setVisible(true);
     }
     
+    public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
+    
     // Mise à jour du PanelSaisie
     public void maj()
     {
