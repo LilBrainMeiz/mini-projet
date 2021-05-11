@@ -64,31 +64,13 @@ Série        : les chevaliers
 Saisie 08 : <<Impossible>>
 
 Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : lebourge
-Scénariste   : Dumesnil
-Tome         : -1
-Série        : les chevaliers
----------------------------------------------
-Saisie 09 : <<Impossible>>
-
-Titre        : Titre1
-Editeur      : Edition parla
-Desssinateur : lebourge
-Scénariste   : Dumesnil
-Tome         : a
-Série        : les chevaliers
----------------------------------------------
-Saisie 10 : <<Impossible>>
-
-Titre        : Titre1
 Editeur      : Edition garlangue
 Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : 1
 Série        : le zodiaque
 ---------------------------------------------
-Saisie 11 : <<Possible>>
+Saisie 09 : <<Possible>>
 
 Titre        : Titre1
 Editeur      : Edition parla
@@ -97,7 +79,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        :
 ---------------------------------------------
-Saisie 12 : <<Possible>>
+Saisie 10 : <<Possible>>
 
 Titre        : Titre2
 Editeur      : Edition garlangue
@@ -106,7 +88,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 13 : <<Possible>>
+Saisie 11 : <<Possible>>
 
 Titre        : Titre3
 Editeur      : Edition garlangue
@@ -115,7 +97,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 14 : <<Impossible>>
+Saisie 12 : <<Impossible>>
 
 Titre        :
 Editeur      : Edition parla
@@ -124,7 +106,7 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 14 : <<Possible>>
+Saisie 13 : <<Possible>>
 
 Titre        : 1234
 Editeur      : Edition parla
@@ -133,12 +115,32 @@ Scénariste   : Dumesnil
 Tome         : 1
 Série        : les chevaliers
 ---------------------------------------------
-Saisie 15 : <<Impossible>>
+Pour les saisies de tomes non-valide :
+---------------------------------------------
+Saisie 14 : <<Impossible>>
 
 Titre        : 1234
 Editeur      : Edition parla
 Desssinateur : lebourge
 Scénariste   : Dumesnil
 Tome         : 1,5
+Série        : les chevaliers
+---------------------------------------------
+Saisie 15 : <<Impossible>>
+
+Titre        : Titre1
+Editeur      : Edition parla
+Desssinateur : lebourge
+Scénariste   : Dumesnil
+Tome         : -1
+Série        : les chevaliers
+---------------------------------------------
+Saisie 16 : <<Impossible>>
+
+Titre        : Titre1
+Editeur      : Edition parla
+Desssinateur : lebourge
+Scénariste   : Dumesnil
+Tome         : a
 Série        : les chevaliers
 ---------------------------------------------
