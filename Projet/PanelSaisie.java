@@ -8,8 +8,10 @@ import java.awt.Color       ;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent   ;
+import java.awt.event.FocusListener ;
+import java.awt.event.FocusEvent    ;
 
-public class PanelSaisie extends JPanel implements ActionListener
+public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 {
     private ControleurSaisie ctrl;
     
@@ -38,13 +40,6 @@ public class PanelSaisie extends JPanel implements ActionListener
         this.txtTitre       = new JTextField(column);
         this.txtEditeur     = new JTextField(column);
         this.txtTome        = new JTextField(column);
-    }
-
-    public void setComposantTextFieldAlignement(int alignement)
-    {
-        this.txtTitre      .setHorizontalAlignment(alignement);
-        this.txtEditeur    .setHorizontalAlignment(alignement);
-        this.txtTome       .setHorizontalAlignment(alignement);
     }
 
     public void addFormulaireComposantLabel(JPanel toAdd)
@@ -82,8 +77,6 @@ public class PanelSaisie extends JPanel implements ActionListener
         initComposantTextField(20);
 
         this.btnAjouter     = new JButton("Ajouter la BD");
-
-        setComposantTextFieldAlignement(JTextField.LEFT);
 
         panelNord = new JPanel( new BorderLayout() );
         lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
@@ -141,16 +134,25 @@ public class PanelSaisie extends JPanel implements ActionListener
         /*  Activation des composants  */
         /*-----------------------------*/
         this.btnAjouter.addActionListener(this);
+        this.txtTitre  .addFocusListener (this);
     }
     
     public void maj()
     {
-        this.txtTitre      .setText("");
-        this.txtTome       .setText("");
+        this.txtTitre.setText("");
+        this.txtTome .setText("");
+    }
+    
+    public void champObligatoire()
+    {
+        this.txtTitre.setForeground(Color.RED);
+        this.txtTitre.setText("Champs obligatoire");
     }
     
     public void actionPerformed(ActionEvent e)
     {
+        if ( this.txtTitre.getForeground() == Color.RED )return;
+    
         String sTitre       = this.txtTitre             .getText();
         String sEditeur     = (String)this.cbEditeur    .getSelectedItem();
         String sSerie       = (String)this.cbSerie      .getSelectedItem();
@@ -167,4 +169,15 @@ public class PanelSaisie extends JPanel implements ActionListener
         this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
                                   sDessinateur, iTome );
     }
+    
+    public void focusGained(FocusEvent e)
+    {
+        if (this.txtTitre.getForeground() == Color.RED)
+        {
+            this.txtTitre.setForeground(Color.BLACK);
+            this.txtTitre.setText("");
+        }
+    }
+
+    public void focusLost(FocusEvent e){}
 }
