@@ -1,8 +1,8 @@
 public class ControleurSaisie
 {
     //Attributs de ControleurSaisie
-    private FrameSaisie  ihm;
-    private MetierSaisie metier;
+    private FrameSaisie  ihm;    /* @see FrameSaisie */
+    private MetierSaisie metier; /* @see MetierSaisie */
 
     //Constructeur de la classe ControleurSaisie
     public ControleurSaisie()
