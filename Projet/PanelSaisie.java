@@ -161,7 +161,7 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
         
         Integer iTome;
 
-        if ( this.txtTome.getText().matches("^[0-9]*$") )
+        if ( !this.txtTome.getText().equals("") && this.txtTome.getText().matches("^[0-9]*$") )
             iTome = Integer.parseInt(this.txtTome.getText());
         else
             iTome = null;
