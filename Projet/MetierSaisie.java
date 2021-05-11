@@ -50,7 +50,9 @@ public class MetierSaisie extends MetierBase
         catch(Exception e){ e.printStackTrace(); }
     }
     
-    
+    /*
+     * retourne ?
+     */
     public String toString()
     {
         File      f = new File("sortie.txt");
