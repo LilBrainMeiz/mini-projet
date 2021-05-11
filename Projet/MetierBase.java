@@ -10,8 +10,10 @@ import java.io.FileOutputStream;
 
 public class MetierBase
 {
+    //Attribut
     private List<Ouvrage> ensOuvrages;
-
+    
+    //Constructeur
     public MetierBase()
     {
         this.ensOuvrages = new ArrayList<Ouvrage>();
