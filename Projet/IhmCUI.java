@@ -1,6 +1,6 @@
 /**
- * ControleurSaisie.java
- * controleur
+ * IhmCUI.java
+ * IhmCUI.
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
