@@ -104,7 +104,9 @@ public class MetierBase
 	}
 	/*
 	 * retourne l'en-tete d'un tableau
-	 * @return la première ligne d'un tableau*/
+	 * @return la première ligne d'un tableau
+	 * 
+	 */
 	public String enTete()
 	{
 		String sRet = "+";
