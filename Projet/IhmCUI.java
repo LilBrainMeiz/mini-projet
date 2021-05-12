@@ -7,14 +7,14 @@ import java.util.stream.Collectors;
 
 public class IhmCUI
 {
-	private ControleurEtat ctrl;
+	private ControleurEtat oCtrl;
 
-	private Scanner        scInput;
+	private Scanner        oEntree;
 
 	public IhmCUI(ControleurEtat ctrl)
 	{
-		this.ctrl = ctrl;
-		this.scInput = new Scanner(System.in);
+		this.oCtrl = ctrl;
+		this.oEntree = new Scanner(System.in);
 	}
 
 	public void afficherMenu()
@@ -31,9 +31,9 @@ public class IhmCUI
 
 	public void afficherTriNaturel()
 	{
-		System.out.println(this.ctrl.getEnTete());
+		System.out.println(this.oCtrl.getEnTete());
 
-		List<Ouvrage> listeTriee = this.ctrl.getListeTrieeParOrdreNaturel();
+		List<Ouvrage> listeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
 
 		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
@@ -42,11 +42,11 @@ public class IhmCUI
     {
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
 
-		String sNom = this.ctrl.getNomAuteur();
+		String sNom = this.oCtrl.getNomAuteur();
 
-		List<Ouvrage> tmp = this.ctrl.getOuvragesDe( sNom );
+		List<Ouvrage> tmp = this.oCtrl.getOuvragesDe( sNom );
 
-		System.out.println( this.ctrl.getEnTete() );
+		System.out.println( this.oCtrl.getEnTete() );
 
 		for (Ouvrage o : tmp) System.out.println( o );
 	}
@@ -54,10 +54,10 @@ public class IhmCUI
 	public void afficherListeGroupee()
 	{
 		
-		List<Ouvrage> ouvragesTries = this.ctrl.
+		List<Ouvrage> ouvragesTries = this.oCtrl.
 					                  getListeTrieeParEditeurEtSerie();
 
-		System.out.println( this.ctrl.getEnTete() );
+		System.out.println( this.oCtrl.getEnTete() );
 		
 		ouvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}

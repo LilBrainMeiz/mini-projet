@@ -18,7 +18,7 @@ public class ControleurSaisie
 	 * @see ControleurSaisie#ControleurSaisie()
 	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
 	 */
-	private FrameSaisie  ihm;
+	private FrameSaisie  oIhm;
 	
 	/**
 	 * Metier pour l'application Saisie.
@@ -30,17 +30,17 @@ public class ControleurSaisie
 	 * @see ControleurSaisie#getAuteur()
 	 * @see ControleurSaisie#getEditeur()
 	 */
-	private MetierSaisie metier;
+	private MetierSaisie oMetier;
 
 	/**
 	 * Constructeur Controleur.
-	 * @see ControleurSaisie#metier
-	 * @see ControleurSaisie#ihm
+	 * @see ControleurSaisie#oMetier
+	 * @see ControleurSaisie#oIhm
 	 */
 	public ControleurSaisie()
 	{
-		this.metier = new MetierSaisie();
-		this.ihm    = new FrameSaisie(this);
+		this.oMetier = new MetierSaisie();
+		this.oIhm    = new FrameSaisie(this);
 	}
     
     	//Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
@@ -60,18 +60,18 @@ public class ControleurSaisie
 	 *          Le nom du dessinateur de l'ouvrage.
      	 *             
      	 *
-     	 * @see ControleurSaisie#metier
-     	 * @see ControleurSaisie#ihm
+     	 * @see ControleurSaisie#oMetier
+     	 * @see ControleurSaisie#oIhm
      	 */
 	public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
                                Integer tome)
 	{
-		if ( this.metier.ajouterOuvrage(titre, editeur, serie, scenariste,
+		if ( this.oMetier.ajouterOuvrage(titre, editeur, serie, scenariste,
                                         dessinateur, tome) )
-			this.metier.ecrireFichier("sortie.txt", metier.toString());
+			this.oMetier.ecrireFichier("sortie.txt", oMetier.toString());
 		else
-			this.ihm.champObligatoire();
+			this.oIhm.champObligatoire();
 	}
     
 	/*-----Accesseur aux attributs de la classe metier-----*/
@@ -80,25 +80,25 @@ public class ControleurSaisie
 	 * Retourne l'ensemble des series contenues dans le fichier "serie.txt".
 	 * @return L'ensemble des series contenues dans le fichier "serie.txt".
 	 *
-	 * @see metier
+	 * @see ControleurSaisie#oMetier
 	 */
-	public String[] getSeries  (){ return this.metier.getTableauLignesFichier("serie.txt"  ); }
+	public String[] getSeries  (){ return this.oMetier.getTableauLignesFichier("serie.txt"  ); }
     
 	/**
 	 * Retourne l'ensemble des auteurs contenues dans le fichier "auteur.txt".
 	 * @return L'ensemble des auteurs contenues dans le fichier "auteur.txt".
 	 *
-	 * @see metier
+	 * @see ControleurSaisie#oMetier
 	 */
-	public String[] getAuteurs (){ return this.metier.getTableauLignesFichier("auteur.txt" ); }
+	public String[] getAuteurs (){ return this.oMetier.getTableauLignesFichier("auteur.txt" ); }
     
 	/**
 	 * Retourne l'ensemble des editeurs contenues dans le fichier "editeur.txt".
 	 * @return L'ensemble des editeurs contenues dans le fichier "editeur.txt".
 	 *
-	 * @see metier
+	 * @see ControleurSaisie#oMetier
 	 */
-   	public String[] getEditeurs(){ return this.metier.getTableauLignesFichier("editeur.txt"); }
+   	public String[] getEditeurs(){ return this.oMetier.getTableauLignesFichier("editeur.txt"); }
 
 	public static void main(String[] args)
 	{
