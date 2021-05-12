@@ -21,7 +21,7 @@ public class FrameSaisie extends JFrame
 	 * @see FrameSaisie#FrameSaisie(ControleurSaisie)
 	 */
 	private ControleurSaisie oCtrl;
-	
+
 	/**
 	 * Panel de l'application Saisie.
 	 *
@@ -57,11 +57,9 @@ public class FrameSaisie extends JFrame
 		this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		this.setVisible(true);
 	}
-    	/**
+	/**
 	 * Appelle la méthode champObligatoire de oPanelSaisie.
 	 * @see PanelSaisie
 	 */
 	public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
-
-
 }
