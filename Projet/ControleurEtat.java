@@ -41,23 +41,23 @@ public class ControleurEtat
 
 		this.lancerEtat();
 	}
-	
+
 	// Accesseurs
-	
+
 	/**
 	 * Retourne une String étant l'en-tête de tous les affichages.
 	 * @see ControleurEtat#oMetier
 	 * @return L'en-tête dans metier.
 	 */
 	public String        getEnTete  (){ return this.oMetier.enTete     (); }
-	
+
 	/**
 	 * Appelle getOuvrages dans la classe metier.
 	 * @see ControleurEtat#oMetier
 	 * @return L'ensembles des ouvrages dans la classe metier.
 	 */
 	public List<Ouvrage> getOuvrages(){ return this.oMetier.getOuvrages(); }
-	
+
 	/**
 	 * Permet de lancer l'état avec une boucle.
 	 */
@@ -79,12 +79,12 @@ public class ControleurEtat
 				if ( !sTmp.equals("0") && !sTmp.equals("1") && !sTmp.equals("2") &&
 				     !sTmp.equals("3") && !sTmp.equals("4"))
 				{
-				    System.out.println("Veuillez rentrer un numéro valide");
+					System.out.println("Veuillez rentrer un numéro valide");
 					iAction = 0;
 				}
 				else
 				{
-                    iAction = sTmp.charAt(0) - '0';
+					iAction = sTmp.charAt(0) - '0';
 				}
 
 				this.oMetier.synchroniserOuvrages();
@@ -94,13 +94,13 @@ public class ControleurEtat
 					case 1  -> this.oIhm.afficherTriNaturel  ();
 					case 2  -> this.oIhm.afficherOuvrageDe   ();
 					case 3  -> this.oIhm.afficherListeGroupee();
-				}			
+				}
 			}while ( iAction != 4 );
 
 			oEntree.close();
 		}catch(Exception e){e.printStackTrace();}
 	}
-	
+
 	/**
 	 * Retourne la liste des ouvrages fait par auteur en paramètre
 	 * @param sAuteur Nom de l'auteur dont on souhaite les ouvrages.
