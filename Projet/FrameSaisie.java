@@ -29,7 +29,6 @@ public class FrameSaisie extends JFrame
 	 *
 	 * @see FrameSaisie#FrameSaisie(ControleurSaisie)
 	 * @see FrameSaisie#champObligatoire()
-	 * @see FrameSaisie#maj()
 	 */
 	private PanelSaisie      oPanelSaisie;
 

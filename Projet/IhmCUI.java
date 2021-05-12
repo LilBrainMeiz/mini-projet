@@ -46,7 +46,8 @@ public class IhmCUI
 
 		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 		
-		System.out.println( "\n" + "La Bedetheque contien " + listeTriee.size() + " ouvrages." + "\n" );
+		System.out.println(  "\n" + "La Bedetheque contient " + listeTriee.size() + 
+		                    (listeTriee.size()==1?" ouvrage.":" ouvrages.") + "\n" );
 	}
 
 	/**

@@ -268,7 +268,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	{
 		if ( this.txtTitre.getForeground() == Color.RED )return;
 
-		String  sTitre       =         this.txtTitre     .getText();
+		String  sTitre       =         this.txtTitre          .getText        ();
 		String  sEditeur     = (String)this.cmbListEditeur    .getSelectedItem();
 		String  sSerie       = (String)this.cmbListSerie      .getSelectedItem();
 		String  sScenariste  = (String)this.cmbListScenariste .getSelectedItem();
