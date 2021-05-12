@@ -262,7 +262,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * Compare le titre de l'ouvrage actuel avec le titre de l'ouvrage en paramètre.
 	 *
 	 * @param Ouvrage
-	 *          Ouvrage que l'on va comparé avec l'actuel
+	 *          Ouvrage que l'on va comparé avec l'actuel.
 	 *
 	 * @return 0 si le titre des deux ouvrages sont identiques
 	 *
