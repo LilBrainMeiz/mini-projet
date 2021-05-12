@@ -42,11 +42,11 @@ public class IhmCUI
 	{
 		System.out.println(this.oCtrl.getEnTete());
 
-		List<Ouvrage> listeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
+		List<Ouvrage> ensListeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
 
-		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
+		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 		
-		System.out.println( "\n" + "La Bedetheque contien " + listeTriee.size() + " ouvrages." + "\n" );
+		System.out.println( "\n" + "La Bedetheque contien " + ensListeTriee.size() + " ouvrages." + "\n" );
 	}
 
 	/**
@@ -87,5 +87,7 @@ public class IhmCUI
 		System.out.println( this.oCtrl.getEnTete() );
 		
 		ensOuvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
+		
+		System.out.println( "\n" + "La Bedetheque contient " + ensOuvragesTries.size() + " ouvrages." + "\n" );
 	}
 }
