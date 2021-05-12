@@ -33,22 +33,73 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	private ControleurSaisie   oCtrl;
 	
 	/**
-	 * Liste des dessinateurs qui apparraissent dans le Panel*/
+	 * Liste des dessinateurs.
+	 * @see PanelSaisie#initComposantComboBox(String[], String[], String[])
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 */
 	private JComboBox<String>  cbDessinateur;
+
+	/**
+	 * Liste des scénaristes.
+	 * @see PanelSaisie#initComposantComboBox(String[], String[], String[])
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 */
 	private JComboBox<String>  cbScenariste;
+
+	/**
+	 * Liste des série.
+	 * @see PanelSaisie#initComposantComboBox(String[], String[], String[])
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 */
 	private JComboBox<String>  cbSerie;
+
+	/**
+	 * Liste des éditeurs.
+	 * @see PanelSaisie#initComposantComboBox(String[], String[], String[])
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 */
 	private JComboBox<String>  cbEditeur;
 
+	/**
+	 * Champs de saisie du titre
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#initComposantTextField(int)
+	 * @see PanelSaisie#maj()
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 * @see PanelSaisie#champObligatoire()
+	 */
 	private JTextField         txtTitre;
+
+	/**
+	 * Champs de saisie du n° de tom
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 * @see PanelSaisie#initComposantTextField(int)
+	 * @see PanelSaisie#maj()
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
+	 * @see PanelSaisie#champObligatoire()
+	 */
 	private JTextField         txtTome;
 
+	/**
+	 * Champs de saisie du titre
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 */
 	private JButton            btnAjouter;
 	
-	/*
+	/**
 	 * Initialise les composant ComboBox
 	 * @param auteurs, editeurs, series
 	 *          listes d'auteurs, d'editeurs et de series
+	 * @see PanelSaisie#cbDessinateur
+	 * @see PanelSaisie#cbScenariste
+	 * @see PanelSaisie#cbSerie
+	 * @see PanelSaisie#cbEditeur
 	 */
+
 	public void initComposantComboBox(String[] auteurs, String[] editeurs, String[] series)
 	{
 		this.cbDessinateur  = new JComboBox<String>(auteurs );
@@ -57,10 +108,11 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.cbEditeur      = new JComboBox<String>(editeurs);
 	}
 	
-	/*
+	/**
 	 * Initialise les composant TextField
-	 * @param column
-	 *          Correspond à la taille en largeur des textField
+	 * @param column Correspond à la taille en largeur des textField
+	 * @see PanelSaisie#txtTitre
+	 * @see PanelSaisie#txtTome
 	 */
 	public void initComposantTextField(int textFieldColumn)
 	{
@@ -68,10 +120,9 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTome        = new JTextField(textFieldColumn);
 	}
 	
-	/*
+	/**
 	 * Ajoute les labels à un panel
-	 * @param toAdd
-	 *          JPanel qui recevra les JLabel
+	 * @param JPanel qui recevra les JLabel
 	 */
 	public void addFormulaireComposantLabel(JPanel panelToAdd)
 	{
@@ -84,14 +135,14 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	}
 	
 	// Constructeur
-	/*
+	/**
 	 * Constructeur de PanelSaisie.
 	 * @param ctrl
 	 *          ControleurSaisie
 	 *
 	 * @see PanelSaisie#oCtrl
 	 * @see PanelSaisie#cbDessinateur
-	 * @see PanelSaisie#cbscenariste
+	 * @see PanelSaisie#cbScenariste
 	 * @see PanelSaisie#cbSerie
 	 * @see PanelSaisie#cbEditeur
 	 *
@@ -121,10 +172,10 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*   Création des composants   */
 		/*-----------------------------*/
 
-		initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
+		this.initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
 							   this.oCtrl.getSeries());
 
-		initComposantTextField(20);
+		this.initComposantTextField(20);
 
 		this.btnAjouter = new JButton("Ajouter la BD");
 
@@ -146,7 +197,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 
 		panelNord.add( lblTemp    , BorderLayout.SOUTH );
 
-		addFormulaireComposantLabel(panelTmp);
+		this.addFormulaireComposantLabel(panelTmp);
 
 		panelCentre.add( panelTmp, BorderLayout.WEST );
 
@@ -190,7 +241,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTome   .addFocusListener (this);
 	}
     
-	/*
+	/**
 	 * Mise à jour du Panel
 	 * Met à jour l'affichage du panel
 	 */
@@ -200,7 +251,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTome .setText("");
 	}
 	
-	/*
+	/**
 	 * Affiche "Champs obligatoire" en rouge dans le TextField txtTitre
 	 */
 	public void champObligatoire()
@@ -209,10 +260,9 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTitre.setText("Champs obligatoire");
 	}
 	
-	/*
+	/**
 	 * définition d'actionPerformed
-	 * @param e
-	 *          action effectué
+	 * @param e Objet sur lequel l'action est effectué action effectué
 	 */
 	public void actionPerformed(ActionEvent e)
 	{
@@ -240,8 +290,9 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.oCtrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
 	}
 
-	/*
-	 * si la couleur de police de txtTitre est rouge et que l'on clique sur txtTitre,
+	/**
+	 * @param e Objet sur lequel nous sommes Focus
+	 * si la couleur de police du TextField est rouge et que l'on clique sur celui-ci,
 	 * la couleur de police devient noir et txtTitre contient ""
 	 */
 	public void focusGained(FocusEvent e)
@@ -250,8 +301,8 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		((JTextField)e.getSource()).setText("");
 	}
 	
-	/*
-	 * on défini cette méthode car on implémente focusListener mais elle est inutile
+	/**
+	 * on défini cette méthode car on implémente focusListener mais on ne l'utilise pas
 	 */
 	public void focusLost(FocusEvent e){}
 }
