@@ -1,6 +1,6 @@
 /**
  * FrameSaisie.java
- * Frame
+ * Frame.
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
@@ -13,15 +13,36 @@ import javax.swing.JFrame;
 public class FrameSaisie extends JFrame
 {
 	// Attributs
+	/**
+	 * Controleur de l'application Saisie.
+	 *
+	 * @see ControleurSaisie
+	 * 
+	 * @see FrameSaisie#FrameSaisie(ControleurSaisie)
+	 */
 	private ControleurSaisie oCtrl;
+	
+	/**
+	 * Panel de l'application Saisie.
+	 *
+	 * @see PanelSaisie
+	 *
+	 * @see FrameSaisie#FrameSaisie(ControleurSaisie)
+	 * @see FrameSaisie#champObligatoire()
+	 * @see FrameSaisie#maj()
+	 */
 	private PanelSaisie      oPanelSaisie;
 
 	// Constructeur
 	/**
-	 * Ceci est le constructeur de la classe FrameSaisie
+	 * Ceci est le constructeur de la classe FrameSaisie.
 	 *
 	 * @param ctrl
-	 *           Initialise oCtrl de FrameSaisie à ctrl*/
+	 *           Initialise oCtrl de FrameSaisie à ctrl
+	 *
+	 * @see FrameSaisie#oCtrl
+	 * @see FrameSaisie#oPanelSaisie
+	 */
 	public FrameSaisie(ControleurSaisie ctrl)
 	{
 		// Modèle MVC
@@ -38,13 +59,13 @@ public class FrameSaisie extends JFrame
 		this.setVisible(true);
 	}
     	/**
-	 * Appelle la méthode champObligatoire de oPanelSaisie
+	 * Appelle la méthode champObligatoire de oPanelSaisie.
 	 * @see PanelSaisie
 	 */
 	public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
 
 	/**
-	 * Mise à jour de oPanelSaisie
+	 * Mise à jour de oPanelSaisie.
 	 * @see PanelSaisie
 	 */
 	public void maj()
