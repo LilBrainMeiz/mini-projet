@@ -68,7 +68,6 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * Champs de saisie du titre
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#initComposantTextField(int)
-	 * @see PanelSaisie#maj()
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 * @see PanelSaisie#champObligatoire()
 	 */
@@ -78,7 +77,6 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * Champs de saisie du n° de tom
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#initComposantTextField(int)
-	 * @see PanelSaisie#maj()
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 * @see PanelSaisie#champObligatoire()
 	 */
@@ -239,16 +237,6 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.btnAjouter.addActionListener(this);
 		this.txtTitre  .addFocusListener (this);
 		this.txtTome   .addFocusListener (this);
-	}
-    
-	/**
-	 * Mise à jour du Panel
-	 * Met à jour l'affichage du panel
-	 */
-	public void maj()
-	{
-		this.txtTitre.setText("");
-		this.txtTome .setText("");
 	}
 	
 	/**
