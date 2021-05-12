@@ -10,4 +10,8 @@
 
 public class MetierEtat extends MetierBase
 {
+    public List<Ouvrage> getOuvragesDe( String auteur )
+    {
+        List<Ouvrage> tmp = new ArrayList<Ouvrage>();
+    }
 }
