@@ -100,6 +100,8 @@ public class MetierBase
 	
 	/**
 	 * Synchronise les ouvrages.
+	 *
+	 * @see MetierBase#ensOuvrages
 	 */
 	public void synchroniserOuvrages()
 	{
@@ -118,20 +120,17 @@ public class MetierBase
 			{
 				tableauLignesActuelles = s.split(":");
 				
-				iTome =  tableauLignesActuelles[5].equals("null")?null: 
-						 Integer.parseInt(tableauLignesActuelles[5]);
+				iTome =  tableauLignesActuelles[5].equals("null")?null: Integer.parseInt(tableauLignesActuelles[5]);
 
-				this.ensOuvrages.add(Ouvrage.creerOuvrage(tableauLignesActuelles[0],
-														  tableauLignesActuelles[1],
-				                                          tableauLignesActuelles[2],
-														  tableauLignesActuelles[3],
-				                                          tableauLignesActuelles[4],
-														  iTome));
+				this.ensOuvrages.add(Ouvrage.creerOuvrage(tableauLignesActuelles[0], tableauLignesActuelles[1],
+				                                          tableauLignesActuelles[2], tableauLignesActuelles[3],
+				                                          tableauLignesActuelles[4], iTome));
 			}
 		}
 	}
-	/*
-	 * retourne l'en-tete d'un tableau
+	/**
+	 * Retourne l'en-tete d'un tableau.
+	 * 
 	 * @return la première ligne d'un tableau
 	 * 
 	 */
@@ -168,15 +167,21 @@ public class MetierBase
 		return sRet;
 	}
 	
-	/*
+	/**
 	 * retourne ensOuvrage
+	 *
 	 * @return l'ensemble des ouvrages dans la classe MetierBase
+	 *
+	 * @see MetierBase#ensOuvrages
 	 */
 	public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
 	
-	/*
-	 * retourne le dernier élément de ensOuvrages
+	/**
+	 * Retourne le dernier élément de ensOuvrages.
+	 *
 	 * @return le dernier ouvrage ajouté dans l'ensemble d'ouvrages
+	 *
+	 * @see MetierBases#ensOuvrages
 	 */
 	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
 }
