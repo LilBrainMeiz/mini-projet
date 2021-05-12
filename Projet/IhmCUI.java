@@ -17,6 +17,9 @@ public class IhmCUI
 		this.oEntree = new Scanner(System.in);
 	}
 
+	/**
+	 * Affiche le menu de choix de l'application.
+	 */
 	public void afficherMenu()
 	{
 		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
@@ -29,6 +32,9 @@ public class IhmCUI
 		System.out.print( "Saisissez le numero puis son eventuel parametre : " );
 	}
 
+	/**
+	 * Affiche tous les ouvrages triés dans l'ordre naturel.
+	 */
 	public void afficherTriNaturel()
 	{
 		System.out.println(this.oCtrl.getEnTete());
@@ -38,6 +44,9 @@ public class IhmCUI
 		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 
+	/**
+	 * Affiche tous les ouvrages d'un auteur en particulier.
+	 */
 	public void afficherOuvrageDe()
     {
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
@@ -51,6 +60,9 @@ public class IhmCUI
 		for (Ouvrage o : tmp) System.out.println( o );
 	}
 
+	/**
+	 * Affiche tous les ouvrages triés par éditeurs puis par séries.
+	 */
 	public void afficherListeGroupee()
 	{
 		
