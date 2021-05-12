@@ -9,9 +9,6 @@ Pour saisir un livre dans votre bedeteque vous devez lancer l'application avec l
 Une fois l'application lancer, il faut ajouter des ouvrages en écrivant dans les champs de texte et
 avec les liste déroulante.
 
-Ajout d'éditeur, de séries et d'auteurs au liste déroulante:
-Ajouter dans les fichiers correspondant ( editeur.txt, série.txt, auteur.txt ) ce que vous souhaiter ajouter dans les liste déroulante.
-
 Quelques contraintes sont à respecter:
   - Les champs marquer d'une * sont obligatoires.
   - Le titre doit être une chaîne de caractères quelconque.
@@ -19,6 +16,10 @@ Quelques contraintes sont à respecter:
   - La série est facultative
   
 Une fois les information correct saisie appuyer sur Ajouter la BD.
+
+Ajout d'éditeur, de séries et d'auteurs au liste déroulante:
+Ajouter dans les fichiers correspondant ( editeur.txt, série.txt, auteur.txt ) ce que vous souhaiter ajouter dans les liste déroulante.
+
 
 Pour consulter votre liste de BD que vous avez mis dans votre bedetheque vous devez utiliser l'application d'état. Cette dernière vous permet de consulter votre bedetheque sous différents états:
   -Pour afficher la base de donnée triée selon titre des ouvrages avec un ordre naturel 
