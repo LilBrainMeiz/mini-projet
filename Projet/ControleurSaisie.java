@@ -12,7 +12,7 @@ public class ControleurSaisie
 {
 	//Attributs de ControleurSaisie
 	/**
-	 * IHM qui sera sous forme de Frame
+	 * IHM qui sera sous forme de Frame.
 	 *
 	 * @see FrameSaisie
 	 *
@@ -22,7 +22,7 @@ public class ControleurSaisie
 	private FrameSaisie  ihm;
 	
 	/**
-	 * metier pour l'application Saisie
+	 * metier pour l'application Saisie.
 	 *
 	 * @see MetierSaisie
 	 *
@@ -35,7 +35,7 @@ public class ControleurSaisie
 	private MetierSaisie metier;
 
 	/**
-	 * Constructeur Controleur
+	 * Constructeur Controleur.
 	 * @see ControleurSaisie#metier
 	 * @see ControleurSaisie#ihm
 	 */
@@ -45,16 +45,25 @@ public class ControleurSaisie
 		this.ihm    = new FrameSaisie(this);
 	}
     
-    //Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
-    /**
-     * Ajoute un ouvrage dans la base metier
-     *
-     * @param titre, editeur, serie, scenariste, dessinateur, tome
-     *             
-     *
-     * @see ControleurSaisie#metier
-     * @see ControleurSaisie#ihm
-     */
+    	//Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
+    	/**
+     	 * Ajoute un ouvrage dans la base metier.
+     	 *
+     	 * @param titre
+	 *          Le titre de l'ouvrage.
+	 * @param editeur
+	 *          Le nom de l'editeur de l'ouvrage.
+	 * @param serie
+	 *          Le nom de la série de l'ouvrage.
+	 * @param scenariste
+	 *          Le nom du scénariste de l'ouvrage.
+	 * @param dessinateur
+	 *          Le nom du dessinateur de l'ouvrage.
+     	 *             
+     	 *
+     	 * @see ControleurSaisie#metier
+     	 * @see ControleurSaisie#ihm
+     	 */
 	public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
                                Integer tome)
@@ -66,24 +75,27 @@ public class ControleurSaisie
 			this.ihm.champObligatoire();
 	}
     
-	/*-----Accesseur aux attributs de la classe métier-----*/
+	/*-----Accesseur aux attributs de la classe metier-----*/
 	/**
 	 * @return L'attribut Serie de la classe metier
+	 *
+	 * @see MetierSaisie
 	 */
-	public String[] getSeries  (){ return this.metier.
-								   getTableauLignesFichier("serie.txt"  ); }
+	public String[] getSeries  (){ return this.metier.getTableauLignesFichier("serie.txt"  ); }
     
 	/**
 	 * @return L'attribut Auteur de la classe metier
+	 *
+	 * @see MetierSaisie
 	 */
-	public String[] getAuteurs (){ return this.metier.
-								   getTableauLignesFichier("auteur.txt" ); }
+	public String[] getAuteurs (){ return this.metier.getTableauLignesFichier("auteur.txt" ); }
     
 	/**
 	 * @return L'attribut Editeur de la classe metier
+	 *
+	 * @see MetierSaisie
 	 */
-   	public String[] getEditeurs(){ return this.metier.
-								   getTableauLignesFichier("editeur.txt"); }
+   	public String[] getEditeurs(){ return this.metier.getTableauLignesFichier("editeur.txt"); }
 
 	public static void main(String[] args)
 	{
