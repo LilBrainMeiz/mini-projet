@@ -1,4 +1,4 @@
-/*
+/**
  * MetierEtat.java
  * classe fille de MetierBase
  * @author Bosquain  Maxence
