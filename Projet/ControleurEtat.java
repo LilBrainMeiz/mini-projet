@@ -64,16 +64,16 @@ public class ControleurEtat
 	private void lancerEtat()
 	{
 		int iAction;
-		Scanner oIn;
+		Scanner oEntree;
 
 		try
 		{
-			oIn = new Scanner(System.in);
+			oEntree = new Scanner(System.in);
 
 			do
 			{
 				this.oIhm.afficherMenu();
-				iAction = oIn.nextInt();
+				iAction = oEntree.nextInt();
 
 				this.oMetier.synchroniserOuvrages();
 

@@ -28,9 +28,9 @@ public class MetierSaisie extends MetierBase
 	 */
 	public String[] getTableauLignesFichier( String chemin )
 	{
-		List<String> lignesFichier = super.lireFichier(chemin);
+		List<String> ensLignesFichier = super.lireFichier(chemin);
 
-		return lignesFichier.toArray(new String[lignesFichier.size()]);
+		return ensLignesFichier.toArray(new String[ensLignesFichier.size()]);
 	}
     
 	/**
@@ -42,11 +42,11 @@ public class MetierSaisie extends MetierBase
 	{
 		try
 		{
-			PrintWriter sSortie = new PrintWriter( new FileWriter(chemin,
+			PrintWriter oSortie = new PrintWriter( new FileWriter(chemin,
 															      true));
 		
-			sSortie.print(toPrint);
-			sSortie.close();
+			oSortie.print(toPrint);
+			oSortie.close();
 		}
 		catch(Exception e){ e.printStackTrace(); }
 	}
@@ -54,10 +54,10 @@ public class MetierSaisie extends MetierBase
 	
 	public String toString()
     	{
-        	File   fichier = new File("sortie.txt");
+        	File   oFichier = new File("sortie.txt");
         	String sRet    = "";
 
-        	boolean bIsExisting = fichier.exists();
+        	boolean bIsExisting = oFichier.exists();
 
         	if(!bIsExisting)
         	{            

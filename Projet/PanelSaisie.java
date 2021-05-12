@@ -25,7 +25,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 {
 	
 	// Attributs
-	private ControleurSaisie   ctrl;
+	private ControleurSaisie   oCtrl;
 
 	private JComboBox<String>  cbDessinateur;
 	private JComboBox<String>  cbScenariste;
@@ -84,7 +84,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 */
 	public PanelSaisie(ControleurSaisie ctrl)
 	{
-		this.ctrl = ctrl;
+		this.oCtrl = ctrl;
 
 		// Variables locales
 		JPanel panelNord  ;
@@ -101,8 +101,8 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*   Création des composants   */
 		/*-----------------------------*/
 
-		initComposantComboBox (this.ctrl.getAuteurs(), this.ctrl.getEditeurs(),
-							   this.ctrl.getSeries());
+		initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
+							   this.oCtrl.getSeries());
 
 		initComposantTextField(20);
 
@@ -218,7 +218,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 			iTome = null;
 		}
 
-		this.ctrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
+		this.oCtrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
 								  sDessinateur, iTome );
 	}
 

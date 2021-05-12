@@ -47,12 +47,12 @@ public class MetierEtat extends MetierBase
     {
         List<Ouvrage> ensOuvrages = super.getOuvrages();
 
-        List<Ouvrage> listeTriee = ensOuvrages.stream().
+        List<Ouvrage> ensOuvragesTries = ensOuvrages.stream().
                                    sorted(Comparator.comparing(Ouvrage::getEditeur).
                                    thenComparing(Ouvrage::getSerie)).
                                    collect(Collectors.toList());
 
-        return listeTriee;
+        return ensOuvragesTries;
     }
 
     /**

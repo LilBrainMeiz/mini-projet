@@ -65,11 +65,11 @@ public class IhmCUI
 
 		}catch(Exception e){e.printStackTrace();}
 
-		List<Ouvrage> oTmp = this.oCtrl.getOuvragesDe( sNom );
+		List<Ouvrage> ensOuvragesAuteur = this.oCtrl.getOuvragesDe( sNom );
 
 		System.out.println( this.oCtrl.getEnTete() );
 
-		for (Ouvrage o : oTmp) System.out.println( o );
+		ensOuvragesAuteur.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class IhmCUI
 	public void afficherListeGroupee()
 	{
 		
-		List<Ouvrage> ouvragesTries = this.oCtrl.
+		List<Ouvrage> ensOuvragesTries = this.oCtrl.
 					                  getListeTrieeParEditeurEtSerie();
 
 		System.out.println( this.oCtrl.getEnTete() );
 		
-		ouvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
+		ensOuvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 }
