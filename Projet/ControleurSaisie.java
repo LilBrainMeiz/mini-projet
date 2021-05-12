@@ -11,10 +11,34 @@
 public class ControleurSaisie
 {
 	//Attributs de ControleurSaisie
-	private FrameSaisie  ihm;    /* @see FrameSaisie */
-	private MetierSaisie metier; /* @see MetierSaisie */
+	/**
+	 * IHM qui sera sous forme de Frame
+	 *
+	 * @see FrameSaisie
+	 *
+	 * @see ControleurSaisie#ControleurSaisie()
+	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
+	 */
+	private FrameSaisie  ihm;
+	
+	/**
+	 * metier pour l'application Saisie
+	 *
+	 * @see MetierSaisie
+	 *
+	 * @see ControleurSaisie#ControleurSaisie()
+	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
+	 * @see ControleurSaisie#getSerie()
+	 * @see ControleurSaisie#getAuteur()
+	 * @see ControleurSaisie#getEditeur()
+	 */
+	private MetierSaisie metier;
 
-	//Constructeur de la classe ControleurSaisie
+	/**
+	 * Constructeur Controleur
+	 * @see ControleurSaisie#metier
+	 * @see ControleurSaisie#ihm
+	 */
 	public ControleurSaisie()
 	{
 		this.metier = new MetierSaisie();
@@ -26,7 +50,10 @@ public class ControleurSaisie
      * Ajoute un ouvrage dans la base metier
      *
      * @param titre, editeur, serie, scenariste, dessinateur, tome
-     *             Attributs du nouvel ouvrage
+     *             
+     *
+     * @see ControleurSaisie#metier
+     * @see ControleurSaisie#ihm
      */
 	public void ajouterOuvrage(String titre, String editeur, String serie,
                                String scenariste, String dessinateur,
