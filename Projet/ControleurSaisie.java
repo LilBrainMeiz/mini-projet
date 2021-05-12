@@ -14,7 +14,6 @@ public class ControleurSaisie
 	/**
 	 * IHM qui sera sous forme de Frame.
 	 *
-	 * @see FrameSaisie
 	 *
 	 * @see ControleurSaisie#ControleurSaisie()
 	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
@@ -22,9 +21,8 @@ public class ControleurSaisie
 	private FrameSaisie  ihm;
 	
 	/**
-	 * metier pour l'application Saisie.
+	 * Metier pour l'application Saisie.
 	 *
-	 * @see MetierSaisie
 	 *
 	 * @see ControleurSaisie#ControleurSaisie()
 	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
@@ -46,6 +44,7 @@ public class ControleurSaisie
 	}
     
     	//Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
+	
     	/**
      	 * Ajoute un ouvrage dans la base metier.
      	 *
@@ -76,24 +75,28 @@ public class ControleurSaisie
 	}
     
 	/*-----Accesseur aux attributs de la classe metier-----*/
+	
 	/**
-	 * @return L'attribut Serie de la classe metier
+	 * Retourne l'ensemble des series contenues dans le fichier "serie.txt".
+	 * @return L'ensemble des series contenues dans le fichier "serie.txt".
 	 *
-	 * @see MetierSaisie
+	 * @see metier
 	 */
 	public String[] getSeries  (){ return this.metier.getTableauLignesFichier("serie.txt"  ); }
     
 	/**
-	 * @return L'attribut Auteur de la classe metier
+	 * Retourne l'ensemble des auteurs contenues dans le fichier "auteur.txt".
+	 * @return L'ensemble des auteurs contenues dans le fichier "auteur.txt".
 	 *
-	 * @see MetierSaisie
+	 * @see metier
 	 */
 	public String[] getAuteurs (){ return this.metier.getTableauLignesFichier("auteur.txt" ); }
     
 	/**
-	 * @return L'attribut Editeur de la classe metier
+	 * Retourne l'ensemble des editeurs contenues dans le fichier "editeur.txt".
+	 * @return L'ensemble des editeurs contenues dans le fichier "editeur.txt".
 	 *
-	 * @see MetierSaisie
+	 * @see metier
 	 */
    	public String[] getEditeurs(){ return this.metier.getTableauLignesFichier("editeur.txt"); }
 
