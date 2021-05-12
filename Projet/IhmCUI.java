@@ -67,5 +67,6 @@ public class IhmCUI
 		System.out.println( this.ctrl.getEnTete() );
 		
 		sort.forEach(tP -> System.out.println(tP));
+		
 	}
 }
