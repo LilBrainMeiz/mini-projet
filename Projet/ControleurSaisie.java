@@ -14,7 +14,11 @@ public class ControleurSaisie
 	private FrameSaisie  ihm;    /* @see FrameSaisie */
 	private MetierSaisie metier; /* @see MetierSaisie */
 
-	//Constructeur de la classe ControleurSaisie
+	/**
+	 * Constructeur Controleur
+	 * @see ControleurSaisie#metier
+	 * @see ControleurSaisie#ihm
+	 */
 	public ControleurSaisie()
 	{
 		this.metier = new MetierSaisie();
