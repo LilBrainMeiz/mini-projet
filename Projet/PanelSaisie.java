@@ -21,7 +21,7 @@ import java.awt.event.FocusListener ;
 import java.awt.event.FocusEvent    ;
 
 public class PanelSaisie extends JPanel implements ActionListener,
-												   FocusListener
+                                                   FocusListener
 {
 	
 	// Attributs
@@ -31,7 +31,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 */
 	private ControleurSaisie   oCtrl;
-	
+
 	/**
 	 * Liste des dessinateurs.
 	 * @see PanelSaisie#initComposantComboBox(String[], String[], String[])
@@ -87,7 +87,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 */
 	private JButton            btnAjouter;
-	
+
 	/**
 	 * Initialise les composant ComboBox
 	 * @param auteurs, editeurs, series
@@ -110,7 +110,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.cmbListSerie      .setMaximumRowCount(10);
 		this.cmbListEditeur    .setMaximumRowCount(10);
 	}
-	
+
 	/**
 	 * Initialise les composant TextField
 	 * @param column Correspond à la taille en largeur des textField
@@ -122,7 +122,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTitre       = new JTextField(20);
 		this.txtTome        = new JTextField( 5);
 	}
-	
+
 	/**
 	 * Ajoute les labels à un panel
 	 * @param JPanel qui recevra les JLabel
@@ -136,7 +136,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		panelToAdd.add( new JLabel(         "Tome : " , JLabel.RIGHT ));
 		panelToAdd.add( new JLabel(        "Série : " , JLabel.RIGHT ));
 	}
-	
+
 	// Constructeur
 	/**
 	 * Constructeur de PanelSaisie.
@@ -176,7 +176,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*-----------------------------*/
 
 		this.initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
-							   this.oCtrl.getSeries());
+		                            this.oCtrl.getSeries());
 
 		this.initComposantTextField();
 
@@ -196,7 +196,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*-----------------------------*/
 
 		panelNord.add( new JLabel ( new ImageIcon ( "./bedetheque.png" ))
-								  , BorderLayout.CENTER);
+		                          , BorderLayout.CENTER);
 
 		panelNord.add( lblTemp    , BorderLayout.SOUTH );
 
@@ -243,7 +243,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTitre  .addFocusListener (this);
 		this.txtTome   .addFocusListener (this);
 	}
-	
+
 	/**
 	 * Affiche "Champs obligatoire" en rouge dans le TextField txtTitre
 	 */
@@ -252,7 +252,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.txtTitre.setForeground(Color.RED);
 		this.txtTitre.setText("Champs obligatoire");
 	}
-	
+
 	/**
 	 * définition d'actionPerformed
 	 * @see PanelSaisie#txtTitre
@@ -303,7 +303,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		((JTextField)e.getSource()).setForeground(Color.BLACK);
 		((JTextField)e.getSource()).setText("");
 	}
-	
+
 	/**
 	 * on défini cette méthode car on implémente focusListener mais on ne l'utilise pas
 	 */
