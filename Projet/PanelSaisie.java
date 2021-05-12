@@ -38,7 +38,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 */
-	private JComboBox<String>  cbDessinateur;
+	private JComboBox<String>  cmbListDessinateur;
 
 	/**
 	 * Liste des scénaristes.
@@ -46,7 +46,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 */
-	private JComboBox<String>  cbScenariste;
+	private JComboBox<String>  cmbListScenariste;
 
 	/**
 	 * Liste des série.
@@ -54,7 +54,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 */
-	private JComboBox<String>  cbSerie;
+	private JComboBox<String>  cmbListSerie;
 
 	/**
 	 * Liste des éditeurs.
@@ -62,12 +62,12 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 */
-	private JComboBox<String>  cbEditeur;
+	private JComboBox<String>  cmbListEditeur;
 
 	/**
 	 * Champs de saisie du titre
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
-	 * @see PanelSaisie#initComposantTextField(int)
+	 * @see PanelSaisie#initComposantTextField()
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 * @see PanelSaisie#champObligatoire()
 	 */
@@ -76,7 +76,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	/**
 	 * Champs de saisie du n° de tom
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
-	 * @see PanelSaisie#initComposantTextField(int)
+	 * @see PanelSaisie#initComposantTextField()
 	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 * @see PanelSaisie#champObligatoire()
 	 */
@@ -92,18 +92,23 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * Initialise les composant ComboBox
 	 * @param auteurs, editeurs, series
 	 *          listes d'auteurs, d'editeurs et de series
-	 * @see PanelSaisie#cbDessinateur
-	 * @see PanelSaisie#cbScenariste
-	 * @see PanelSaisie#cbSerie
-	 * @see PanelSaisie#cbEditeur
+	 * @see PanelSaisie#cmbListDessinateur
+	 * @see PanelSaisie#cmbListScenariste
+	 * @see PanelSaisie#cmbListSerie
+	 * @see PanelSaisie#cmbListEditeur
 	 */
 
 	public void initComposantComboBox(String[] auteurs, String[] editeurs, String[] series)
 	{
-		this.cbDessinateur  = new JComboBox<String>(auteurs );
-		this.cbScenariste   = new JComboBox<String>(auteurs );
-		this.cbSerie        = new JComboBox<String>(series  );
-		this.cbEditeur      = new JComboBox<String>(editeurs);
+		this.cmbListDessinateur  = new JComboBox<String>(auteurs );
+		this.cmbListScenariste   = new JComboBox<String>(auteurs );
+		this.cmbListSerie        = new JComboBox<String>(series  );
+		this.cmbListEditeur      = new JComboBox<String>(editeurs);
+
+		this.cmbListDessinateur.setMaximumRowCount(10);
+		this.cmbListScenariste .setMaximumRowCount(10);
+		this.cmbListSerie      .setMaximumRowCount(10);
+		this.cmbListEditeur    .setMaximumRowCount(10);
 	}
 	
 	/**
@@ -112,10 +117,10 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @see PanelSaisie#txtTitre
 	 * @see PanelSaisie#txtTome
 	 */
-	public void initComposantTextField(int textFieldColumn)
+	public void initComposantTextField()
 	{
-		this.txtTitre       = new JTextField(textFieldColumn);
-		this.txtTome        = new JTextField(textFieldColumn);
+		this.txtTitre       = new JTextField(20);
+		this.txtTome        = new JTextField( 5);
 	}
 	
 	/**
@@ -139,10 +144,10 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 *          ControleurSaisie
 	 *
 	 * @see PanelSaisie#oCtrl
-	 * @see PanelSaisie#cbDessinateur
-	 * @see PanelSaisie#cbScenariste
-	 * @see PanelSaisie#cbSerie
-	 * @see PanelSaisie#cbEditeur
+	 * @see PanelSaisie#cmbListDessinateur
+	 * @see PanelSaisie#cmbListScenariste
+	 * @see PanelSaisie#cmbListSerie
+	 * @see PanelSaisie#cmbListEditeur
 	 *
 	 * @see PanelSaisie#txtTitre
 	 * @see PanelSaisie#txtTome
@@ -173,7 +178,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
 							   this.oCtrl.getSeries());
 
-		this.initComposantTextField(20);
+		this.initComposantTextField();
 
 		this.btnAjouter = new JButton("Ajouter la BD");
 
@@ -206,15 +211,15 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2 .add( this.cbEditeur     );
+		panelTmp2 .add( this.cmbListEditeur     );
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2 .add( this.cbDessinateur );
+		panelTmp2 .add( this.cmbListDessinateur );
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2 .add( this.cbScenariste  );
+		panelTmp2 .add( this.cmbListScenariste  );
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -222,7 +227,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2 .add( this.cbSerie        );
+		panelTmp2 .add( this.cmbListSerie        );
 		panelTmp  .add( panelTmp2           );
 
 		panelCentre.add ( panelTmp, BorderLayout.CENTER );
@@ -251,10 +256,10 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	/**
 	 * définition d'actionPerformed
 	 * @see PanelSaisie#txtTitre
-	 * @see PanelSaisie#cbEditeur
-	 * @see PanelSaisie#cbSerie
-	 * @see PanelSaisie#cbScenariste
-	 * @see PanelSaisie#cbDessinateur
+	 * @see PanelSaisie#cmbListEditeur
+	 * @see PanelSaisie#cmbListSerie
+	 * @see PanelSaisie#cmbListScenariste
+	 * @see PanelSaisie#cmbListDessinateur
 	 * @see PanelSaisie#txtTome
 	 * @see PanelSaisie#oCtrl
 	 * @param e Objet sur lequel l'action est effectué action effectué
@@ -264,10 +269,10 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		if ( this.txtTitre.getForeground() == Color.RED )return;
 
 		String  sTitre       =         this.txtTitre     .getText();
-		String  sEditeur     = (String)this.cbEditeur    .getSelectedItem();
-		String  sSerie       = (String)this.cbSerie      .getSelectedItem();
-		String  sScenariste  = (String)this.cbScenariste .getSelectedItem();
-		String  sDessinateur = (String)this.cbDessinateur.getSelectedItem();
+		String  sEditeur     = (String)this.cmbListEditeur    .getSelectedItem();
+		String  sSerie       = (String)this.cmbListSerie      .getSelectedItem();
+		String  sScenariste  = (String)this.cmbListScenariste .getSelectedItem();
+		String  sDessinateur = (String)this.cmbListDessinateur.getSelectedItem();
 
 		Integer iTome;
 
@@ -277,8 +282,11 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		}
 		else
 		{
-			this.txtTome.setForeground(Color.RED);
-			this.txtTome.setText("Valeur impossible");
+			if ( !this.txtTome.getText().equals("") )
+			{
+				this.txtTome.setForeground(Color.RED);
+				this.txtTome.setText("Erreur");
+			}
 			iTome = null;
 		}
 
