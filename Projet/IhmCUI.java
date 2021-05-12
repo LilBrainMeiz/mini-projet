@@ -24,7 +24,7 @@ public class IhmCUI
 	 * @see IhmCUI#afficherListeGroupee()
 	 */
 	private ControleurEtat oCtrl;
-	
+
 	/**
 	 * Controleur de IhmCUI.
 	 *
@@ -44,11 +44,11 @@ public class IhmCUI
 	public void afficherMenu()
 	{
 		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
-							"   1.Afficher tous les ouvrages"                               + "\n" +
-							"   2.Afficher tous les ouvrages de [nom]"                      + "\n" +
-							"   3.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
-							"   4.Quitter"                                                  + "\n"
-						  );
+		                    "   1.Afficher tous les ouvrages"                               + "\n" +
+		                    "   2.Afficher tous les ouvrages de [nom]"                      + "\n" +
+		                    "   3.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
+		                    "   4.Quitter"                                                  + "\n"
+		                  );
 
 		System.out.print( "Saisissez le numero : " );
 	}
@@ -64,8 +64,8 @@ public class IhmCUI
 
 		List<Ouvrage> ensListeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
 
-		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage +""+ oOuvrage.getNum()));
-		
+		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
+
 		System.out.println(  "\n" + "La Bedetheque contient " + ensListeTriee.size() + 
 		                    (ensListeTriee.size()<=1?" ouvrage.":" ouvrages.") + "\n" );
 	}
