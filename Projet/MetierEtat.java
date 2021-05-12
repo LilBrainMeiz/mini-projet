@@ -1,6 +1,6 @@
 /*
- * MetierBase.java
- * classe mère de MetierSaisie et MetierEtat
+ * MetierEtat.java
+ * classe fille de MetierBase
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
