@@ -74,22 +74,22 @@ public class ControleurEtat
 	 */
 	private void lancerEtat()
 	{
-		int action;
+		int iAction;
 
 		do
 		{
 			this.ihm.afficherMenu();
-			action = scInput.nextInt();
+			iAction = scInput.nextInt();
 
 			this.metier.synchroniserOuvrages();
 
-			switch( action )
+			switch( iAction )
 			{
 				case 1  -> this.ihm.afficherTriNaturel  ();
 				case 2  -> this.ihm.afficherListeGroupee();
 				case 3  -> this.ihm.afficherOuvrageDe   ();
 			}			
-		}while ( action != 4 );
+		}while ( iAction != 4 );
 	}
 
 	/**
