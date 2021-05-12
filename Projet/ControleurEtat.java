@@ -105,7 +105,7 @@ public class ControleurEtat
 
 	/**
 	 * lance l'application
-	 * @param args
+	 * @param args argument au lancement du ControleurEtat
 	 */
 	public static void main(String[] args)
 	{
