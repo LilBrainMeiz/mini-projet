@@ -14,6 +14,7 @@ import java.awt.GridLayout  ;
 import java.awt.FlowLayout  ;
 import java.awt.Font        ;
 import java.awt.Color       ;
+import java.awt.Dimension   ;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent   ;
@@ -109,6 +110,11 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		this.cmbListScenariste .setMaximumRowCount(10);
 		this.cmbListSerie      .setMaximumRowCount(10);
 		this.cmbListEditeur    .setMaximumRowCount(10);
+
+		this.cmbListDessinateur.setPreferredSize(new Dimension ( 330, 30 ));
+		this.cmbListScenariste .setPreferredSize(new Dimension ( 330, 30 ));
+		this.cmbListSerie      .setPreferredSize(new Dimension ( 330, 30 ));
+		this.cmbListEditeur    .setPreferredSize(new Dimension ( 330, 30 ));
 	}
 	
 	/**
@@ -133,7 +139,6 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		panelToAdd.add( new JLabel(     "Editeur* : " , JLabel.RIGHT ));
 		panelToAdd.add( new JLabel( "Dessinateur* : " , JLabel.RIGHT ));
 		panelToAdd.add( new JLabel(  "Scénariste* : " , JLabel.RIGHT ));
-		panelToAdd.add( new JLabel(         "Tome : " , JLabel.RIGHT ));
 		panelToAdd.add( new JLabel(        "Série : " , JLabel.RIGHT ));
 	}
 	
@@ -176,7 +181,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*-----------------------------*/
 
 		this.initComposantComboBox (this.oCtrl.getAuteurs(), this.oCtrl.getEditeurs(),
-							   this.oCtrl.getSeries());
+							        this.oCtrl.getSeries());
 
 		this.initComposantTextField();
 
@@ -189,7 +194,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		lblTemp.setForeground(Color.RED);
 
 		panelCentre     = new JPanel( new BorderLayout()        );
-		panelTmp        = new JPanel( new GridLayout(6, 1, 1, 2));
+		panelTmp        = new JPanel( new GridLayout(5, 1, 1, 2));
 
 		/*-----------------------------*/
 		/*     Ajout des composants    */
@@ -204,10 +209,14 @@ public class PanelSaisie extends JPanel implements ActionListener,
 
 		panelCentre.add( panelTmp, BorderLayout.WEST );
 
-		panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
+		panelTmp    = new JPanel( new GridLayout(5, 1, 1, 2));
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		this.txtTitre.setPreferredSize(new Dimension ( 170, 30 ));
 		panelTmp2 .add( this.txtTitre      );
+		panelTmp2 .add( new JLabel("Tome : " , JLabel.RIGHT ));
+		this.txtTome.setPreferredSize(new Dimension ( 80, 30 ));
+		panelTmp2 .add( this.txtTome );
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -220,10 +229,6 @@ public class PanelSaisie extends JPanel implements ActionListener,
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panelTmp2 .add( this.cmbListScenariste  );
-		panelTmp  .add( panelTmp2          );
-
-		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2 .add( this.txtTome       );
 		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -251,6 +256,12 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	{
 		this.txtTitre.setForeground(Color.RED);
 		this.txtTitre.setText("Champs obligatoire");
+	}
+
+	public void tailleMax()
+	{
+		this.txtTitre.setForeground(Color.RED);
+		this.txtTitre.setText("Taille maximale bedetheque atteinte");
 	}
 	
 	/**

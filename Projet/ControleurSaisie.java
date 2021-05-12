@@ -72,7 +72,12 @@ public class ControleurSaisie
                                         dessinateur, tome) )
 			this.oMetier.ecrireFichier("sortie.txt", oMetier.toString());
 		else
-			this.oIhm.champObligatoire();
+		{
+			if ( titre == null || titre.equals(""))
+			    this.oIhm.champObligatoire();
+			else
+			    this.oIhm.tailleMax();
+		}
 	}
     
 	/*-----Accesseur aux attributs de la classe metier-----*/

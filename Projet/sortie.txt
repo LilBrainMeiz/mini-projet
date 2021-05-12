@@ -1,6 +1,0 @@
-Super	Dargaud	La complainte des landes perdues	René Goscinny	René Goscinny	null
-Super	Dargaud		René Goscinny	René Goscinny	null
-Super	Dargaud		Émmanuel Civiello	René Goscinny	null
-Super	Dargaud		Émmanuel Civiello	Émmanuel Civiello	null
-Super	Delcourt		Émmanuel Civiello	Émmanuel Civiello	null
-Super	Delcourt		Émmanuel Civiello	Thomas Mosdi	null

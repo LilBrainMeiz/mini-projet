@@ -64,7 +64,7 @@ public class IhmCUI
 
 		List<Ouvrage> ensListeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
 
-		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
+		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage +""+ oOuvrage.getNum()));
 		
 		System.out.println(  "\n" + "La Bedetheque contient " + ensListeTriee.size() + 
 		                    (ensListeTriee.size()<=1?" ouvrage.":" ouvrages.") + "\n" );

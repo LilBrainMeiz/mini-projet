@@ -63,5 +63,9 @@ public class FrameSaisie extends JFrame
 	 */
 	public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
 
-
+		/**
+	 * Appelle la méthode tailleMax de oPanelSaisie.
+	 * @see PanelSaisie
+	 */
+	public void tailleMax       (){ this.oPanelSaisie.tailleMax       (); }
 }

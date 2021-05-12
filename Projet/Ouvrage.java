@@ -17,7 +17,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#creerOuvrage( String, String, String, String, String, Integer )
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
 	 */
-	private static int isNombreOuvrage;
+	private static int isNombreOuvrage = 0;
 	
 	/**
 	 * C'est le numero de l'ouvrage selon le l'ordre dans lequel il a été créé.
@@ -283,4 +283,11 @@ public class Ouvrage implements Comparable<Ouvrage>
 
 		return 0;
 	}
+
+	public int getNum()
+	{
+		return this.iNumeroOuvrage;
+	}
+
+	public static void resetNbOuvrage(){ Ouvrage.isNombreOuvrage = 0; }
 }

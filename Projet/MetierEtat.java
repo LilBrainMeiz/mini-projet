@@ -29,12 +29,8 @@ public class MetierEtat extends MetierBase
         List<Ouvrage> ensOuvrages = super.getOuvrages();
 
         for(Ouvrage oOuvrage : ensOuvrages)
-        {
            if(oOuvrage.getDessinateur().equals(sAuteur) || oOuvrage.getScenariste().equals(sAuteur))
-           {
                ensTempo.add(oOuvrage);
-           }
-        }
 
         return ensTempo;
     }

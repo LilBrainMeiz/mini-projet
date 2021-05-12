@@ -111,6 +111,7 @@ public class MetierBase
 		Integer iTome;
 
 		this.ensOuvrages.clear();
+		Ouvrage.resetNbOuvrage();
 
 		if ( oFichier.exists() )
 		{
@@ -125,6 +126,8 @@ public class MetierBase
 				this.ensOuvrages.add(Ouvrage.creerOuvrage(tableauLignesActuelles[0], tableauLignesActuelles[1],
 				                                          tableauLignesActuelles[2], tableauLignesActuelles[3],
 				                                          tableauLignesActuelles[4], iTome));
+
+				if ( this.ensOuvrages.size() == 10000)break;
 			}
 		}
 	}
