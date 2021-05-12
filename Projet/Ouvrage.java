@@ -10,7 +10,7 @@
 public class Ouvrage implements Comparable<Ouvrage>
 {
 	// Attributs
-	/*
+	/**
 	 * C'est le nombre d'ouvrage qui a été créé.
 	 * Ici, le préfixe is correspond à "int" "static" selon la notation hongroise.
 	 *
@@ -19,14 +19,14 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private static int isNombreOuvrage;
 	
-	/*
+	/**
 	 * C'est le numero de l'ouvrage selon le l'ordre dans lequel il a été créé.
 	 * 
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
 	 */
 	private int        iNumeroOuvrage;
 	
-	/*
+	/**
 	 * Titre de l'ouvrage.
 	 *
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
@@ -37,7 +37,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private String     sTitre;
 	
-	/*
+	/**
 	 * Nom de l'éditeur de l'ouvrage.
 	 *
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
@@ -47,7 +47,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private String     sEditeur;
 	
-	/*
+	/**
 	 * Nom de la série de l'ouvrage.
 	 * Cet Attribut n'est pas facultatif, il se peut qu'il ne contienne rien(null).
 	 *
@@ -58,7 +58,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private String     sSerie;
 	
-	/*
+	/**
 	 * Nom du scénariste de l'ouvrage.
 	 *
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
@@ -68,7 +68,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private String     sScenariste;
 	
-	/*
+	/**
 	 * Nom du dessinateur de l'ouvrage.
 	 *
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
@@ -78,7 +78,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 */
 	private String     sDessinateur;
 	
-	/*
+	/**
 	 * Nombre de tome de l'ouvrage.
 	 * Ici le tome est en Integer car il est facultatif.
 	 *
@@ -124,7 +124,7 @@ public class Ouvrage implements Comparable<Ouvrage>
     }
     
 	// Constructeur
-	/*
+	/**
 	 * Si les paramétres de la méthode usine sont correct, elle appelle le constructeur.
 	 * Celui-ci est "private" pour qu'on ne puisse pas l'appeller en dehors de la classe.
 	 * Initialise les attributs du nouvel ouvrage.
