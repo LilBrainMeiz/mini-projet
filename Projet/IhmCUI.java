@@ -3,8 +3,6 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
-import java.util.stream.Collectors;
-
 public class IhmCUI
 {
 	private ControleurEtat ctrl;
@@ -41,8 +39,16 @@ public class IhmCUI
 	public void afficherOuvrageDe()
     {
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
+		String sNom = "";
 
-		String sNom = this.ctrl.getNomAuteur();
+		try
+		{
+			Scanner in = new Scanner(System.in);
+			
+			sNom = in.nextLine();
+			System.out.println( sNom );
+
+		}catch(Exception e){e.printStackTrace();}
 
 		List<Ouvrage> tmp = this.ctrl.getOuvragesDe( sNom );
 

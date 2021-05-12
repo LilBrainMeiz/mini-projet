@@ -27,27 +27,17 @@ public class ControleurEtat
 	 */
 
 	private MetierEtat oMetier;
-
-	/**
-	 * Permet de lire l'entrée de l'utilisateur dans différents cas.
-	 * @see ControleurEtat#ControleurEtat()
-	 * @see ControleurEtat#lancerEtat()
-	 */
-    private Scanner    oEntree;
 	
 	/**
 	 * Creer une instance de ControleurEtat.
 	 * Lance une IhmCUI et un MetierEtat.
 	 * @see ControleurEtat#oIhm
 	 * @see ControleurEtat#oMetier
-	 * @see ControleurEtat#oEntree
 	 */
 	public ControleurEtat()
 	{
 		this.oIhm    = new IhmCUI(this);
 		this.oMetier = new MetierEtat();
-
-        oEntree = new Scanner(System.in);
 
 		this.lancerEtat();
 	}
@@ -70,26 +60,31 @@ public class ControleurEtat
 	
 	/**
 	 * Permet de lancer l'état avec une boucle.
-	 * @see ControleurEtat#oEntree
 	 */
 	private void lancerEtat()
 	{
 		int iAction;
+		Scanner oIn;
 
-		do
+		try
 		{
-			this.oIhm.afficherMenu();
-			iAction = oEntree.nextInt();
+			oIn = new Scanner(System.in);
 
-			this.oMetier.synchroniserOuvrages();
-
-			switch( iAction )
+			do
 			{
-				case 1  -> this.oIhm.afficherTriNaturel  ();
-				case 2  -> this.oIhm.afficherListeGroupee();
-				case 3  -> this.oIhm.afficherOuvrageDe   ();
-			}			
-		}while ( iAction != 4 );
+				this.oIhm.afficherMenu();
+				iAction = oIn.nextInt();
+
+				this.oMetier.synchroniserOuvrages();
+
+				switch( iAction )
+				{
+					case 1  -> this.oIhm.afficherTriNaturel  ();
+					case 2  -> this.oIhm.afficherListeGroupee();
+					case 3  -> this.oIhm.afficherOuvrageDe   ();
+				}			
+			}while ( iAction != 4 );
+		}catch(Exception e){System.out.println("Veuillez saisir un entier\n"); this.lancerEtat();}
 	}
 	
 	/**
@@ -120,17 +115,6 @@ public class ControleurEtat
 	public List<Ouvrage> getListeTrieeParOrdreNaturel()
 	{
 		return this.oMetier.getListeTrieeParOrdreNaturel();
-	}
-
-	/**
-	 * Lit un nom d'auteur pour l'etat n°3.
-	 * @return Entrée de l'utilisateur destinée à être l'auteur pour l'état n°3.
-	 */
-	public String getNomAuteur()
-	{
-		String sRet = this.oEntree.next();
-
-		return sRet;
 	}
 
 	/**
