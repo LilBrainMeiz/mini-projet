@@ -1,6 +1,6 @@
 /**
  * ControleurEtat.java
- * controleur de l'application pour les Etat d'une bedetheque
+ * controleur de l'application pour les Etat d'une bedetheque.
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
@@ -13,14 +13,14 @@ import java.util.List;
 public class ControleurEtat
 {
 	/**
-	 * Ihm pour l'application Etat qui sera en CUI
+	 * Ihm pour l'application Etat qui sera en CUI.
 	 * @see ControleurEtat#ControleurEtat()
 	 * @see ControleurEtat#lancerEtat()
 	 */
 	private IhmCUI     ihm;
 
 	/**
-	 * metier pour l'application Etat
+	 * Metier pour l'application Etat.
 	 * @see ControleurEtat#ControleurEtat()
 	 * @see ControleurEtat#getEnTete()
 	 * @see ControleurEtat#getOuvrages()
