@@ -1,70 +1,142 @@
 /**
- * MetierEtat.java
- * classe fille de MetierBase
+ * ControleurEtat.java
+ * controleur de l'application pour les Etat d'une bedetheque.
  * @author Bosquain  Maxence
  * @author Cléon     Benjamin
  * @author Loubeau   Enzo
  * @author Pesquerel Mathis
  * @author Vatres    Manon
  */
-
+import java.util.Scanner;
 import java.util.List;
-import java.util.ArrayList;
 
-import java.util.Comparator;
-import java.util.stream.Collectors;
-import java.util.Collections;
-
-public class MetierEtat extends MetierBase
+public class ControleurEtat
 {
 	/**
-	 * Retourne la liste d'ouvrages correspondant à l'auteur passé en paramètre.
-	 * @param sAuteur Nom de l'auteur à rechercher.
-	 * @return Liste des ouvrages de l'auteur.
+	 * Ihm pour l'application Etat qui sera en CUI.
+	 * @see ControleurEtat#ControleurEtat()
+	 * @see ControleurEtat#lancerEtat()
 	 */
-	public List<Ouvrage> getOuvragesDe( String sAuteur )
+	private IhmCUI     oIhm;
+
+	/**
+	 * Metier pour l'application Etat.
+	 * @see ControleurEtat#ControleurEtat()
+	 * @see ControleurEtat#getEnTete()
+	 * @see ControleurEtat#getOuvrages()
+	 */
+
+	private MetierEtat oMetier;
+	
+	/**
+	 * Creer une instance de ControleurEtat.
+	 * Lance une IhmCUI et un MetierEtat.
+	 * @see ControleurEtat#oIhm
+	 * @see ControleurEtat#oMetier
+	 */
+	public ControleurEtat()
 	{
-		List<Ouvrage> ensTempo   = new ArrayList<Ouvrage>();
+		this.oIhm    = new IhmCUI(this);
+		this.oMetier = new MetierEtat();
 
-		List<Ouvrage> ensOuvrages = super.getOuvrages();
+		this.lancerEtat();
+	}
+	
+	// Accesseurs
+	
+	/**
+	 * Retourne une String étant l'en-tête de tous les affichages.
+	 * @see ControleurEtat#oMetier
+	 * @return L'en-tête dans metier.
+	 */
+	public String        getEnTete  (){ return this.oMetier.enTete     (); }
+	
+	/**
+	 * Appelle getOuvrages dans la classe metier.
+	 * @see ControleurEtat#oMetier
+	 * @return L'ensembles des ouvrages dans la classe metier.
+	 */
+	public List<Ouvrage> getOuvrages(){ return this.oMetier.getOuvrages(); }
+	
+	/**
+	 * Permet de lancer l'état avec une boucle.
+	 */
+	private void lancerEtat()
+	{
+		int iAction;
+		String sTmp;
+		Scanner oEntree;
 
-		for(Ouvrage oOuvrage : ensOuvrages)
+		try
 		{
-			if(oOuvrage.getDessinateur().equals(sAuteur) || oOuvrage.getScenariste().equals(sAuteur))
-			{
-				ensTempo.add(oOuvrage);
-			}
-		}
+			oEntree = new Scanner(System.in);
 
-		return ensTempo;
+			do
+			{
+				this.oIhm.afficherMenu();
+				sTmp = oEntree.nextLine();
+
+				if ( !sTmp.equals("0") && !sTmp.equals("1") && !sTmp.equals("2") &&
+				     !sTmp.equals("3") && !sTmp.equals("4"))
+				{
+				    System.out.println("Veuillez rentrer un numéro valide");
+					iAction = 0;
+				}
+				else
+				{
+                    iAction = sTmp.charAt(0) - '0';
+				}
+
+				this.oMetier.synchroniserOuvrages();
+
+				switch( iAction )
+				{
+					case 1  -> this.oIhm.afficherTriNaturel  ();
+					case 2  -> this.oIhm.afficherOuvrageDe   ();
+					case 3  -> this.oIhm.afficherListeGroupee();
+				}			
+			}while ( iAction != 4 );
+
+			oEntree.close();
+		}catch(Exception e){e.printStackTrace();}
+	}
+	
+	/**
+	 * Retourne la liste des ouvrages fait par auteur en paramètre
+	 * @param sAuteur Nom de l'auteur dont on souhaite les ouvrages.
+	 * @return Liste des ouvrages de l'auteur en paramètre.
+	 */
+	public List<Ouvrage> getOuvragesDe(String sAuteur)
+	{
+		return this.oMetier.getOuvragesDe( sAuteur );
 	}
 
 	/**
-	 * Retourne la liste des ouvrages triée par éditeur et par série.
-	 * @return Liste d'ouvrages triée par éditeur et par série.
+	 * Retourne la liste des ouvrages triées par éditeurs et par séries.
+	 * @return Liste des ouvrages triée par éditeurs et séries.
+	 * @see ControleurEtat#oMetier
 	 */
 	public List<Ouvrage> getListeTrieeParEditeurEtSerie()
 	{
-		List<Ouvrage> ensOuvrages = super.getOuvrages();
-
-		List<Ouvrage> ensOuvragesTries = ensOuvrages.stream().
-		                           sorted(Comparator.comparing(Ouvrage::getEditeur).
-		                           thenComparing(Ouvrage::getSerie)).
-		                           collect(Collectors.toList());
-
-		return ensOuvragesTries;
+		return this.oMetier.getListeTrieeParEditeurEtSerie();
 	}
 
 	/**
-	 * Retourne la liste triée par ordre naturel.
-	 * @return Liste d'ouvrage triée par ordre naturel.
+	 * Retourne la liste des ouvrages triées par ordre naturel.
+	 * @return Liste des ouvrages triée par ordre naturel.
+	 * @see ControleurEtat#oMetier
 	 */
 	public List<Ouvrage> getListeTrieeParOrdreNaturel()
 	{
-		List<Ouvrage> ensOuvrages = super.getOuvrages();
+		return this.oMetier.getListeTrieeParOrdreNaturel();
+	}
 
-		Collections.sort(ensOuvrages);
-
-		return ensOuvrages;
+	/**
+	 * Lance l'application.
+	 * @param args argument au lancement du ControleurEtat
+	 */
+	public static void main(String[] args)
+	{
+		new ControleurEtat();
 	}
 }
