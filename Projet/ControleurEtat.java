@@ -64,6 +64,7 @@ public class ControleurEtat
 	private void lancerEtat()
 	{
 		int iAction;
+		String sTmp;
 		Scanner oEntree;
 
 		try
@@ -73,7 +74,18 @@ public class ControleurEtat
 			do
 			{
 				this.oIhm.afficherMenu();
-				iAction = oEntree.nextLine().charAt(0) - '0';
+				sTmp = oEntree.nextLine();
+
+				if ( !sTmp.equals("0") && !sTmp.equals("1") && !sTmp.equals("2") &&
+				     !sTmp.equals("3") && !sTmp.equals("4"))
+				{
+				    System.out.println("Veuillez rentrer un numéro valide");
+					iAction = 0;
+				}
+				else
+				{
+                    iAction = sTmp.charAt(0) - '0';
+				}
 
 				this.oMetier.synchroniserOuvrages();
 
@@ -86,7 +98,7 @@ public class ControleurEtat
 			}while ( iAction != 4 );
 
 			oEntree.close();
-		}catch(Exception e){System.out.println("Veuillez saisir un entier\n"); this.lancerEtat();}
+		}catch(Exception e){e.printStackTrace();}
 	}
 	
 	/**
