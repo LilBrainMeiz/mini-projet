@@ -1,4 +1,4 @@
-/*
+/**
  * MetierBase.java
  * classe mère de MetierSaisie et MetierEtat
  * @author Bosquain  Maxence
@@ -17,19 +17,47 @@ import java.io.FileInputStream;
 public class MetierBase
 {
 	// Attributs
+	/**
+	 * La liste des ouvrages de metierBase.
+	 *
+	 * @see Ouvrages
+	 *
+	 * @see MetierBase#MetierBase()
+	 * @see MetierBase#ajouterOuvrage( String, String, String, String, String, Integer )
+	 * @see MetierBase#synchroniserOuvrages()
+	 * @see MetierBase#getOuvrages()
+	 * @see MetierBase#getLastOuvrage()
+	 */
 	private List<Ouvrage> ensOuvrages;
 	
-	// Constructeur
+	/**
+	 * Constructeur de la classe MetierBase.
+	 *
+	 * @see MetierBase#ensOuvrages
+	 *
+	 * @see MetierBase#synchroniserOuvrages
+	 */
 	public MetierBase()
 	{
 		this.ensOuvrages = new ArrayList<Ouvrage>();
 		this.synchroniserOuvrages();
 	}
 	
-	/*
-	 * Ajoute un ouvrage
-	 * @param titre, editeur, serie, scenariste, dessinateur, tome
-	 *          Attributs du nouvel ouvrage
+	/**
+	 * Ajoute un ouvrage à ensOuvrages.
+	 * @param titre
+	 *          Titre du nouvel Ouvrage.
+	 * @param editeur
+	 *          Nom de l'éditeur du nouvel Ouvrage.
+	 * @param serie
+	 *          Nom de la série du nouvel Ouvrage.
+	 * @param scenariste
+	 *          Nom du scénariste du nouvel Ouvrage.
+	 * @param dessinateur
+	 *          Nom du dessinateur du nouvel Ouvrage.
+	 * @param tome
+	 *          Nombre de tome du nouvel Ouvrage.
+	 *
 	 * @return true si tmp différent de null
 	 */
 	public boolean ajouterOuvrage(String titre, String editeur, String serie,
@@ -45,10 +73,10 @@ public class MetierBase
 		return true;
 	}
 	
-	/*
+	/**
 	 * lit le fichier jusqu'à la dernière ligne
 	 * @param chemin
-	 *          Chemin vers le fichier que l'on veut lire
+	 *          Chemin vers le fichier que l'on veut lire.
 	 * @return la dernière ligne du fichier sous forme de tableau de String
 	 */
 	public List<String> lireFichier(String chemin)
@@ -70,8 +98,8 @@ public class MetierBase
 		return oFichier;
 	}
 	
-	/*
-	 * synchronise les ouvrages
+	/**
+	 * Synchronise les ouvrages.
 	 */
 	public void synchroniserOuvrages()
 	{
@@ -150,7 +178,5 @@ public class MetierBase
 	 * retourne le dernier élément de ensOuvrages
 	 * @return le dernier ouvrage ajouté dans l'ensemble d'ouvrages
 	 */
-	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.
-												  get(this.ensOuvrages.
-												  	  size()-1);}
+	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
 }
