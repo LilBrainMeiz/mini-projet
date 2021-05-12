@@ -73,15 +73,15 @@ public class ControleurEtat
 			do
 			{
 				this.oIhm.afficherMenu();
-				iAction = oEntree.nextInt();
+				iAction = oEntree.nextLine().charAt(0) - '0';
 
 				this.oMetier.synchroniserOuvrages();
 
 				switch( iAction )
 				{
 					case 1  -> this.oIhm.afficherTriNaturel  ();
-					case 2  -> this.oIhm.afficherListeGroupee();
-					case 3  -> this.oIhm.afficherOuvrageDe   ();
+					case 2  -> this.oIhm.afficherOuvrageDe   ();
+					case 3  -> this.oIhm.afficherListeGroupee();
 				}			
 			}while ( iAction != 4 );
 

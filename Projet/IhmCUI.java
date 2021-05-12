@@ -26,12 +26,12 @@ public class IhmCUI
 	{
 		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
 							"   1.Afficher tous les ouvrages"                               + "\n" +
-							"   2.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
-							"   3.Afficher tous les ouvrages de [nom]"                      + "\n" +
+							"   2.Afficher tous les ouvrages de [nom]"                      + "\n" +
+							"   3.Afficher tous les ouvrages triée par Editeurs et Séries." + "\n" +
 							"   4.Quitter"                                                  + "\n"
 						  );
 
-		System.out.print( "Saisissez le numero puis son eventuel parametre : " );
+		System.out.print( "Saisissez le numero : " );
 	}
 
 	/**
@@ -46,8 +46,8 @@ public class IhmCUI
 
 		ensListeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 		
-		System.out.println(  "\n" + "La Bedetheque contient " + listeTriee.size() + 
-		                    (listeTriee.size()==1?" ouvrage.":" ouvrages.") + "\n" );
+		System.out.println(  "\n" + "La Bedetheque contient " + ensListeTriee.size() + 
+		                    (ensListeTriee.size()<=1?" ouvrage.":" ouvrages.") + "\n" );
 	}
 
 	/**
@@ -72,6 +72,9 @@ public class IhmCUI
 
 		System.out.println( this.oCtrl.getEnTete() );
 		ensOuvragesAuteur.forEach(oOuvrage -> System.out.println(oOuvrage));
+
+		System.out.println("\nCette auteur à participer à " + ensOuvragesAuteur.size() +
+		                  (ensOuvragesAuteur.size()<=1?" ouvrage":" ouvrages") + " de la bedetheque.\n");
 	}
 
 	/**
@@ -84,6 +87,8 @@ public class IhmCUI
 
 		System.out.println( this.oCtrl.getEnTete() );
 		ensOuvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
-		System.out.println( "\n" + "La Bedetheque contient " + ensOuvragesTries.size() + " ouvrages." + "\n" );
+
+		System.out.println(  "\n" + "La Bedetheque contient " + ensOuvragesTries.size() + 
+		                    (ensOuvragesTries.size()<=1?" ouvrage.":" ouvrages.") + "\n" );
 	}
 }
