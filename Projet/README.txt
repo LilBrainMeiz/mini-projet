@@ -9,6 +9,9 @@ Pour saisir un livre dans votre bedeteque vous devez lancer l'application avec l
 Une fois l'application lancer, il faut ajouter des ouvrages en écrivant dans les champs de texte et
 avec les liste déroulante.
 
+Ajout d'éditeur, de séries et d'auteurs au liste déroulante:
+Ajouter dans les fichiers correspondant ( editeur.txt, série.txt, auteur.txt ) ce que vous souhaiter ajouter dans les liste déroulante.
+
 Quelques contraintes sont à respecter:
   - Les champs marquer d'une * sont obligatoires.
   - Le titre doit être une chaîne de caractères quelconque.
@@ -27,5 +30,5 @@ Il vous sera alors proposé de choisir l'affichage que vous souhaitez parmis ceu
 
 À savoir que vous pouvez lancer les deux applications simultanément, sans vous souciez de l'ordre, de la même manière que vous pouvez ne pas les lancer en même temps si vous le souhaitez.
 
-Si vous voulez créer plusieurs budotheque, faites un copier coller de vos fichiers .class que vous aurez générez après compilation, puis relancer les applications. 
+Si vous voulez créer plusieurs bedetheque, faites un copier coller de vos fichiers .class que vous aurez générez après compilation, puis relancer les applications. 
 Si vous souhaitez supprimer votre bedetheque, vous pouvez supprimer le fichier appeler sortie.txt, lors de votre prochaine bedetheque vous pouvez procédez comme d'habitude.
