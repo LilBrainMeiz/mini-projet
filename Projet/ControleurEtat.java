@@ -31,7 +31,7 @@ public class ControleurEtat
 	// Accesseurs
 	
 	/*
-	 * appelle enTete dans la classe metier
+	 * retourne une String étant l'en-tête de tous les affichages
 	 * @return l'en-tête dans metier
 	 */
 	public String        getEnTete  (){ return this.metier.enTete     (); }
@@ -43,7 +43,7 @@ public class ControleurEtat
 	public List<Ouvrage> getOuvrages(){ return this.metier.getOuvrages(); }
 	
 	/*
-	 * lance l'état
+	 * permet de lancer l'application
 	 */
 	private void lancerEtat()
 	{
@@ -65,6 +65,9 @@ public class ControleurEtat
 		}while ( action != 4 );
 	}
 
+	/*
+	 * retourne le nom de l'auteur saisie par l'utilisateur pour l'état n°3
+	 */
 	public String getNomAuteur()
 	{
 		String sRet = this.scInput.next();
@@ -72,6 +75,9 @@ public class ControleurEtat
 		return sRet;
 	}
 
+	/*
+	 * lance l'application
+	 */
 	public static void main(String[] args)
 	{
 		new ControleurEtat();
