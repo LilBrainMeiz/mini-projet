@@ -18,14 +18,14 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
 	 */
 	private static int isNombreOuvrage;
-	
+
 	/**
 	 * C'est le numero de l'ouvrage selon le l'ordre dans lequel il a été créé.
 	 * 
 	 * @see Ouvrage#Ouvrage( String, String, String, String, String, Integer )
 	 */
 	private int        iNumeroOuvrage;
-	
+
 	/**
 	 * Titre de l'ouvrage.
 	 *
@@ -36,7 +36,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#compareTo( Ouvrage )
 	 */
 	private String     sTitre;
-	
+
 	/**
 	 * Nom de l'éditeur de l'ouvrage.
 	 *
@@ -46,7 +46,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#toString2()
 	 */
 	private String     sEditeur;
-	
+
 	/**
 	 * Nom de la série de l'ouvrage.
 	 * Cet Attribut n'est pas facultatif, il se peut qu'il ne contienne rien(null).
@@ -57,7 +57,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#toString2()
 	 */
 	private String     sSerie;
-	
+
 	/**
 	 * Nom du scénariste de l'ouvrage.
 	 *
@@ -67,7 +67,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#toString2()
 	 */
 	private String     sScenariste;
-	
+
 	/**
 	 * Nom du dessinateur de l'ouvrage.
 	 *
@@ -120,9 +120,9 @@ public class Ouvrage implements Comparable<Ouvrage>
 		if(Ouvrage.isNombreOuvrage == 10000)return null;
 
 		return new Ouvrage(titre, editeur, serie, scenariste, dessinateur,
-						   tome);
-    }
-    
+		                   tome);
+	}
+
 	// Constructeur
 	/**
 	 * Si les paramétres de la méthode usine sont correct, elle appelle le constructeur.
@@ -160,7 +160,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 		this.sDessinateur   = dessinateur;
 		this.iTome          = tome;
 	}
-    
+
 	/*-----Accesseurs-----*/
 
 	/**
@@ -210,7 +210,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @see Ouvrage#iTome
 	 */
 	public Integer getTome       (){ return this.iTome;        }
-	
+
 	/**
 	 * Retourne les informations de l'ouvrage sous forme d'une ligne de tableau.
 	 *
@@ -238,7 +238,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 
 		return sRet;
 	}
-	
+
 	/**
 	 * Retourne les informations de l'ouvrage en les séparants par ":".
 	 *
@@ -257,7 +257,7 @@ public class Ouvrage implements Comparable<Ouvrage>
 		           this.sSerie       + "\t" +  this.sScenariste  + "\t" +
 		           this.sDessinateur + "\t" + this.iTome;
 	}
-	
+
 	/**
 	 * Compare le titre de l'ouvrage actuel avec le titre de l'ouvrage en paramètre.
 	 *
