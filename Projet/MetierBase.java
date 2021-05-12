@@ -29,7 +29,7 @@ public class MetierBase
 	 * @see MetierBase#getLastOuvrage()
 	 */
 	private List<Ouvrage> ensOuvrages;
-	
+
 	/**
 	 * Constructeur de la classe MetierBase.
 	 *
@@ -42,7 +42,7 @@ public class MetierBase
 		this.ensOuvrages = new ArrayList<Ouvrage>();
 		this.synchroniserOuvrages();
 	}
-	
+
 	/**
 	 * Ajoute un ouvrage à ensOuvrages.
 	 * @param titre
@@ -61,18 +61,18 @@ public class MetierBase
 	 * @return true si tmp différent de null
 	 */
 	public boolean ajouterOuvrage(String titre, String editeur, String serie,
-				      String scenariste, String dessinateur,
-				      Integer tome)
+	                              String scenariste, String dessinateur,
+	                              Integer tome)
 	{
 		Ouvrage oTempo = Ouvrage.creerOuvrage(titre, editeur, serie,
-						   scenariste, dessinateur, tome);
+		                                      scenariste, dessinateur, tome);
 
 		if ( oTempo == null )return false;
 
 		this.ensOuvrages.add(oTempo);
 		return true;
 	}
-	
+
 	/**
 	 * lit le fichier jusqu'à la dernière ligne
 	 * @param chemin
@@ -84,15 +84,14 @@ public class MetierBase
 		List<String> oFichier = new ArrayList<String>();
 
 		try
-        	{
-            	Scanner oEntree = new Scanner( new FileInputStream(chemin),
-			                                  "UTF8" );
+		{
+			Scanner oEntree = new Scanner( new FileInputStream(chemin), "UTF8" );
 
 			while(oEntree.hasNextLine())
 			{
 				oFichier.add(oEntree.nextLine());
 			}
-			
+
 		}catch(Exception e){ e.printStackTrace(); }
 
 		return oFichier;
@@ -166,7 +165,7 @@ public class MetierBase
 
 		return sRet;
 	}
-	
+
 	/**
 	 * retourne ensOuvrage
 	 *
@@ -175,7 +174,7 @@ public class MetierBase
 	 * @see MetierBase#ensOuvrages
 	 */
 	public List<Ouvrage> getOuvrages   (){ return this.ensOuvrages; }
-	
+
 	/**
 	 * Retourne le dernier élément de ensOuvrages.
 	 *
