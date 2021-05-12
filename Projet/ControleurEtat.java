@@ -84,6 +84,8 @@ public class ControleurEtat
 					case 3  -> this.oIhm.afficherOuvrageDe   ();
 				}			
 			}while ( iAction != 4 );
+
+			oEntree.close();
 		}catch(Exception e){System.out.println("Veuillez saisir un entier\n"); this.lancerEtat();}
 	}
 	

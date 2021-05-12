@@ -70,7 +70,7 @@ public class ControleurSaisie
 	{
 		if ( this.oMetier.ajouterOuvrage(titre, editeur, serie, scenariste,
                                         dessinateur, tome) )
-			this.oMetier.ecrireFichier("sortie.txt", oMetier.toString());
+			this.oMetier.ecrireFichier("sortie.pjdata", oMetier.toString());
 		else
 			this.oIhm.champObligatoire();
 	}

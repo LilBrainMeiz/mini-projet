@@ -116,11 +116,11 @@ public class Ouvrage implements Comparable<Ouvrage>
 	public String toString()
 	{
 		String sRet = "| " +
-					  String.format("%-29s", this.sTitre      ) + "| " +
-					  String.format("%-24s", this.sScenariste ) + "| " +
-					  String.format("%-24s", this.sDessinateur) + "| " + 
-					  String.format("%-14s", this.sEditeur    ) + "| " +
-					  String.format("%-34s", this.sSerie      ) + "| ";
+					  String.format("%-29.29s", this.sTitre      ) + "| " +
+					  String.format("%-24.24s", this.sScenariste ) + "| " +
+					  String.format("%-24.24s", this.sDessinateur) + "| " + 
+					  String.format("%-14.14s", this.sEditeur    ) + "| " +
+					  String.format("%-34.34s", this.sSerie      ) + "| ";
 
 		sRet += this.iTome == null ? "Aucun"+ "|": String.format("%-5s" , this.getTome()) + "|";
 

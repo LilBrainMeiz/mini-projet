@@ -75,7 +75,7 @@ public class MetierBase
 	 */
 	public void synchroniserOuvrages()
 	{
-		File     oFichier = new File("sortie.txt");
+		File     oFichier = new File("sortie.pjdata");
 		String[] tableauLignesActuelles;
 
 		Integer iTome;
@@ -84,7 +84,7 @@ public class MetierBase
 
 		if ( oFichier.exists() )
 		{
-			List<String> ensLignesFichier = this.lireFichier("sortie.txt");
+			List<String> ensLignesFichier = this.lireFichier("sortie.pjdata");
 
 			for ( String s : ensLignesFichier )
 			{
