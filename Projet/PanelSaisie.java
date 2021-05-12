@@ -101,8 +101,8 @@ public class PanelSaisie extends JPanel implements ActionListener,
 		/*   Création des composants   */
 		/*-----------------------------*/
 
-		initComposantComboBox (this.ctrl.getAuteur(), this.ctrl.getEditeur(),
-							   this.ctrl.getSerie());
+		initComposantComboBox (this.ctrl.getAuteurs(), this.ctrl.getEditeurs(),
+							   this.ctrl.getSeries());
 
 		initComposantTextField(20);
 
