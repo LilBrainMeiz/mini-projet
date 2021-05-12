@@ -1,4 +1,4 @@
-/*
+/**
  * ControleurSaisie.java
  * controleur
  * @author Bosquain  Maxence
@@ -22,7 +22,7 @@ public class ControleurSaisie
 	}
     
     //Méthode pour ajouter un ouvrage dans la bedetheque en appellant la méthode du même nom dans la classe métier
-    /*
+    /**
      * Ajoute un ouvrage dans la base metier
      *
      * @param titre, editeur, serie, scenariste, dessinateur, tome
@@ -40,13 +40,19 @@ public class ControleurSaisie
 	}
     
 	/*-----Accesseur aux attributs de la classe métier-----*/
-	/* @return L'attribut Serie de la classe metier */
+	/**
+	 * @return L'attribut Serie de la classe metier
+	 */
 	public String[] getSerie  (){ return this.metier.getEnsemble("serie.txt"  ); }
     
-	/* @return L'attribut Auteur de la classe metier */
+	/**
+	 * @return L'attribut Auteur de la classe metier
+	 */
 	public String[] getAuteur (){ return this.metier.getEnsemble("auteur.txt" ); }
     
-	/* @return L'attribut Editeur de la classe metier */
+	/**
+	 * @return L'attribut Editeur de la classe metier
+	 */
    	public String[] getEditeur(){ return this.metier.getEnsemble("editeur.txt"); }
 
 	public static void main(String[] args)

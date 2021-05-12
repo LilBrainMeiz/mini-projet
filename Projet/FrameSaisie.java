@@ -1,4 +1,4 @@
-/*
+/**
  * FrameSaisie.java
  * Frame
  * @author Bosquain  Maxence
@@ -17,7 +17,7 @@ public class FrameSaisie extends JFrame
 	private PanelSaisie oPanelSaisie;
 
 	// Constructeur
-	/*
+	/**
 	 * Ceci est le constructeur de la classe FrameSaisie
 	 *
 	 * @param ctrl
@@ -37,10 +37,16 @@ public class FrameSaisie extends JFrame
 		this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		this.setVisible(true);
 	}
-    
+    	/**
+	 * Appelle la méthode champObligatoire de oPanelSaisie
+	 * @see PanelSaisie
+	 */
 	public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
 
-	// Mise à jour du PanelSaisie
+	/**
+	 * Mise à jour de oPanelSaisie
+	 * @see PanelSaisie
+	 */
 	public void maj()
 	{
 		this.oPanelSaisie.maj();
