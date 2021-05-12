@@ -24,17 +24,17 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 {
 	
 	// Attributs
-	private ControleurSaisie ctrl;
+	private ControleurSaisie   ctrl;
 
 	private JComboBox<String>  cbDessinateur;
 	private JComboBox<String>  cbScenariste;
 	private JComboBox<String>  cbSerie;
 	private JComboBox<String>  cbEditeur;
 
-	private JTextField txtTitre;
-	private JTextField txtTome;
+	private JTextField         txtTitre;
+	private JTextField         txtTome;
 
-	private JButton btnAjouter;
+	private JButton            btnAjouter;
 	
 	/*
 	 * Initialise les composant ComboBox
@@ -44,9 +44,9 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	public void initComposantComboBox(String[] auteurs, String[] editeurs,  
 									  String[] series)
 	{
-		this.cbDessinateur  = new JComboBox<String>(auteurs);
-		this.cbScenariste   = new JComboBox<String>(auteurs);
-		this.cbSerie        = new JComboBox<String>(series );
+		this.cbDessinateur  = new JComboBox<String>(auteurs );
+		this.cbScenariste   = new JComboBox<String>(auteurs );
+		this.cbSerie        = new JComboBox<String>(series  );
 		this.cbEditeur      = new JComboBox<String>(editeurs);
 	}
 	
@@ -55,10 +55,10 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	 * @param column
 	 *          Correspond à la taille en largeur des textField
 	 */
-	public void initComposantTextField(int column)
+	public void initComposantTextField(int textFieldColumn)
 	{
-		this.txtTitre       = new JTextField(column);
-		this.txtTome        = new JTextField(column);
+		this.txtTitre       = new JTextField(textFieldColumn);
+		this.txtTome        = new JTextField(textFieldColumn);
 	}
 	
 	/*
@@ -66,14 +66,14 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	 * @param toAdd
 	 *          JPanel qui recevra les JLabel
 	 */
-	public void addFormulaireComposantLabel(JPanel toAdd)
+	public void addFormulaireComposantLabel(JPanel panelToAdd)
 	{
-		toAdd.add( new JLabel( "Titre* : "      , JLabel.RIGHT ));
-		toAdd.add( new JLabel( "Editeur* : "    , JLabel.RIGHT ));
-		toAdd.add( new JLabel( "Dessinateur* : ", JLabel.RIGHT ));
-		toAdd.add( new JLabel( "Scénariste* : " , JLabel.RIGHT ));
-		toAdd.add( new JLabel( "Tome : "        , JLabel.RIGHT ));
-		toAdd.add( new JLabel( "Série : "       , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel(       "Titre* : " , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel(     "Editeur* : " , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel( "Dessinateur* : " , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel(  "Scénariste* : " , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel(         "Tome : " , JLabel.RIGHT ));
+		panelToAdd.add( new JLabel(        "Série : " , JLabel.RIGHT ));
 	}
 	
 	// Constructeur
@@ -88,10 +88,10 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		// Variables locales
 		JPanel panelNord  ;
 		JPanel panelCentre;
-		JPanel panelTmp  ;
-		JPanel panelTmp2 ;
+		JPanel panelTmp   ;
+		JPanel panelTmp2  ;
 
-		JLabel lblTemp     ;
+		JLabel lblTemp    ;
 
 		// Réglage du layoutManager
 		this.setLayout( new BorderLayout(1, 4) );
@@ -107,9 +107,10 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 
 		this.btnAjouter     = new JButton("Ajouter la BD");
 
-		panelNord = new JPanel( new BorderLayout() );
-		lblTemp   = new JLabel("* Champs obligatoires", JLabel.LEFT);
-		lblTemp.setFont(new Font ("Serif", Font.BOLD, 10));
+		panelNord           = new JPanel( new BorderLayout() );
+		lblTemp             = new JLabel("* Champs obligatoires", JLabel.LEFT);
+
+		lblTemp.setFont      (new Font ("Serif", Font.BOLD, 10));
 		lblTemp.setForeground(Color.RED);
 
 		panelCentre = new JPanel( new BorderLayout()        );
@@ -121,6 +122,7 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 
 		panelNord.add( new JLabel ( new ImageIcon ( "./bedetheque.png" ))
 								  , BorderLayout.CENTER);
+
 		panelNord.add( lblTemp    , BorderLayout.SOUTH );
 
 		addFormulaireComposantLabel(panelTmp);
@@ -130,34 +132,34 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 		panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.txtTitre      );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.txtTitre      );
+		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.cbEditeur     );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.cbEditeur     );
+		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.cbDessinateur );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.cbDessinateur );
+		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.cbScenariste );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.cbScenariste  );
+		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.txtTome        );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.txtTome       );
+		panelTmp  .add( panelTmp2          );
 
 		panelTmp2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		panelTmp2.add( this.cbSerie       );
-		panelTmp.add ( panelTmp2 );
+		panelTmp2 .add( this.cbSerie        );
+		panelTmp  .add( panelTmp2           );
 
 		panelCentre.add ( panelTmp, BorderLayout.CENTER );
 
-		this.add( panelNord      , BorderLayout.NORTH  );
-		this.add( panelCentre    , BorderLayout.CENTER );
-		this.add( this.btnAjouter, BorderLayout.SOUTH  );
+		this.add( panelNord       , BorderLayout.NORTH  );
+		this.add( panelCentre     , BorderLayout.CENTER );
+		this.add( this.btnAjouter , BorderLayout.SOUTH  );
 
 		/*-----------------------------*/
 		/*  Activation des composants  */
@@ -195,16 +197,19 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	{
 		if ( this.txtTitre.getForeground() == Color.RED )return;
 
-		String sTitre       = this.txtTitre             .getText();
-		String sEditeur     = (String)this.cbEditeur    .getSelectedItem();
-		String sSerie       = (String)this.cbSerie      .getSelectedItem();
-		String sScenariste  = (String)this.cbScenariste .getSelectedItem();
-		String sDessinateur = (String)this.cbDessinateur.getSelectedItem();
+		String  sTitre       =         this.txtTitre     .getText();
+		String  sEditeur     = (String)this.cbEditeur    .getSelectedItem();
+		String  sSerie       = (String)this.cbSerie      .getSelectedItem();
+		String  sScenariste  = (String)this.cbScenariste .getSelectedItem();
+		String  sDessinateur = (String)this.cbDessinateur.getSelectedItem();
 
 		Integer iTome;
 
-		if ( !this.txtTome.getText().equals("") && this.txtTome.getText().matches("^[0-9]*$") )
+		if ( !this.txtTome.getText().equals("") && this.txtTome.getText()
+												   .matches("^[0-9]*$") )
+		{
 			iTome = Integer.parseInt(this.txtTome.getText());
+		}
 		else
 		{
 			this.txtTome.setForeground(Color.RED);
@@ -227,7 +232,7 @@ public class PanelSaisie extends JPanel implements ActionListener, FocusListener
 	}
 	
 	/*
-	 * on défini cette car on implémente focusListener mais elle est inutile
+	 * on défini cette méthode car on implémente focusListener mais elle est inutile
 	 */
 	public void focusLost(FocusEvent e){}
 }
