@@ -1,3 +1,12 @@
+/**
+ * IhmCUI.java
+ * IhmCUI.
+ * @author Bosquain  Maxence
+ * @author Cléon     Benjamin
+ * @author Loubeau   Enzo
+ * @author Pesquerel Mathis
+ * @author Vatres    Manon
+ */
 import java.util.Scanner;
 import java.util.List;
 import java.util.Collections;
@@ -13,7 +22,15 @@ public class IhmCUI
 	 * @see IhmCUI#afficherListeGroupee()
 	 */
 	private ControleurEtat oCtrl;
-
+	
+	/**
+	 * Controleur de IhmCUI.
+	 *
+	 * @param oCtrl
+	 *          Controleur de l'IhmCUI.
+	 *
+	 * @see IhmCUI#oCtrl
+	 */
 	public IhmCUI(ControleurEtat oCtrl)
 	{
 		this.oCtrl = oCtrl;
@@ -36,6 +53,7 @@ public class IhmCUI
 
 	/**
 	 * Affiche tous les ouvrages triés dans l'ordre naturel.
+	 *
 	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherTriNaturel()
@@ -52,6 +70,7 @@ public class IhmCUI
 
 	/**
 	 * Affiche tous les ouvrages d'un auteur en particulier.
+	 *
 	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherOuvrageDe()
@@ -79,6 +98,7 @@ public class IhmCUI
 
 	/**
 	 * Affiche tous les ouvrages triés par éditeurs puis par séries.
+	 *
 	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherListeGroupee()
