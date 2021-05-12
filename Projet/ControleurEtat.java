@@ -91,6 +91,16 @@ public class ControleurEtat
 			}			
 		}while ( action != 4 );
 	}
+	
+	/**
+	 * Retourne la liste des ouvrages fait par auteur en paramètre
+	 * @param auteur Nom de l'auteur dont on souhaite les ouvrages.
+	 * @return Liste des ouvrages de l'auteur en paramètre.
+	 */
+	public List<Ouvrage> getOuvragesDe(String auteur)
+	{
+		return this.metier.getOuvragesDe( auteur );
+	}
 
 	/**
 	 * Lit un nom d'auteur pour l'etat n°3.
