@@ -27,6 +27,16 @@ public class Ouvrage implements Comparable<Ouvrage>
 	 * @param titre, editeur, serie, scenariste, dessinateur, tome
 	 *          attributs de l'ouvrage créé
 	 */
+
+	/**
+	 * Méthode factory : Vérifie si les paramètres sont corrects.
+	 * @param titre Titre de l'ouvrage.
+	 * @param editeur Éditeur de l'ouvrage.
+	 * @param serie   Série de l'ouvrage (Optionnel).
+	 * @param scenariste Scénariste de l'ouvrage.
+	 * @param dessinateur Dessinateur de l'ouvrage.
+	 * @param tome Tome de l'ouvrage (Optionnel).
+	 */
 	public static Ouvrage creerOuvrage(String titre, String editeur,
 									   String serie, String scenariste,
 									   String dessinateur, Integer tome)
@@ -67,43 +77,42 @@ public class Ouvrage implements Comparable<Ouvrage>
     
 	/*-----Accesseurs-----*/
 
-	/*
-	 *retourne sEditeur de l'ouvrage
-	 * @return le nom de l'éditeur de l'oeuvre
+	/**
+	 * Retourne l'éditeur de l'ouvrage.
+	 * @return Le nom de l'éditeur de l'ouvrage.
 	 */
 	public String  getEditeur    (){ return this.sEditeur;     }
 
-	/* 
-	 *retourne sDessinateur de l'ouvrage
-	 * @return le nom du dessinateur de l'oeuvre
+	/**
+	 * Retourne le dessinateur de l'ouvrage.
+	 * @return Le nom du dessinateur de l'ouvrage.
 	 */
 	public String  getDessinateur(){ return this.sDessinateur; }
 
-	/*
-	 *retourne sSerie de l'ouvrage
-	 * @return le nom de la série de l'oeuvre
+	/**
+	 * Retourne la série de l'ouvrage.
+	 * @return La série de l'ouvrage.
 	 */
 	public String  getSerie      (){ return this.sSerie;       }
 
-	/* 
-	 *retourne sScenariste de l'ouvrage
-	 * @return le nom du scénariste de l'oeuvre
-	 */
+	 /**
+	  * Retourne le scénariste de l'ouvrage.
+	  * @return Le nom du scénariste de l'ouvrage.
+	  */
 	public String  getScenariste (){ return this.sScenariste;  }
 
-	/* 
-	 *retourne sTitre de l'ouvrage
-	 * @return le titre de l'oeuvre
-	 */
+	 /**
+	  * Retourne le titre de l'ouvrage.
+	  * @return Le titre de l'ouvrage.
+	  */
 	public String  getTitre      (){ return this.sTitre;       }
 
-	/* 
-	 * retourne iTome de l'ouvrage
-	 * @return le nombre de tome de l'oeuvre
+	/**
+	 * Retourne le tome de l'ouvrage.
+	 * @return Le tome de l'ouvrage.
 	 */
 	public Integer getTome       (){ return this.iTome;        }
 
-	/* retourne les informations de l'ouvrage sous forme de ligne d'un tableau */
 	public String toString()
 	{
 		String sRet = "| " +
@@ -118,20 +127,13 @@ public class Ouvrage implements Comparable<Ouvrage>
 		return sRet;
 	}
 	
-	/* retourne les informations de l'ouvrage séparé par ":"*/
 	public String toString2()
 	{
         	return this.sTitre       + ":" + this.sEditeur      + ":" +
 		       this.sSerie       + ":" +  this.sScenariste  + ":" +
 		       this.sDessinateur + ":" + this.iTome;
 	}
-    
-	/*
-	 * compare le titre de l'ouvrage actuel avec le titre de l'ouvrage mis en paramètre
-	 * @param autre
-	 *           ouvrage comparé
-	 * @return 0 si les titres des 2 ouvrages sont identiques
-	 */
+
 	public int compareTo(Ouvrage autre)
 	{
 		int iSize = autre.sTitre.length();

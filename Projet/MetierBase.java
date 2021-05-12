@@ -36,12 +36,12 @@ public class MetierBase
 				      String scenariste, String dessinateur,
 				      Integer tome)
 	{
-		Ouvrage tmp = Ouvrage.creerOuvrage(titre, editeur, serie,
+		Ouvrage oTempo = Ouvrage.creerOuvrage(titre, editeur, serie,
 						   scenariste, dessinateur, tome);
 
-		if ( tmp == null )return false;
+		if ( oTempo == null )return false;
 
-		this.ensOuvrages.add(tmp);
+		this.ensOuvrages.add(oTempo);
 		return true;
 	}
 	
@@ -75,36 +75,38 @@ public class MetierBase
 	 */
 	public void synchroniserOuvrages()
 	{
-		File     fichier = new File("sortie.txt");
-		String[] tabLigActuelle;
+		File     oFichier = new File("sortie.txt");
+		String[] tableauLignesActuelles;
 
 		Integer iTome;
 
 		this.ensOuvrages.clear();
 
-		if ( fichier.exists() )
+		if ( oFichier.exists() )
 		{
-			List<String> tmp = this.lireFichier("sortie.txt");
+			List<String> ensLignesFichier = this.lireFichier("sortie.txt");
 
-			for ( String s : tmp )
+			for ( String s : ensLignesFichier )
 			{
-				tabLigActuelle = s.split(":");
+				tableauLignesActuelles = s.split(":");
 				
-				iTome =  tabLigActuelle[5].equals("null")?null: 
-						 Integer.parseInt(tabLigActuelle[5]);
+				iTome =  tableauLignesActuelles[5].equals("null")?null: 
+						 Integer.parseInt(tableauLignesActuelles[5]);
 
-				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0],
-														  tabLigActuelle[1],
-				                                          tabLigActuelle[2],
-														  tabLigActuelle[3],
-				                                          tabLigActuelle[4],
+				this.ensOuvrages.add(Ouvrage.creerOuvrage(tableauLignesActuelles[0],
+														  tableauLignesActuelles[1],
+				                                          tableauLignesActuelles[2],
+														  tableauLignesActuelles[3],
+				                                          tableauLignesActuelles[4],
 														  iTome));
 			}
 		}
 	}
 	/*
 	 * retourne l'en-tete d'un tableau
-	 * @return la première ligne d'un tableau*/
+	 * @return la première ligne d'un tableau
+	 * 
+	 */
 	public String enTete()
 	{
 		String sRet = "+";

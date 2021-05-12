@@ -5,16 +5,19 @@ import java.util.Comparator;
 
 public class IhmCUI
 {
-	private ControleurEtat ctrl;
+	private ControleurEtat oCtrl;
 
-	private Scanner        scInput;
+	private Scanner        oEntree;
 
 	public IhmCUI(ControleurEtat ctrl)
 	{
-		this.ctrl = ctrl;
-		this.scInput = new Scanner(System.in);
+		this.oCtrl = ctrl;
+		this.oEntree = new Scanner(System.in);
 	}
 
+	/**
+	 * Affiche le menu de choix de l'application.
+	 */
 	public void afficherMenu()
 	{
 		System.out.println( "Que souhaitez vous faire ?"                                    + "\n" +
@@ -27,15 +30,21 @@ public class IhmCUI
 		System.out.print( "Saisissez le numero puis son eventuel parametre : " );
 	}
 
+	/**
+	 * Affiche tous les ouvrages triés dans l'ordre naturel.
+	 */
 	public void afficherTriNaturel()
 	{
-		System.out.println(this.ctrl.getEnTete());
+		System.out.println(this.oCtrl.getEnTete());
 
-		List<Ouvrage> listeTriee = this.ctrl.getListeTrieeParOrdreNaturel();
+		List<Ouvrage> listeTriee = this.oCtrl.getListeTrieeParOrdreNaturel();
 
 		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 
+	/**
+	 * Affiche tous les ouvrages d'un auteur en particulier.
+	 */
 	public void afficherOuvrageDe()
     {
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
@@ -50,20 +59,23 @@ public class IhmCUI
 
 		}catch(Exception e){e.printStackTrace();}
 
-		List<Ouvrage> tmp = this.ctrl.getOuvragesDe( sNom );
+		List<Ouvrage> tmp = this.oCtrl.getOuvragesDe( sNom );
 
-		System.out.println( this.ctrl.getEnTete() );
+		System.out.println( this.oCtrl.getEnTete() );
 
 		for (Ouvrage o : tmp) System.out.println( o );
 	}
 
+	/**
+	 * Affiche tous les ouvrages triés par éditeurs puis par séries.
+	 */
 	public void afficherListeGroupee()
 	{
 		
-		List<Ouvrage> ouvragesTries = this.ctrl.
+		List<Ouvrage> ouvragesTries = this.oCtrl.
 					                  getListeTrieeParEditeurEtSerie();
 
-		System.out.println( this.ctrl.getEnTete() );
+		System.out.println( this.oCtrl.getEnTete() );
 		
 		ouvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}

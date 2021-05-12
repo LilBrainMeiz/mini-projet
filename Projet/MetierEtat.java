@@ -17,6 +17,11 @@ import java.util.Collections;
 
 public class MetierEtat extends MetierBase
 {
+    /**
+     * Retourne la liste d'ouvrages correspondant à l'auteur passé en paramètre.
+     * @param sAuteur Nom de l'auteur à rechercher.
+     * @return Liste des ouvrages de l'auteur.
+     */
     public List<Ouvrage> getOuvragesDe( String sAuteur )
     {
         List<Ouvrage> ensTempo   = new ArrayList<Ouvrage>();
@@ -34,6 +39,10 @@ public class MetierEtat extends MetierBase
         return ensTempo;
     }
 
+    /**
+     * Retourne la liste des ouvrages triée par éditeur et par série.
+     * @return Liste d'ouvrages triée par éditeur et par série.
+     */
     public List<Ouvrage> getListeTrieeParEditeurEtSerie()
     {
         List<Ouvrage> ensOuvrages = super.getOuvrages();
@@ -46,6 +55,10 @@ public class MetierEtat extends MetierBase
         return listeTriee;
     }
 
+    /**
+     * Retourne la liste triée par ordre naturel.
+     * @return Liste d'ouvrage triée par ordre naturel.
+     */
     public List<Ouvrage> getListeTrieeParOrdreNaturel()
     {
         List<Ouvrage> ensOuvrages = super.getOuvrages();

@@ -20,11 +20,12 @@ public class MetierSaisie extends MetierBase
 	public MetierSaisie(){}
 
 	// Accesseur
-	/* retourne la derniere ligne du fichier mit en paramètre
- 	 * @param chemin
-	 *          chemin pour aller jusqu'au fichier voulu
- 	 * @return une ArrayList de la dernière ligne du fichier
- 	 */
+	
+	/**
+	 * Retourne un tableau contenant toute les lignes du fichier passé en paramètre.
+	 * @param chemin Chemin vers le fichier à lire.
+	 * @return Tableau contenant les lignes du fichier.
+	 */
 	public String[] getTableauLignesFichier( String chemin )
 	{
 		List<String> lignesFichier = super.lireFichier(chemin);
@@ -32,12 +33,11 @@ public class MetierSaisie extends MetierBase
 		return lignesFichier.toArray(new String[lignesFichier.size()]);
 	}
     
-	/*
- 	 * @param chemin
- 	 *          chemin vers le fichier ou l'on veut écrire
-	 * @param toPrint
-	 *          écrit dans le fichier le contenu de toPrint
- 	 */
+	/**
+	 * Ecrit une chaine passée en paramètre dans le fichier dont le chemin est passé en paramètre.
+	 * @param chemin Chemin vers le fichier à écrire.
+	 * @param toPrint Texte à écrire dans le fichier.
+	 */
 	public void ecrireFichier(String chemin, String toPrint)
 	{
 		try
@@ -51,9 +51,7 @@ public class MetierSaisie extends MetierBase
 		catch(Exception e){ e.printStackTrace(); }
 	}
 	
-	/*
- 	 * retourne ?
- 	 */
+	
 	public String toString()
     	{
         	File   fichier = new File("sortie.txt");
