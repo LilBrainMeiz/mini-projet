@@ -17,7 +17,7 @@ public class ControleurEtat
 	 * @see ControleurEtat#ControleurEtat()
 	 * @see ControleurEtat#lancerEtat()
 	 */
-	private IhmCUI     ihm;
+	private IhmCUI     oIhm;
 
 	/**
 	 * Metier pour l'application Etat.
@@ -26,28 +26,28 @@ public class ControleurEtat
 	 * @see ControleurEtat#getOuvrages()
 	 */
 
-	private MetierEtat metier;
+	private MetierEtat oMetier;
 
 	/**
 	 * Permet de lire l'entrée de l'utilisateur dans différents cas.
 	 * @see ControleurEtat#ControleurEtat()
 	 * @see ControleurEtat#lancerEtat()
 	 */
-    private Scanner    scInput;
+    private Scanner    oEntree;
 	
 	/**
 	 * Creer une instance de ControleurEtat.
 	 * Lance une IhmCUI et un MetierEtat.
-	 * @see ControleurEtat#ihm
-	 * @see ControleurEtat#metier
-	 * @see ControleurEtat#scInput
+	 * @see ControleurEtat#oIhm
+	 * @see ControleurEtat#oMetier
+	 * @see ControleurEtat#oEntree
 	 */
 	public ControleurEtat()
 	{
-		this.ihm    = new IhmCUI(this);
-		this.metier = new MetierEtat();
+		this.oIhm    = new IhmCUI(this);
+		this.oMetier = new MetierEtat();
 
-        scInput = new Scanner(System.in);
+        oEntree = new Scanner(System.in);
 
 		this.lancerEtat();
 	}
@@ -56,21 +56,21 @@ public class ControleurEtat
 	
 	/**
 	 * Retourne une String étant l'en-tête de tous les affichages.
-	 * @see ControleurEtat#metier
+	 * @see ControleurEtat#oMetier
 	 * @return L'en-tête dans metier.
 	 */
-	public String        getEnTete  (){ return this.metier.enTete     (); }
+	public String        getEnTete  (){ return this.oMetier.enTete     (); }
 	
 	/**
 	 * Appelle getOuvrages dans la classe metier.
-	 * @see ControleurEtat#metier
+	 * @see ControleurEtat#oMetier
 	 * @return L'ensembles des ouvrages dans la classe metier.
 	 */
-	public List<Ouvrage> getOuvrages(){ return this.metier.getOuvrages(); }
+	public List<Ouvrage> getOuvrages(){ return this.oMetier.getOuvrages(); }
 	
 	/**
 	 * Permet de lancer l'état avec une boucle.
-	 * @see ControleurEtat#scInput
+	 * @see ControleurEtat#oEntree
 	 */
 	private void lancerEtat()
 	{
@@ -78,16 +78,16 @@ public class ControleurEtat
 
 		do
 		{
-			this.ihm.afficherMenu();
-			iAction = scInput.nextInt();
+			this.oIhm.afficherMenu();
+			iAction = oEntree.nextInt();
 
-			this.metier.synchroniserOuvrages();
+			this.oMetier.synchroniserOuvrages();
 
 			switch( iAction )
 			{
-				case 1  -> this.ihm.afficherTriNaturel  ();
-				case 2  -> this.ihm.afficherListeGroupee();
-				case 3  -> this.ihm.afficherOuvrageDe   ();
+				case 1  -> this.oIhm.afficherTriNaturel  ();
+				case 2  -> this.oIhm.afficherListeGroupee();
+				case 3  -> this.oIhm.afficherOuvrageDe   ();
 			}			
 		}while ( iAction != 4 );
 	}
@@ -97,9 +97,29 @@ public class ControleurEtat
 	 * @param auteur Nom de l'auteur dont on souhaite les ouvrages.
 	 * @return Liste des ouvrages de l'auteur en paramètre.
 	 */
-	public List<Ouvrage> getOuvragesDe(String auteur)
+	public List<Ouvrage> getOuvragesDe(String sAuteur)
 	{
-		return this.metier.getOuvragesDe( auteur );
+		return this.oMetier.getOuvragesDe( sAuteur );
+	}
+
+	/**
+	 * Retourne la liste des ouvrages triées par éditeurs et par séries.
+	 * @return Liste des ouvrages triée par éditeurs et séries.
+	 * @see ControleurEtat#oMetier
+	 */
+	public List<Ouvrage> getListeTrieeParEditeurEtSerie()
+	{
+		return this.oMetier.getListeTrieeParEditeurEtSerie();
+	}
+
+	/**
+	 * Retourne la liste des ouvrages triées par ordre naturel.
+	 * @return Liste des ouvrages triée par ordre naturel.
+	 * @see ControleurEtat#oMetier
+	 */
+	public List<Ouvrage> getListeTrieeParOrdreNaturel()
+	{
+		return this.oMetier.getListeTrieeParOrdreNaturel();
 	}
 
 	/**
@@ -108,7 +128,7 @@ public class ControleurEtat
 	 */
 	public String getNomAuteur()
 	{
-		String sRet = this.scInput.next();
+		String sRet = this.oEntree.next();
 
 		return sRet;
 	}

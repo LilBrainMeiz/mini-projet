@@ -33,15 +33,13 @@ public class IhmCUI
 	{
 		System.out.println(this.ctrl.getEnTete());
 
-		List<Ouvrage> tmp = this.ctrl.getOuvrages();
-		Collections.sort(tmp);
+		List<Ouvrage> listeTriee = this.ctrl.getListeTrieeParOrdreNaturel();
 
-		for ( Ouvrage o : tmp )
-			System.out.println(o);
+		listeTriee.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 
 	public void afficherOuvrageDe()
-    	{
+    {
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
 
 		String sNom = this.ctrl.getNomAuteur();
@@ -55,17 +53,12 @@ public class IhmCUI
 
 	public void afficherListeGroupee()
 	{
-		List<Ouvrage> ensOuvrages = this.ctrl.getOuvrages();
-
-		List<Ouvrage> ouvragesTries = ensOuvrages.stream().
-												  sorted(Comparator.comparing
-												  (Ouvrage::getEditeur).
-						     					  thenComparing(Ouvrage::getSerie)).
-												  collect(Collectors.toList());
+		
+		List<Ouvrage> ouvragesTries = this.ctrl.
+					                  getListeTrieeParEditeurEtSerie();
 
 		System.out.println( this.ctrl.getEnTete() );
 		
-		ouvragesTries.forEach(tP -> System.out.println(tP));
-		
+		ouvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 }
