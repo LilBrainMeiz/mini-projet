@@ -106,16 +106,16 @@ public class PanelSaisie extends JPanel implements ActionListener,
 
 		initComposantTextField(20);
 
-		this.btnAjouter     = new JButton("Ajouter la BD");
+		this.btnAjouter = new JButton("Ajouter la BD");
 
-		panelNord           = new JPanel( new BorderLayout() );
-		lblTemp             = new JLabel("* Champs obligatoires", JLabel.LEFT);
+		panelNord       = new JPanel( new BorderLayout() );
+		lblTemp         = new JLabel("* Champs obligatoires", JLabel.LEFT);
 
 		lblTemp.setFont      (new Font ("Serif", Font.BOLD, 10));
 		lblTemp.setForeground(Color.RED);
 
-		panelCentre = new JPanel( new BorderLayout()        );
-		panelTmp    = new JPanel( new GridLayout(6, 1, 1, 2));
+		panelCentre     = new JPanel( new BorderLayout()        );
+		panelTmp        = new JPanel( new GridLayout(6, 1, 1, 2));
 
 		/*-----------------------------*/
 		/*     Ajout des composants    */
