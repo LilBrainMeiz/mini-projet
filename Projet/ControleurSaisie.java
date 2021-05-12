@@ -15,6 +15,13 @@ public class ControleurSaisie
 	 * @see FrameSaisie
 	 */
 	private FrameSaisie  ihm;
+	
+	/**
+	 * metier pour l'application Saisie
+	 * @see ControleurSaisie#ControleurSaisie()
+	 * @see ControleurEtat#getEnTete()
+	 * @see ControleurEtat#getOuvrages()
+	 */
 	private MetierSaisie metier; /* @see MetierSaisie */
 
 	/**
