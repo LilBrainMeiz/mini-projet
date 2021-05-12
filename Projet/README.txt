@@ -18,7 +18,7 @@ Quelques contraintes sont à respecter:
 Une fois les information correct saisie appuyer sur Ajouter la BD.
 
 Ajout d'éditeur, de séries et d'auteurs au liste déroulante:
-Ajouter dans les fichiers correspondant ( editeur.txt, série.txt, auteur.txt ) ce que vous souhaiter ajouter dans les liste déroulante.
+  - Ajouter dans les fichiers correspondant ( editeur.txt, série.txt, auteur.txt ) ce que vous souhaiter ajouter dans les liste déroulante.
 
 
 Pour consulter votre liste de BD que vous avez mis dans votre bedetheque vous devez utiliser l'application d'état. Cette dernière vous permet de consulter votre bedetheque sous différents états:
