@@ -64,12 +64,5 @@ public class FrameSaisie extends JFrame
 	 */
 	public void champObligatoire(){ this.oPanelSaisie.champObligatoire(); }
 
-	/**
-	 * Mise à jour de oPanelSaisie.
-	 * @see PanelSaisie
-	 */
-	public void maj()
-	{
-		this.oPanelSaisie.maj();
-	}
+
 }

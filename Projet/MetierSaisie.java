@@ -13,6 +13,7 @@ import java.util.List;
 import java.io.File       ;
 import java.io.FileWriter ;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 
 public class MetierSaisie extends MetierBase
 {
@@ -42,9 +43,8 @@ public class MetierSaisie extends MetierBase
 	{
 		try
 		{
-			PrintWriter oSortie = new PrintWriter( new FileWriter(chemin,
-															      true));
-		
+			PrintWriter oSortie = new PrintWriter( new FileWriter(chemin, StandardCharsets.UTF_8, true));
+
 			oSortie.print(toPrint);
 			oSortie.close();
 		}
