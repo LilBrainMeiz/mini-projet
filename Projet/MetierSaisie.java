@@ -36,7 +36,7 @@ public class MetierSaisie extends MetierBase
 
 		return ensLignesFichier.toArray(new String[ensLignesFichier.size()]);
 	}
-    
+
 	/**
 	 * Ecrit une chaine passée en paramètre dans le fichier dont le chemin est passé en paramètre.
 	 * @param chemin Chemin vers le fichier à écrire.
@@ -53,24 +53,24 @@ public class MetierSaisie extends MetierBase
 		}
 		catch(Exception e){ e.printStackTrace(); }
 	}
-	
-	
+
+
 	public String toString()
-    	{
-        	File   oFichier = new File("sortie.txt");
-        	String sRet    = "";
+		{
+			File   oFichier = new File("sortie.txt");
+			String sRet    = "";
 
-        	boolean bIsExisting = oFichier.exists();
+			boolean bIsExisting = oFichier.exists();
 
-        	if(!bIsExisting)
-        	{            
-        	    for(Ouvrage o : super.getOuvrages() )
-         	       sRet += o.toString2() + "\n";
-        	}
-        	else
-        	{
-       			sRet = super.getLastOuvrage().toString2() + "\n";
-        	}
-        	return sRet;
+			if(!bIsExisting)
+			{            
+				for(Ouvrage o : super.getOuvrages() )
+					sRet += o.toString2() + "\n";
+			}
+			else
+			{
+				sRet = super.getLastOuvrage().toString2() + "\n";
+			}
+			return sRet;
 	}
 }
