@@ -43,17 +43,20 @@ public class ControleurSaisie
 	/**
 	 * @return L'attribut Serie de la classe metier
 	 */
-	public String[] getSerie  (){ return this.metier.getEnsemble("serie.txt"  ); }
+	public String[] getSeries  (){ return this.metier.
+								   getTableauLignesFichier("serie.txt"  ); }
     
 	/**
 	 * @return L'attribut Auteur de la classe metier
 	 */
-	public String[] getAuteur (){ return this.metier.getEnsemble("auteur.txt" ); }
+	public String[] getAuteurs (){ return this.metier.
+								   getTableauLignesFichier("auteur.txt" ); }
     
 	/**
 	 * @return L'attribut Editeur de la classe metier
 	 */
-   	public String[] getEditeur(){ return this.metier.getEnsemble("editeur.txt"); }
+   	public String[] getEditeurs(){ return this.metier.
+								   getTableauLignesFichier("editeur.txt"); }
 
 	public static void main(String[] args)
 	{

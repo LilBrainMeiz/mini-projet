@@ -46,27 +46,31 @@ public class IhmCUI
 
         System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
 
-        String nom = this.ctrl.getNomAuteur();
+        String sNom = this.ctrl.getNomAuteur();
 
         System.out.println( this.ctrl.getEnTete() );
 
         for (Ouvrage o : tmp)
         {
-            if( o.getDessinateur().equals( nom ) || o.getScenariste().equals( nom ) )
+            if( o.getDessinateur().equals( sNom ) || o.getScenariste().
+												       equals( sNom ) )
                 System.out.println( o );
         }
     }
 
 	public void afficherListeGroupee()
 	{
-		List<Ouvrage> list = this.ctrl.getOuvrages();
+		List<Ouvrage> ensOuvrages = this.ctrl.getOuvrages();
 
-		List<Ouvrage> sort = list.stream().sorted(Comparator.comparing(Ouvrage::getEditeur).
-						     thenComparing(Ouvrage::getSerie)).collect(Collectors.toList());
+		List<Ouvrage> ouvragesTries = ensOuvrages.stream().
+												  sorted(Comparator.comparing
+												  (Ouvrage::getEditeur).
+						     					  thenComparing(Ouvrage::getSerie)).
+												  collect(Collectors.toList());
 
 		System.out.println( this.ctrl.getEnTete() );
 		
-		sort.forEach(tP -> System.out.println(tP));
+		ouvragesTries.forEach(tP -> System.out.println(tP));
 		
 	}
 }

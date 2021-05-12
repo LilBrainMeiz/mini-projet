@@ -57,12 +57,12 @@ public class MetierBase
 
 		try
         	{
-            		Scanner oInput = new Scanner( new FileInputStream(chemin),
-			                              "UTF8" );
+            	Scanner oEntree = new Scanner( new FileInputStream(chemin),
+			                                  "UTF8" );
 
-			while(oInput.hasNextLine())
+			while(oEntree.hasNextLine())
 			{
-				oFichier.add(oInput.nextLine());
+				oFichier.add(oEntree.nextLine());
 			}
 			
 		}catch(Exception e){ e.printStackTrace(); }
@@ -75,14 +75,14 @@ public class MetierBase
 	 */
 	public void synchroniserOuvrages()
 	{
-		File      f = new File("sortie.txt");
+		File     fichier = new File("sortie.txt");
 		String[] tabLigActuelle;
 
-		Integer tome;
+		Integer iTome;
 
 		this.ensOuvrages.clear();
 
-		if ( f.exists() )
+		if ( fichier.exists() )
 		{
 			List<String> tmp = this.lireFichier("sortie.txt");
 
@@ -90,10 +90,15 @@ public class MetierBase
 			{
 				tabLigActuelle = s.split(":");
 				
-				tome =  tabLigActuelle[5].equals("null")?null: Integer.parseInt(tabLigActuelle[5]);
-				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0], tabLigActuelle[1],
-				                                          tabLigActuelle[2], tabLigActuelle[3],
-				                                          tabLigActuelle[4], tome));
+				iTome =  tabLigActuelle[5].equals("null")?null: 
+						 Integer.parseInt(tabLigActuelle[5]);
+
+				this.ensOuvrages.add(Ouvrage.creerOuvrage(tabLigActuelle[0],
+														  tabLigActuelle[1],
+				                                          tabLigActuelle[2],
+														  tabLigActuelle[3],
+				                                          tabLigActuelle[4],
+														  iTome));
 			}
 		}
 	}
@@ -113,7 +118,7 @@ public class MetierBase
 
 		sRet += "\n";
 
-		String encadre = "|" +
+		String sEncadre = "|" +
 							"             Titre            "      + "|" +
 							"        Scenariste       "           + "|" +
 							"        Dessinateur      "           + "|" +
@@ -121,7 +126,7 @@ public class MetierBase
 							"               Serie               " + "|" +
 							" Tome "                              + "|" +"\n";
 
-		sRet += encadre + "+";
+		sRet += sEncadre + "+";
 
 		sRet += "------------------------------+";
 		sRet += "-------------------------+";
@@ -143,5 +148,7 @@ public class MetierBase
 	 * retourne le dernier élément de ensOuvrages
 	 * @return le dernier ouvrage ajouté dans l'ensemble d'ouvrages
 	 */
-	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.get(this.ensOuvrages.size()-1);}
+	public Ouvrage       getLastOuvrage(){ return this.ensOuvrages.
+												  get(this.ensOuvrages.
+												  	  size()-1);}
 }

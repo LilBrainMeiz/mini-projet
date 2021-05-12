@@ -14,7 +14,7 @@ public class FrameSaisie extends JFrame
 {
 	// Attributs
 	private ControleurSaisie oCtrl;
-	private PanelSaisie oPanelSaisie;
+	private PanelSaisie      oPanelSaisie;
 
 	// Constructeur
 	/**
