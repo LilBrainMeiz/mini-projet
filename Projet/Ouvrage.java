@@ -254,8 +254,8 @@ public class Ouvrage implements Comparable<Ouvrage>
 	public String toString2()
 	{
         	return this.sTitre       + ":" + this.sEditeur      + ":" +
-		       this.sSerie       + ":" +  this.sScenariste  + ":" +
-		       this.sDessinateur + ":" + this.iTome;
+		           this.sSerie       + ":" +  this.sScenariste  + ":" +
+		           this.sDessinateur + ":" + this.iTome;
 	}
 	
 	/**

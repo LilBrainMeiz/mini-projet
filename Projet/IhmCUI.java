@@ -63,7 +63,6 @@ public class IhmCUI
 			sNom = oEntree.nextLine();
 			System.out.println( sNom );
 
-			oEntree.close();
 		}catch(Exception e){e.printStackTrace();}
 
 		List<Ouvrage> ensOuvragesAuteur = this.oCtrl.getOuvragesDe( sNom );
