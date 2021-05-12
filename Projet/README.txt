@@ -1,27 +1,31 @@
-Il faut tout d'abord Lancer avec la commande java ControleurSaisie.
+1. Ouvrez votre terminal selon votre système d'exploitation
+2. Placez vous dans le répertoire contenant le code des applications
+3. Executez la commande suivante: javac *.java -encoding utf-8
+4. Vous pouvez désormais utilisez les deux applications
 
+L'objectif est que vous puissiez vous créer votre propre bedetheque, nous vous autorisons un maximum de 10000 livres.
+
+Pour saisir un livre dans votre bedeteque vous devez lancer l'application avec la commande java ControleurSaisie.
 Une fois l'application lancer, il faut ajouter des ouvrages en écrivant dans les champs de texte et
-avec les liste déroulante. Les champs marquer d'une * sont obligatoires.
+avec les liste déroulante.
 
-Le Titre doit être une chaîne de caractères quelconque.
-Tome doit être un entier positif si vous mettez autre chose, il sera considérer qu'il n'y a pas de numéros de tome.
-
+Quelques contraintes sont à respecter:
+  - Les champs marquer d'une * sont obligatoires.
+  - Le titre doit être une chaîne de caractères quelconque.
+  - Tome doit être un entier positif si vous mettez autre chose, il sera considérer qu'il n'y a pas de numéros de tome.
+  - La série est facultative
+  
 Une fois les information correct saisie appuyer sur Ajouter la BD.
 
-Après avoir ajouter des BD à la table,
-lancer si vous le souhaitez avec la commande java ControleurEtat.java pour pouvoir afficher la base de données.
+Pour consulter votre liste de BD que vous avez mis dans votre bedetheque vous devez utiliser l'application d'état. Cette dernière vous permet de consulter votre bedetheque sous différents états:
+  -Pour afficher la base de donnée triée selon titre des ouvrages avec un ordre naturel 
+  -Pour afficher la base de donnée triée par Éditeurs et Séries.
+  -Pour afficher tous les ouvrages d'un auteurs, qu'il soit scénariste et/ou dessinateur.
 
-Une fois lancé vous possédez quatre choix.
+Pour lancer l'application pour les états vous devez saisir dans votre terminal ou vous avez compilé vos fichier .java, la commande suivante: java ControleurEtat.
+Il vous sera alors proposé de choisir l'affichage que vous souhaitez parmis ceux proposé précédemment.
 
-Tapez : 1 puis appuyez sur entrée.
-Pour afficher, sur le CMD, la base de donnée triée selon titre des ouvrages avec un ordre naturel 
+À savoir que vous pouvez lancer les deux applications simultanément, sans vous souciez de l'ordre, de la même manière que vous pouvez ne pas les lancer en même temps si vous le souhaitez.
 
-Tapez : 2 puis appuyez sur entrée.
-pour afficher, sur le CMD, la base de donnée triée par Éditeurs et Séries.
-
-Tapez : 3 puis appuyez sur entrée.
-Pour afficher, sur le CMD, tous les ouvrages d'un auteurs , qu'il soit scénariste et/ou dessinateur.
-Tapez ensuite le nom de l'auteur dont vous souhaiter afficher les ouvrages. 
-
-Tapez : 4 puis appuyez sur entrée
-Pour quitter l'application.
+Si vous voulez créer plusieurs budotheque, faites un copier coller de vos fichiers .class que vous aurez générez après compilation, puis relancer les applications. 
+Si vous souhaitez supprimer votre bedetheque, vous pouvez supprimer le fichier appeler sortie.txt, lors de votre prochaine bedetheque vous pouvez procédez comme d'habitude.
