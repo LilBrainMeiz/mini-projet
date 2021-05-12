@@ -54,7 +54,7 @@ public class IhmCUI
 	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherOuvrageDe()
-    {
+	{
 		System.out.print( "Saisissez le nom de l'auteur que vous souhaitez : " );
 		String sNom = "";
 
@@ -70,7 +70,6 @@ public class IhmCUI
 		List<Ouvrage> ensOuvragesAuteur = this.oCtrl.getOuvragesDe( sNom );
 
 		System.out.println( this.oCtrl.getEnTete() );
-
 		ensOuvragesAuteur.forEach(oOuvrage -> System.out.println(oOuvrage));
 	}
 
@@ -80,14 +79,10 @@ public class IhmCUI
 	 */
 	public void afficherListeGroupee()
 	{
-		
-		List<Ouvrage> ensOuvragesTries = this.oCtrl.
-					                  getListeTrieeParEditeurEtSerie();
+		List<Ouvrage> ensOuvragesTries = this.oCtrl.getListeTrieeParEditeurEtSerie();
 
 		System.out.println( this.oCtrl.getEnTete() );
-		
 		ensOuvragesTries.forEach(oOuvrage -> System.out.println(oOuvrage));
-		
 		System.out.println( "\n" + "La Bedetheque contient " + ensOuvragesTries.size() + " ouvrages." + "\n" );
 	}
 }
