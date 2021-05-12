@@ -27,7 +27,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	// Attributs
 	/**
 	 * Controleur de l'application Saisie
-	 *
+	 * @see PanelSaisie#actionPerformed(ActionEvent)
 	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
 	 */
 	private ControleurSaisie   oCtrl;
@@ -262,6 +262,13 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	
 	/**
 	 * définition d'actionPerformed
+	 * @see PanelSaisie#txtTitre
+	 * @see PanelSaisie#cbEditeur
+	 * @see PanelSaisie#cbSerie
+	 * @see PanelSaisie#cbScenariste
+	 * @see PanelSaisie#cbDessinateur
+	 * @see PanelSaisie#txtTome
+	 * @see PanelSaisie#oCtrl
 	 * @param e Objet sur lequel l'action est effectué action effectué
 	 */
 	public void actionPerformed(ActionEvent e)
