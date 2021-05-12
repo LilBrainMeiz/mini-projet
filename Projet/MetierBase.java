@@ -118,7 +118,7 @@ public class MetierBase
 
 			for ( String s : ensLignesFichier )
 			{
-				tableauLignesActuelles = s.split(":");
+				tableauLignesActuelles = s.split("\t");
 				
 				iTome =  tableauLignesActuelles[5].equals("null")?null: Integer.parseInt(tableauLignesActuelles[5]);
 

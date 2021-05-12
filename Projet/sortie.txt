@@ -1,29 +1,6 @@
-Astérix le gaulois:Dargaud:Les aventures d'Astérix:René Goscinny:Albert Uderzo:null
-La serpe d'or:Dargaud:Les aventures d'Astérix:René Goscinny:Albert Uderzo:null
-le grand fossé:Dargaud:Les aventures d'Astérix:Albert Uderzo:Albert Uderzo:null
-Sioban:Dargaud:La complainte des landes perdues:Grzegorz Rosinki:Jean Dufaux:null
-Blackmore:Dargaud:La complainte des landes perdues:Grzegorz Rosinki:Jean Dufaux:null
-Dame Gerfaut:Dargaud:La complainte des landes perdues:Grzegorz Rosinki:Jean Dufaux:null
-Kyle of Klanach:Dargaud:La complainte des landes perdues:Grzegorz Rosinki:Jean Dufaux:null
-Le secret du janissaire:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Pavillon noir !:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-L'archipel du danger:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Le mystère de l'ile étrange:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Jean Sans Lune:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Luna Incognita:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Chasseurs de chimères:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Le maitre d'armes:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Revers de fortune:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-De la lune a la Terre:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Vingt mois avant:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Si ce n'est toi...:Delcourt:De cape et de crocs:Alain Ayrolles:Jean-Luc Masbou:null
-Igguk:Delcourt:La graine de folie:Émmanuel Civiello:Émmanuel Civiello:null
-Le grand ornement:Delcourt:La graine de folie:Émmanuel Civiello:Émmanuel Civiello:null
-Le roy sans coeur:Delcourt:La graine de folie:Thomas Mosdi:Émmanuel Civiello:null
-Lelficollogue:Delcourt:Petrus Barbygère:Pierre Dubois:Joann Sfar:null
-Le croque mitaine:Delcourt:Petrus Barbygère:Pierre Dubois:Joann Sfar:null
-Terra Incognita:Delcourt:Les potamoks:Joann Sfar:Jose Luis Munuera:null
-Les fontaines rouges:Delcourt:Les potamoks:Joann Sfar:Jose Luis Munuera:null
-Nous et le désert:Delcourt:Les potamoks:Joann Sfar:Jose Luis Munuera:null
-Fol:Vent d'Ouest:Fol:Alain Ayrolles:Jean-Luc Masbou:null
-Le temps du rubezahl:Vent d'Ouest:Fol:Alain Ayrolles:Jean-Luc Masbou:null
+Super	Dargaud	La complainte des landes perdues	René Goscinny	René Goscinny	null
+Super	Dargaud		René Goscinny	René Goscinny	null
+Super	Dargaud		Émmanuel Civiello	René Goscinny	null
+Super	Dargaud		Émmanuel Civiello	Émmanuel Civiello	null
+Super	Delcourt		Émmanuel Civiello	Émmanuel Civiello	null
+Super	Delcourt		Émmanuel Civiello	Thomas Mosdi	null
