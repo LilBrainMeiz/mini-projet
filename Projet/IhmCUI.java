@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
+import java.nio.charset.Charset;
+
 public class IhmCUI
 {
 	/**
@@ -80,7 +82,7 @@ public class IhmCUI
 
 		try
 		{
-			Scanner oEntree = new Scanner(System.in);
+			Scanner oEntree = new Scanner(System.in, Charset.forName("CP850"));
 			
 			sNom = oEntree.nextLine();
 			System.out.println( sNom );
