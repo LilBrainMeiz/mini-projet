@@ -5,14 +5,18 @@ import java.util.Comparator;
 
 public class IhmCUI
 {
+	/**
+	 * Accès aux controleur de l'ihm qui accède au métier
+	 * @see IhmCUI#IhmCUI(ControleurEtat)
+	 * @see IhmCUI#afficherTriNaturel()
+	 * @see IhmCUI#afficherListeGroupee()
+	 * @see IhmCUI#afficherListeGroupee()
+	 */
 	private ControleurEtat oCtrl;
 
-	private Scanner        oEntree;
-
-	public IhmCUI(ControleurEtat ctrl)
+	public IhmCUI(ControleurEtat oCtrl)
 	{
-		this.oCtrl = ctrl;
-		this.oEntree = new Scanner(System.in);
+		this.oCtrl = oCtrl;
 	}
 
 	/**
@@ -32,6 +36,7 @@ public class IhmCUI
 
 	/**
 	 * Affiche tous les ouvrages triés dans l'ordre naturel.
+	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherTriNaturel()
 	{
@@ -44,6 +49,7 @@ public class IhmCUI
 
 	/**
 	 * Affiche tous les ouvrages d'un auteur en particulier.
+	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherOuvrageDe()
     {
@@ -52,22 +58,23 @@ public class IhmCUI
 
 		try
 		{
-			Scanner in = new Scanner(System.in);
+			Scanner oEntree = new Scanner(System.in);
 			
-			sNom = in.nextLine();
+			sNom = oEntree.nextLine();
 			System.out.println( sNom );
 
 		}catch(Exception e){e.printStackTrace();}
 
-		List<Ouvrage> tmp = this.oCtrl.getOuvragesDe( sNom );
+		List<Ouvrage> oTmp = this.oCtrl.getOuvragesDe( sNom );
 
 		System.out.println( this.oCtrl.getEnTete() );
 
-		for (Ouvrage o : tmp) System.out.println( o );
+		for (Ouvrage o : oTmp) System.out.println( o );
 	}
 
 	/**
 	 * Affiche tous les ouvrages triés par éditeurs puis par séries.
+	 * @see IhmCUI#oCtrl
 	 */
 	public void afficherListeGroupee()
 	{

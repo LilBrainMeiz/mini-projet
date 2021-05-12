@@ -49,16 +49,17 @@ public class ControleurSaisie
      	 * Ajoute un ouvrage dans la base metier.
      	 *
      	 * @param titre
-	 *          Le titre de l'ouvrage.
-	 * @param editeur
-	 *          Le nom de l'editeur de l'ouvrage.
-	 * @param serie
-	 *          Le nom de la série de l'ouvrage.
-	 * @param scenariste
-	 *          Le nom du scénariste de l'ouvrage.
-	 * @param dessinateur
-	 *          Le nom du dessinateur de l'ouvrage.
-     	 *             
+		 *          Le titre de l'ouvrage.
+	 	 * @param editeur
+	 	 *          Le nom de l'editeur de l'ouvrage.
+	 	 * @param serie
+	 	 *          Le nom de la série de l'ouvrage.
+	 	 * @param scenariste
+		 *          Le nom du scénariste de l'ouvrage.
+		 * @param dessinateur
+		 *          Le nom du dessinateur de l'ouvrage.
+     	 * @param tome 
+		 *          Le numero du tome de l'ouvrage          
      	 *
      	 * @see ControleurSaisie#oMetier
      	 * @see ControleurSaisie#oIhm
