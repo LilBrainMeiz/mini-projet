@@ -26,9 +26,9 @@ public class ControleurSaisie
 	 *
 	 * @see ControleurSaisie#ControleurSaisie()
 	 * @see ControleurSaisie#ajouterOuvrage(String, String, String, String, String, Integer)
-	 * @see ControleurSaisie#getSerie()
-	 * @see ControleurSaisie#getAuteur()
-	 * @see ControleurSaisie#getEditeur()
+	 * @see ControleurSaisie#getSeries()
+	 * @see ControleurSaisie#getAuteurs()
+	 * @see ControleurSaisie#getEditeurs()
 	 */
 	private MetierSaisie oMetier;
 
