@@ -29,15 +29,15 @@ public class ControleurEtat
 	private MetierEtat metier;
 
 	/**
-	 * permet de lire l'entrée de l'utilisateur dans différents cas
+	 * Permet de lire l'entrée de l'utilisateur dans différents cas.
 	 * @see ControleurEtat#ControleurEtat()
 	 * @see ControleurEtat#lancerEtat()
 	 */
     private Scanner    scInput;
 	
 	/**
-	 * creer une instance de ControleurEtat
-	 * lance une IhmCUI et un MetierEtat
+	 * Creer une instance de ControleurEtat.
+	 * Lance une IhmCUI et un MetierEtat.
 	 * @see ControleurEtat#ihm
 	 * @see ControleurEtat#metier
 	 * @see ControleurEtat#scInput
@@ -55,21 +55,21 @@ public class ControleurEtat
 	// Accesseurs
 	
 	/**
-	 * retourne une String étant l'en-tête de tous les affichages
+	 * Retourne une String étant l'en-tête de tous les affichages.
 	 * @see ControleurEtat#metier
 	 * @return l'en-tête dans metier
 	 */
 	public String        getEnTete  (){ return this.metier.enTete     (); }
 	
 	/**
-	 * appelle getOuvrages dans la classe metier
+	 * Appelle getOuvrages dans la classe metier.
 	 * @see ControleurEtat#metier
 	 * @return l'ensembles des ouvrages dans la classe metier
 	 */
 	public List<Ouvrage> getOuvrages(){ return this.metier.getOuvrages(); }
 	
 	/**
-	 * permet de lancer l'état avec une boucle
+	 * Permet de lancer l'état avec une boucle.
 	 * @see ControleurEtat#scInput
 	 */
 	private void lancerEtat()
@@ -93,7 +93,7 @@ public class ControleurEtat
 	}
 
 	/**
-	 * lit un nom d'auteur pour l'etat n°3
+	 * Lit un nom d'auteur pour l'etat n°3.
 	 * @return entrée de l'utilisateur destinée à être l'auteur pour l'état n°3
 	 */
 	public String getNomAuteur()
@@ -104,7 +104,7 @@ public class ControleurEtat
 	}
 
 	/**
-	 * lance l'application
+	 * Lance l'application.
 	 * @param args argument au lancement du ControleurEtat
 	 */
 	public static void main(String[] args)
