@@ -20,7 +20,8 @@ import java.awt.event.ActionEvent   ;
 import java.awt.event.FocusListener ;
 import java.awt.event.FocusEvent    ;
 
-public class PanelSaisie extends JPanel implements ActionListener, FocusListener
+public class PanelSaisie extends JPanel implements ActionListener,
+												   FocusListener
 {
 	
 	// Attributs
