@@ -57,14 +57,14 @@ public class ControleurEtat
 	/**
 	 * Retourne une String étant l'en-tête de tous les affichages.
 	 * @see ControleurEtat#metier
-	 * @return l'en-tête dans metier
+	 * @return L'en-tête dans metier.
 	 */
 	public String        getEnTete  (){ return this.metier.enTete     (); }
 	
 	/**
 	 * Appelle getOuvrages dans la classe metier.
 	 * @see ControleurEtat#metier
-	 * @return l'ensembles des ouvrages dans la classe metier
+	 * @return L'ensembles des ouvrages dans la classe metier.
 	 */
 	public List<Ouvrage> getOuvrages(){ return this.metier.getOuvrages(); }
 	
@@ -94,7 +94,7 @@ public class ControleurEtat
 
 	/**
 	 * Lit un nom d'auteur pour l'etat n°3.
-	 * @return entrée de l'utilisateur destinée à être l'auteur pour l'état n°3
+	 * @return Entrée de l'utilisateur destinée à être l'auteur pour l'état n°3.
 	 */
 	public String getNomAuteur()
 	{
