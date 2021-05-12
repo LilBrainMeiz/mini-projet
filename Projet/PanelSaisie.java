@@ -1,4 +1,4 @@
-/*
+/**
  * PanelSaisie.java
  * panneau
  * @author Bosquain  Maxence
@@ -25,8 +25,15 @@ public class PanelSaisie extends JPanel implements ActionListener,
 {
 	
 	// Attributs
+	/**
+	 * Controleur de l'application Saisie
+	 *
+	 * @see PanelSaisie#PanelSaisie(ControleurSaisie)
+	 */
 	private ControleurSaisie   oCtrl;
-
+	
+	/**
+	 * Liste des dessinateurs qui apparraissent dans le Panel*/
 	private JComboBox<String>  cbDessinateur;
 	private JComboBox<String>  cbScenariste;
 	private JComboBox<String>  cbSerie;
@@ -42,8 +49,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	 * @param auteurs, editeurs, series
 	 *          listes d'auteurs, d'editeurs et de series
 	 */
-	public void initComposantComboBox(String[] auteurs, String[] editeurs,  
-									  String[] series)
+	public void initComposantComboBox(String[] auteurs, String[] editeurs, String[] series)
 	{
 		this.cbDessinateur  = new JComboBox<String>(auteurs );
 		this.cbScenariste   = new JComboBox<String>(auteurs );
@@ -79,8 +85,22 @@ public class PanelSaisie extends JPanel implements ActionListener,
 	
 	// Constructeur
 	/*
+	 * Constructeur de PanelSaisie.
 	 * @param ctrl
 	 *          ControleurSaisie
+	 *
+	 * @see PanelSaisie#oCtrl
+	 * @see PanelSaisie#cbDessinateur
+	 * @see PanelSaisie#cbscenariste
+	 * @see PanelSaisie#cbSerie
+	 * @see PanelSaisie#cbEditeur
+	 *
+	 * @see PanelSaisie#txtTitre
+	 * @see PanelSaisie#txtTome
+	 *
+	 * @see PanelSaisie#btnAjouter
+	 *
+	 * @see PanelSaisie#initComposantComboBox( String[], String[], String[] )
 	 */
 	public PanelSaisie(ControleurSaisie ctrl)
 	{
@@ -206,8 +226,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 
 		Integer iTome;
 
-		if ( !this.txtTome.getText().equals("") && this.txtTome.getText()
-												   .matches("^[0-9]*$") )
+		if ( !this.txtTome.getText().equals("") && this.txtTome.getText().matches("^[0-9]*$") )
 		{
 			iTome = Integer.parseInt(this.txtTome.getText());
 		}
@@ -218,8 +237,7 @@ public class PanelSaisie extends JPanel implements ActionListener,
 			iTome = null;
 		}
 
-		this.oCtrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste,
-								  sDessinateur, iTome );
+		this.oCtrl.ajouterOuvrage( sTitre, sEditeur, sSerie, sScenariste, sDessinateur, iTome );
 	}
 
 	/*
