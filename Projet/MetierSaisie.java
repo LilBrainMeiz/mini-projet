@@ -1,4 +1,4 @@
-/*
+/**
  * MetierSaisie.java
  * Metier qui hérite de MetierBase
  * @author Bosquain  Maxence
@@ -17,7 +17,10 @@ import java.nio.charset.StandardCharsets;
 
 public class MetierSaisie extends MetierBase
 {
-	// Constructeur
+	/**
+	 * Constructeur de MetierSaisie.
+	 * Il n'est pas défini donc il prend le constructeur de la classe mère MetierBase.
+	 */
 	public MetierSaisie(){}
 
 	// Accesseur
