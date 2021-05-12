@@ -11,7 +11,10 @@
 public class ControleurSaisie
 {
 	//Attributs de ControleurSaisie
-	private FrameSaisie  ihm;    /* @see FrameSaisie */
+	/**
+	 * @see FrameSaisie
+	 */
+	private FrameSaisie  ihm;
 	private MetierSaisie metier; /* @see MetierSaisie */
 
 	/**
